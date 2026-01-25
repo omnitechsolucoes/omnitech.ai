@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Autocalls",
+  "name": "OmniTech IA",
   "logo": {
     "dark": "/resources/logo/dark.png",
     "light": "/resources/logo/light.png"
@@ -22,42 +22,51 @@
   "sidebar": {
     "items": "card"
   },
-  "topbarLinks": [{
-    "name": "Home",
-    "url": "https://autocalls.ai"
-  }, {
-    "name": "Support",
-    "url": "https://autocalls.ai/contact"
-  }],
+  "topbarLinks": [
+    {
+      "name": "Home",
+      "url": "https://omnitechsolucoes.com.br"
+    },
+    {
+      "name": "Support",
+      "url": "https://omnitechsolucoes.com.br/contato"
+    }
+  ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://app.autocalls.ai"
+    "url": "https://app.omnitechsolucoes.com.br"
   },
-  "anchors": [{
-    "name": "No-Code Automation",
-    "icon": "wand-magic-sparkles",
-    "color": "#6c63ff",
-    "url": "automation-platform"
-  }, {
-    "name": "White Label",
-    "icon": "tag",
-    "color": "#ff0142",
-    "url": "white-label"
-  }, {
-    "name": "API Reference",
-    "icon": "code",
-    "color": "#1c51fc",
-    "url": "api-reference"
-  }, {
-    "name": "Platform updates",
-    "icon": "scroll",
-    "color": "#ffbb00",
-    "url": "releases"
-  }],
-  "navigation": [{
+  "anchors": [
+    {
+      "name": "No-Code Automation",
+      "icon": "wand-magic-sparkles",
+      "color": "#6c63ff",
+      "url": "automation-platform"
+    },
+    {
+      "name": "White Label",
+      "icon": "tag",
+      "color": "#ff0142",
+      "url": "white-label"
+    },
+    {
+      "name": "API Reference",
+      "icon": "code",
+      "color": "#1c51fc",
+      "url": "api-reference"
+    },
+    {
+      "name": "Platform updates",
+      "icon": "scroll",
+      "color": "#ffbb00",
+      "url": "releases"
+    }
+  ],
+  "navigation": [
+    {
       "group": "Introduction",
       "pages": [
-        "introduction/what-is-autocalls",
+        "introduction/what-is-omnitech",
         "introduction/how-it-works",
         "introduction/key-terminology"
       ]
@@ -307,7 +316,7 @@
     {
       "group": "Calls Related",
       "pages": [
-        "automation-platform/calls-related/autocalls-tool",
+        "automation-platform/calls-related/omnitech-tool",
         "automation-platform/calls-related/common-integrations",
         "automation-platform/calls-related/sms-capabilities"
       ]
@@ -332,10 +341,10 @@
     }
   ],
   "footerSocials": {
-    "linkedin": "https://www.linkedin.com/company/autocalls-ai"
+    "linkedin": "https://www.linkedin.com/company/omnitechsolucoes"
   },
   "api": {
-    "baseUrl": "https://app.autocalls.ai/api/",
+    "baseUrl": "https://app.omnitechsolucoes.com.br/api/",
     "auth": {
       "method": "bearer"
     }
