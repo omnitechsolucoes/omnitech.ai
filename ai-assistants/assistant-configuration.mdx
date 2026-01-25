@@ -1,111 +1,117 @@
 ---
-title: "Assistant best practices"
+title: "Boas Práticas para Assistentes"
 icon: "sliders"
-description: "Quick guide to fine-tune mode, transcriber, model, and other settings for the best call experience."
+description: "Guia rápido para ajustar modo, transcrição, modelo e demais configurações para a melhor experiência em chamadas com IA."
 ---
 
-> **Last updated:** September 1, 2025
+> **Última atualização:** 1º de setembro de 2025
 
-Getting great results often comes down to **picking the right engine settings**. Use this checklist when configuring an assistant:
+Obter ótimos resultados depende, na maioria das vezes, de **escolher corretamente as configurações do mecanismo**.  
+Use este checklist ao configurar um assistente na **OmniTech IA**:
 
-## 1. Pick a Mode
+## 1. Escolha o Modo de Operação
 
-| Mode | Why choose it? | Notes |
+| Modo | Por que escolher? | Observações |
 | --- | --- | --- |
-| **Dualplex (Beta)** | Fast turn-taking + premium/cloned voices | Recommended default. Pair with **Gemini Flash 2.0/2.5** or **GPT‑5 Realtime**. |
-| **Speech-to-Speech (Multimodal)** | Fastest turn-taking & most natural flow | Recommended model: **GPT‑5 Realtime**. |
-| **Pipeline** | Maximum control over voice & long-form replies | Recommended model: **GPT‑5 Mini**. If you select Pipeline, continue to the **Transcriber** step below. |
+| **Dualplex (Beta)** | Alternância rápida de fala + vozes premium/clonadas | Modo padrão recomendado. Combine com **Gemini Flash 2.0/2.5** ou **GPT-5 Realtime**. |
+| **Speech-to-Speech (Multimodal)** | Fluxo mais natural e menor latência | Modelo recomendado: **GPT-5 Realtime**. |
+| **Pipeline** | Máximo controle de voz e respostas longas | Modelo recomendado: **GPT-5 Mini**. Ao escolher Pipeline, configure também o **Transcritor** abaixo. |
 
-Want to know more about the differences between the modes? Read the <a href="/ai-assistants/assistant-modes">Assistant modes</a> guide.
+Quer entender melhor as diferenças entre os modos? Consulte o guia  
+<a href="/ai-assistants/assistant-modes">Modos do Assistente</a>.
 
 <Note>
-Experiment with all three modes: record the same scenario in each and compare response time and caller satisfaction.<br/>
+Teste os três modos usando o mesmo cenário e compare tempo de resposta e satisfação do usuário.
 </Note>
 
-## 2. Choose a Transcriber (Pipeline only)
+## 2. Escolha o Transcritor (somente Pipeline)
 
-| Transcriber | Accuracy | Latency | Best for |
+| Transcritor | Precisão | Latência | Melhor uso |
 | --- | --- | --- | --- |
-| **Azure** | ⭐⭐⭐⭐ | ⏱️⏱️⏱️ (slower) | When you need the highest transcription fidelity. |
-| **Gladia** | ⭐⭐⭐ | ⏱️ (faster) | Good all-rounder for most languages. |
-| **Deepgram** | ⭐⭐⭐ | ⏱️ (faster) | Another solid choice—test which performs better for your language & audio setup. |
+| **Azure** | ⭐⭐⭐⭐ | ⏱️⏱️⏱️ (mais lento) | Quando a fidelidade da transcrição é prioridade máxima. |
+| **Gladia** | ⭐⭐⭐ | ⏱️ (mais rápido) | Opção equilibrada para a maioria dos idiomas. |
+| **Deepgram** | ⭐⭐⭐ | ⏱️ (mais rápido) | Alternativa sólida — teste qual funciona melhor no seu idioma e ambiente. |
 
-> **Tip:** Different languages, accents, or background noise can impact each engine differently. Run a quick A/B test and keep the best performer.
+> **Dica:** Idioma, sotaque e ruído de fundo impactam cada engine de forma diferente. Faça testes A/B e mantenha o melhor desempenho.
 
-## 3. Select an LLM Model
+## 3. Selecione o Modelo de IA (LLM)
 
-| Model | Strengths | Trade-offs |
+| Modelo | Pontos fortes | Considerações |
 | --- | --- | --- |
-| **GPT-5 Mini** | Balanced reasoning with low latency | May be slower than realtime models for rapid turn-taking. |
-| **GPT-5 Realtime** | Designed for ultra-low-latency voice turns | Best for **Speech-to-Speech** and **Dualplex**. |
-| **GPT-4o** | Strong reasoning and multimodal understanding | Higher latency. |
-| **Gemini Flash 2.0 / 2.5** | Ultra-fast for voice turns in Dualplex/Multimodal | Excellent for minimizing perceived latency. |
+| **GPT-5 Mini** | Bom equilíbrio entre raciocínio e latência | Pode ser mais lento que modelos realtime. |
+| **GPT-5 Realtime** | Projetado para latência ultra-baixa em voz | Ideal para **Speech-to-Speech** e **Dualplex**. |
+| **GPT-4o** | Excelente raciocínio e multimodalidade | Latência mais alta. |
+| **Gemini Flash 2.0 / 2.5** | Extremamente rápido em interações por voz | Ideal para minimizar latência percebida. |
 
-If speed is critical, use **GPT‑5 Realtime** (great for **Speech-to-Speech**) or **Gemini Flash 2.0/2.5** (great with **Dualplex**). For richer reasoning, use **GPT-4o** or **GPT-5 Mini** and offset latency by using filler audios.
+Se velocidade for crítica, utilize **GPT-5 Realtime** (Speech-to-Speech) ou **Gemini Flash 2.0/2.5** (Dualplex).  
+Para respostas mais elaboradas, use **GPT-4o** ou **GPT-5 Mini** e compense a latência com **áudios de preenchimento**.
 
-## 4. Noise Cancellation
+## 4. Cancelamento de Ruído
 
-If callers are on speaker phone or in a quiet environment, keep **noise cancellation ON**. If your call volume is low or some words are "clipped," **turn it OFF** so the transcriber gets the full waveform.
+Se o usuário estiver em viva-voz ou ambiente silencioso, mantenha o **cancelamento de ruído ATIVADO**.  
+Caso palavras estejam sendo cortadas ou o volume seja baixo, **desative** para garantir melhor captação do áudio.
 
 <Note>
-If your assistant is not hearing you well, you can try to turn off noise cancellation.
+Se o assistente não estiver ouvindo corretamente, experimente desativar o cancelamento de ruído.
 </Note>
 
-## 5. Conversation Timers
+## 5. Temporizadores de Conversa
 
-Parameter | Recommended | Why
+Parâmetro | Recomendado | Motivo
 --- | --- | ---
-**Re-engagement** | `≈ 30 s` | Gives callers enough time to think. Lower values can feel pushy.
-**Max silence duration** | `≈ 60 s` | Prevents premature hang-ups while still ending truly silent calls.
+**Reengajamento** | `≈ 30 s` | Dá tempo suficiente para o usuário pensar, sem parecer insistente.
+**Duração máxima de silêncio** | `≈ 60 s` | Evita desligamentos prematuros, encerrando apenas chamadas realmente silenciosas.
 
-Test different values in real calls—too low can interrupt, too high leaves awkward gaps.
+Teste valores diferentes em chamadas reais — valores muito baixos interrompem, valores altos criam pausas desconfortáveis.
 
-## 6. Initial Message
+## 6. Mensagem Inicial
 
-Mode | How it's used | Best practice
+Modo | Como é utilizada | Boa prática
 --- | --- | ---
-**Pipeline** | Read **exactly** as written (converted by TTS). | Write the greeting verbatim: "Hello, this is Alex from …".
-**Dualplex** | Read **exactly** as written (rendered via ElevenLabs TTS). | Write the greeting verbatim, then select your cloned voice.
-**Speech-to-Speech** | Interpreted as a **prompt** by the model. | Include instructions like "Greet the customer and say …" _or_ prepend `say exactly: ` to ensure literal output.
+**Pipeline** | Lida **exatamente** como escrita (TTS). | Escreva literalmente: “Olá, aqui é a OmniTech IA…”.
+**Dualplex** | Lida **exatamente** como escrita (TTS). | Escreva o texto final e selecione a voz clonada.
+**Speech-to-Speech** | Interpretada como **prompt** pelo modelo. | Inclua instruções como “Cumprimente o cliente e diga…” ou use `diga exatamente:` para saída literal.
 
-## 7. Ambient sound
+## 7. Som Ambiente
 
-Enabled by default, ambient sound is a feature that adds background noise to the assistant's voice.
+Ativado por padrão, o som ambiente adiciona ruído de fundo à voz do assistente, tornando-a mais natural.
 
 <Note>
-If the assistant is not hearing you well, you can try to turn off ambient sound or turn the volume lower.
+Se houver dificuldade de compreensão, reduza o volume do som ambiente ou desative-o.
 </Note>
 
-## 8. Endpointing sliders
+## 8. Sensibilidade de Endpointing
 
-**Control when your assistant starts talking** with the endpointing sensitivity slider at the bottom of assistant settings.
+Controle **quando o assistente começa a falar** usando o controle de sensibilidade de endpointing.
 
-| Setting | Effect | Use when |
+| Configuração | Efeito | Quando usar |
 | --- | --- | --- |
-| **Lower sensitivity** | Assistant responds **faster** after caller stops speaking | You want snappy, quick-turn conversations |
-| **Higher sensitivity** | Assistant waits **longer** before responding | Callers give longer, more detailed replies |
+| **Menor sensibilidade** | Resposta mais rápida após o usuário parar de falar | Conversas ágeis e objetivas |
+| **Maior sensibilidade** | Aguarda mais antes de responder | Usuários que falam frases longas |
 
 <Tip>
-**Pro tip:** If your assistant cuts off callers mid-sentence, **increase** the sensitivity. If responses feel sluggish, **decrease** it.
+**Dica avançada:** Se o assistente interrompe o usuário, **aumente** a sensibilidade.  
+Se as respostas parecerem lentas, **reduza**.
 </Tip>
 
-## 9. Debug using call transcript
+## 9. Depuração com Transcrição da Chamada
 
-If you are having issues with your assistant, you can use the call transcript to debug the issue.
+Para diagnosticar problemas:
 
-1. Go to the Call history page.
-2. Click on the last call you tested
-3. The call transcript will be shown including function calls and its parameters.
+1. Acesse a página **Histórico de Chamadas**
+2. Clique na última chamada testada
+3. Analise a transcrição completa, incluindo funções e parâmetros executados
 
-## 10. Still have questions?
+## 10. Ainda tem dúvidas?
 
-If you have any questions, please contact our support team via the chat widget inside the app.
+Caso tenha qualquer dúvida, utilize o chat de suporte dentro da plataforma **OmniTech IA**.
 
 <Note>
-Test different settings with real calls—the right balance depends on your conversation flow and caller behavior patterns.
+Teste diferentes combinações em chamadas reais — o melhor ajuste depende do fluxo de conversa e do comportamento dos usuários.
 </Note>
 
 ---
 
-Need a complete list of every toggle and slider? See the full
-<a href="/ai-assistants/settings/general">Assistant settings reference</a>.
+Precisa da lista completa de todos os botões e controles?  
+Consulte a  
+<a href="/ai-assistants/settings/general">Referência completa de configurações do assistente</a>.
