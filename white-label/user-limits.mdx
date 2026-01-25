@@ -1,203 +1,129 @@
 ---
-title: "User Limits Management"
+title: "Gestão de Limites de Usuário"
 icon: "user-gear"
-description: "Configure individual user limits and restrictions for your white label platform users"
+description: "Configure limites e restrições individuais para usuários da sua plataforma OmniTech IA White Label"
 ---
 
-Manage individual user limits and restrictions beyond the default plan limits. This allows you to customize specific users' access without changing their plan.
+Gerencie limites e restrições individuais de usuários além dos limites padrão dos planos. Isso permite personalizar o acesso de usuários específicos sem a necessidade de alterar o plano contratado.
 
-## Overview
+## Visão Geral
 
-User limits provide granular control over individual users on your white label platform. You can override plan limits for specific users, giving them more or less access than their plan normally allows.
+Os limites de usuário oferecem controle granular sobre cada usuário da sua plataforma **OmniTech IA White Label**. Com eles, é possível sobrescrever os limites do plano para usuários específicos, concedendo mais ou menos recursos conforme a necessidade operacional ou comercial.
 
-## Available Limit Types
+## Tipos de Limites Disponíveis
 
-### Count Limits
-**Numerical restrictions on resource usage:**
+### Limites de Quantidade
+**Restrições numéricas sobre o uso de recursos:**
 
 <AccordionGroup>
-  <Accordion title="Assistants" icon="robot">
-    **Purpose:** Maximum number of AI assistants user can create
+  <Accordion title="Assistentes" icon="robot">
+    **Finalidade:** Número máximo de assistentes de IA que o usuário pode criar
     
-    **Your Custom Plans:**
-    - Free: 1 assistant (recommended)
-    - Basic: 2-3 assistants
-    - Professional: 5-10 assistants
-    - Enterprise: Unlimited
+    **Sugestão de Planos Personalizados:**
+    - Gratuito: 1 assistente (recomendado)
+    - Básico: 2–3 assistentes
+    - Profissional: 5–10 assistentes
+    - Enterprise: Ilimitado
   </Accordion>
   
-  <Accordion title="Campaigns" icon="bullhorn">
-    **Purpose:** Maximum number of outbound campaigns
+  <Accordion title="Campanhas" icon="bullhorn">
+    **Finalidade:** Número máximo de campanhas ativas de chamadas
     
-    **Your Custom Plans:**
-    - Free: 1 campaign (trial)
-    - Basic: 2-3 campaigns
-    - Professional: 5-15 campaigns
-    - Enterprise: Unlimited
+    **Sugestão de Planos Personalizados:**
+    - Gratuito: 1 campanha (teste)
+    - Básico: 2–3 campanhas
+    - Profissional: 5–15 campanhas
+    - Enterprise: Ilimitado
   </Accordion>
   
-  <Accordion title="Cloned Voices" icon="microphone">
-    **Purpose:** Maximum number of custom voice clones
+  <Accordion title="Vozes Clonadas" icon="microphone">
+    **Finalidade:** Número máximo de vozes personalizadas (clonadas)
     
-    **Your Custom Plans:**
-    - Free: 0-1 voice (premium incentive)
-    - Basic: 2-3 voices
-    - Professional: 5-10 voices
-    - Enterprise: Unlimited
+    **Sugestão de Planos Personalizados:**
+    - Gratuito: 0–1 voz (incentivo premium)
+    - Básico: 2–3 vozes
+    - Profissional: 5–10 vozes
+    - Enterprise: Ilimitado
   </Accordion>
   
-  <Accordion title="Parallel Calls" icon="phone">
-    **Purpose:** Maximum simultaneous calls
+  <Accordion title="Chamadas Simultâneas" icon="phone">
+    **Finalidade:** Quantidade máxima de chamadas paralelas
     
-    **Your Custom Plans:**
-    - Free: 1-2 calls (prevent abuse)
-    - Basic: 5-10 calls
-    - Professional: 20-100 calls
-    - Enterprise: 500+ calls
+    **Sugestão de Planos Personalizados:**
+    - Gratuito: 1–2 chamadas (controle de uso)
+    - Básico: 5–10 chamadas
+    - Profissional: 20–100 chamadas
+    - Enterprise: 500+ chamadas
   </Accordion>
   
-  <Accordion title="Knowledge Bases" icon="database">
-    **Purpose:** Maximum number of knowledge bases
+  <Accordion title="Bases de Conhecimento" icon="database">
+    **Finalidade:** Número máximo de bases de conhecimento
     
-    **Your Custom Plans:**
-    - Free: 1 knowledge base
-    - Basic: 2-5 knowledge bases
-    - Professional: 10-20 knowledge bases
-    - Enterprise: Unlimited
+    **Sugestão de Planos Personalizados:**
+    - Gratuito: 1 base
+    - Básico: 2–5 bases
+    - Profissional: 10–20 bases
+    - Enterprise: Ilimitado
   </Accordion>
   
-  <Accordion title="Own Numbers" icon="hashtag">
-    **Purpose:** Maximum phone numbers user can add (SIP/Caller ID)
+  <Accordion title="Números Próprios" icon="hashtag">
+    **Finalidade:** Quantidade máxima de números telefônicos (SIP / Caller ID)
     
-    **Your Custom Plans:**
-    - Free: 1 number
-    - Basic: 2-3 numbers
-    - Professional: 5-15 numbers
-    - Enterprise: Unlimited
+    **Sugestão de Planos Personalizados:**
+    - Gratuito: 1 número
+    - Básico: 2–3 números
+    - Profissional: 5–15 números
+    - Enterprise: Ilimitado
   </Accordion>
   
-  <Accordion title="Mid-Call Tools" icon="wrench">
-    **Purpose:** Maximum custom mid-call tools
+  <Accordion title="Ferramentas Mid-Call" icon="wrench">
+    **Finalidade:** Quantidade máxima de ferramentas personalizadas durante a chamada
     
-    **Your Custom Plans:**
-    - Free: 0 tools (premium feature)
-    - Basic: 1-2 tools
-    - Professional: 5-10 tools
-    - Enterprise: Unlimited
+    **Sugestão de Planos Personalizados:**
+    - Gratuito: 0 ferramentas (recurso premium)
+    - Básico: 1–2 ferramentas
+    - Profissional: 5–10 ferramentas
+    - Enterprise: Ilimitado
   </Accordion>
   
-  <Accordion title="Automation Runs" icon="play">
-    **Purpose:** Monthly automation platform executions
+  <Accordion title="Execuções de Automação" icon="play">
+    **Finalidade:** Número mensal de execuções da plataforma de automação
     
-    **Your Custom Plans:**
-    - Free: 100-500 runs
-    - Basic: 1,000-5,000 runs
-    - Professional: 10,000-50,000 runs
-    - Enterprise: Unlimited
+    **Sugestão de Planos Personalizados:**
+    - Gratuito: 100–500 execuções
+    - Básico: 1.000–5.000 execuções
+    - Profissional: 10.000–50.000 execuções
+    - Enterprise: Ilimitado
   </Accordion>
 </AccordionGroup>
 
-### Boolean Limits
-**Feature access controls (enabled/disabled):**
+### Limites Booleanos
+**Controles de acesso a funcionalidades (ativado/desativado):**
 
 <AccordionGroup>
-  <Accordion title="Web Widget" icon="code">
-    **Purpose:** Access to embeddable web widget functionality
+  <Accordion title="Widget Web" icon="code">
+    **Finalidade:** Acesso ao widget de atendimento incorporável em sites
     
-    **Default:** Enabled for all plans
+    **Padrão:** Ativado para todos os planos
   </Accordion>
   
-  <Accordion title="Secondary Languages" icon="language">
-    **Purpose:** Access to multi-language assistant support
+  <Accordion title="Idiomas Secundários" icon="language">
+    **Finalidade:** Suporte a múltiplos idiomas nos assistentes de IA
     
-    **Default:** Enabled for all plans
+    **Padrão:** Ativado para todos os planos
   </Accordion>
   
-  <Accordion title="Automation Platform" icon="bolt">
-    **Purpose:** Access to no-code automation workflows
+  <Accordion title="Plataforma de Automação" icon="bolt">
+    **Finalidade:** Acesso aos fluxos de automação no-code
     
-    **Default:** Enabled for all plans
+    **Padrão:** Ativado para todos os planos
   </Accordion>
   
-  <Accordion title="Calendar Integrations" icon="calendar">
-    **Purpose:** Access to Cal.com and GoHighLevel scheduling
+  <Accordion title="Integrações de Calendário" icon="calendar">
+    **Finalidade:** Integração com Cal.com e GoHighLevel para agendamentos
     
-    **Default:** Enabled for all plans
+    **Padrão:** Ativado para todos os planos
   </Accordion>
 </AccordionGroup>
 
-## Setting User Limits
-
-### Accessing Individual User Limits
-
-<Frame>
-  <img src="/resources/white-label-users-table.png" alt="Users Table Interface" />
-</Frame>
-
-**Steps to modify individual user limits:**
-1. **Go to "Users" table** in your administration panel
-2. **Click "Edit" button** on any user row to open their profile
-
-### Enable Custom Limits
-
-<Frame>
-  <img src="/resources/white-label-enable-custom-limits.png" alt="Enable Custom Limits Interface" />
-</Frame>
-
-3. **Enable "Custom Limits"** to override plan defaults
-4. **Modify any limit** as needed for that specific user
-
-### Configuring Limits
-
-**For Count Limits:**
-- **-1:** Unlimited access
-- **0:** No access/disabled
-- **Positive number:** Specific limit
-
-**For Boolean Limits:**
-- **Enabled:** User has access to feature
-- **Disabled:** User cannot access feature
-
-**Additional User Management:**
-- **Change user email and name**
-- **Grant admin access**
-
-### Transfer Credits
-
-<Frame>
-  <img src="/resources/white-label-transfer-credits.png" alt="Transfer Credits Interface" />
-</Frame>
-
-**Credit Management:**
-- **Transfer credits** from your white label account to user accounts
-- **Add or remove credits** from individual user balances
-- **Monitor usage** and top up accounts as needed
-
-**Additional User Management:**
-- **Impersonate user** to make settings on their behalf
-
-<Tip>
-**Quick Access:** Click directly on any user row in the Users table to instantly open their profile and access limit configuration.
-</Tip>
-
-## Troubleshooting
-
-### Common Issues
-
-**User can't create resources:**
-- Check current vs. limit usage
-- Verify limit type (count vs. boolean)
-- Confirm user is on correct plan
-
-**Limits not applying:**
-- Clear platform cache
-- Verify limit configuration
-- Check for conflicting settings
-
-<Warning>
-**Resource Impact:** Unlimited settings (-1) should be used carefully as they can impact platform performance and costs.
-</Warning>
-
-<Note>
-User limits override plan limits. A user's effective limit is always the user limit if set, otherwise the plan limit applies.
-</Note>
+## Configurando Limites por
