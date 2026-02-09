@@ -1,31 +1,24 @@
 ---
 title: "Webhook & API"
 icon: "code"
-description: "Learn how to use webhooks and the REST API for custom integrations and automation"
+description: "Aprenda como usar webhooks e a API REST para integrações e automações personalizadas"
 ---
-
-If you want deeper customization beyond no-code blocks, Autocalls.ai supports **webhooks** and a **REST API**.
+Se você deseja uma personalização mais profunda além dos blocos no-code, a OmniTech suporta **webhooks** e uma **API REST**.
 
 ## 1. Webhooks
-
-- **When to Use**: Trigger events in external systems the moment something happens in Autocalls.ai (e.g., "Call Ended,").
-- **Configuration**: Set a webhook URL in your assistant/campaign settings or the automation platform.
-- **Payload**: Typically includes call ID, transcript, call outcome, or any user data collected.
+- **Quando Usar**: Acionar eventos em sistemas externos no momento em que algo acontece na OmniTech (ex.: "Chamada Finalizada").
+- **Configuração**: Defina uma URL de webhook nas configurações do seu assistente/campanha ou na plataforma de automação.
+- **Payload**: Geralmente inclui ID da chamada, transcrição, resultado da chamada ou quaisquer dados coletados do usuário.
 
 ## 2. REST API
+- **Principais Funções**:
+  1. **Criar/Atualizar Leads**
+  2. **Gerenciar Campanhas**
+- **Autenticação & Limites de Taxa**: Normalmente utiliza tokens de API. Consulte a [documentação da API](/api-reference/introduction) para detalhes sobre endpoints e cotas de uso.
 
-- **Key Functions**:
-
-  1. **Create/Update Leads**
-  2. **Manage Campaigns**
-
-- **Auth & Rate Limits**: Usually uses API tokens. Check [API docs](/api-reference/introduction) for details on endpoints and usage quotas.
-
-## 3. Example Use Cases
-
-- **Real-Time CRM Sync**: For each new call, post data to your CRM's endpoint.
-- **Custom Dashboards**: Pull call data into your own analytics dashboard.
+## 3. Exemplos de Casos de Uso
+- **Sincronização em Tempo Real com CRM**: Para cada nova chamada, envie os dados para o endpoint do seu CRM.
+- **Dashboards Personalizados**: Extraia dados de chamadas para seu próprio dashboard de análises.
 
 ---
-
-**Note:** You'll find the official API reference in a dedicated docs section or via your Autocalls.ai dashboard. Always secure your tokens and test endpoints in a dev environment.
+**Nota:** Você encontrará a referência oficial da API em uma seção dedicada da documentação ou diretamente no dashboard da OmniTech. Sempre proteja seus tokens e teste os endpoints em um ambiente de desenvolvimento.
