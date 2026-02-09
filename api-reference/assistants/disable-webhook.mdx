@@ -1,44 +1,44 @@
 ---
-title: "Disable assistant webhook"
+title: "Desativar webhook do assistente"
 api: "POST /user/assistants/disable-webhook"
-description: "Disable webhook notifications for a specific assistant"
+description: "Desativa as notificações de webhook para um assistente específico"
 ---
 
-This endpoint disables webhook notifications for an assistant, stopping all real-time updates about call completions and data.
+Este endpoint desativa as notificações de webhook de um assistente, interrompendo todos os envios de atualizações em tempo real sobre conclusões de chamadas e dados.
 
-### Request Body
+### Corpo da Requisição
 
 <ParamField body="assistant_id" type="integer" required>
-  The ID of the assistant to disable webhook for
+  O ID do assistente para o qual o webhook será desativado
 </ParamField>
 
-### Response
+### Resposta
 
 <ResponseField name="message" type="string">
-  Success message confirming webhook was disabled
+  Mensagem de sucesso confirmando que o webhook foi desativado
 </ResponseField>
 
 <ResponseField name="data" type="array">
-  Empty array (reserved for future use)
+  Array vazio (reservado para uso futuro)
 </ResponseField>
 
-### Error Responses
+### Respostas de Erro
 
 <ResponseField name="404 Not Found">
-  <Expandable title="Error Response">
+  <Expandable title="Resposta de Erro">
     <ResponseField name="message" type="string">
-      Error message when the assistant is not found or doesn't belong to the authenticated user
+      Mensagem de erro quando o assistente não é encontrado ou não pertence ao usuário autenticado
     </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="422 Validation Error">
-  <Expandable title="Error Response">
+  <Expandable title="Resposta de Erro">
     <ResponseField name="message" type="string">
-      Error message indicating validation failure
+      Mensagem de erro indicando falha de validação
     </ResponseField>
     <ResponseField name="errors" type="object">
-      Detailed validation errors for each field
+      Erros detalhados de validação para cada campo
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -47,42 +47,37 @@ This endpoint disables webhook notifications for an assistant, stopping all real
 
 ```json 200 Success Response
 {
-  "message": "Webhook disabled successfully",
+  "message": "Webhook desativado com sucesso",
   "data": []
 }
-```
-
-```json 404 Not Found
 {
-  "message": "Assistant not found"
+  "message": "Assistente não encontrado"
 }
-```
-
-```json 422 Validation Error
 {
-  "message": "The given data was invalid.",
+  "message": "Os dados fornecidos são inválidos.",
   "errors": {
     "assistant_id": [
-      "The assistant id field is required."
+      "O campo ID do assistente é obrigatório."
     ]
   }
 }
-```
-
 </ResponseExample>
+Comportamento do Webhook
+Quando o webhook é desativado:
 
-### Webhook Behavior
+O assistente deixará de enviar requisições HTTP POST para a URL do webhook
 
-When webhook is disabled:
+Tanto is_webhook_active será definido como false quanto webhook_url será definido como null
 
-- The assistant will stop sending HTTP POST requests to your webhook URL
-- Both `is_webhook_active` is set to `false` and `webhook_url` is set to `null`
-- Any ongoing calls will complete normally, but no webhook notifications will be sent
-- Call data will still be available through the API calls endpoints
+Quaisquer chamadas em andamento serão concluídas normalmente, porém nenhuma notificação de webhook será enviada
 
-### Notes
+Os dados das chamadas continuarão disponíveis através dos endpoints de chamadas da API
 
-- The assistant must belong to the authenticated user
-- This completely removes the webhook configuration from the assistant
-- You can later re-enable webhooks using the enable webhook endpoint with a new URL
-- Disabling webhooks does not affect call recording or data collection
+Observações
+O assistente deve pertencer ao usuário autenticado
+
+Esta ação remove completamente a configuração de webhook do assistente
+
+Você pode reativar os webhooks posteriormente utilizando o endpoint de habilitar webhook com uma nova URL
+
+Desativar webhooks não afeta a gravação de chamadas nem a coleta de dados
