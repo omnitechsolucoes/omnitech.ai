@@ -1,87 +1,89 @@
 ---
-title: "List mid call tools"
+title: "Listar ferramentas de uso durante a chamada"
 api: "GET /user/tools"
-description: "Retrieve all mid call tools"
+description: "Recupera todas as ferramentas de uso durante a chamada"
 ---
 
-This endpoint allows you to retrieve all mid call tools. Mid call tools enable your AI assistants to interact with external APIs during a call.
+Este endpoint permite recuperar todas as ferramentas de uso durante a chamada. As ferramentas de mid call permitem que seus assistentes de IA interajam com APIs externas durante uma ligação.
 
 ### Headers
 
 <ParamField header="Authorization" type="string" required>
-  Bearer token for authentication
+  Token Bearer para autenticação
 </ParamField>
 
 <ParamField header="Content-Type" type="string" required>
-  Must be `application/json`
+  Deve ser `application/json`
 </ParamField>
 
 <ParamField header="Accept" type="string" required>
-  Must be `application/json`
+  Deve ser `application/json`
 </ParamField>
 
-### Response fields
+### Campos da Resposta
 
 <ResponseField name="data" type="array">
-  Array of mid call tools
-  <Expandable title="properties">
+  Array de ferramentas de uso durante a chamada
+  <Expandable title="propriedades">
     <ResponseField name="id" type="integer">
-      The unique identifier of the tool
+      Identificador único da ferramenta
     </ResponseField>
 
     <ResponseField name="name" type="string">
-      The name of the tool (lowercase with underscores)
+      Nome da ferramenta (minúsculas com underscore)
     </ResponseField>
 
     <ResponseField name="description" type="string">
-      Detailed explanation of when and how the AI should use this tool
+      Explicação detalhada de quando e como a IA deve utilizar esta ferramenta
     </ResponseField>
 
     <ResponseField name="endpoint" type="string">
-      The API endpoint URL that will be called
+      URL do endpoint da API que será chamado
     </ResponseField>
 
     <ResponseField name="method" type="string">
-      HTTP method (GET, POST, PUT, PATCH, DELETE)
+      Método HTTP (GET, POST, PUT, PATCH, DELETE)
     </ResponseField>
 
     <ResponseField name="timeout" type="integer">
-      Request timeout in seconds (1-30)
+      Timeout da requisição em segundos (1-30)
     </ResponseField>
 
     <ResponseField name="headers" type="array">
-      HTTP headers to send with the request
-      <Expandable title="header properties">
+      Headers HTTP enviados na requisição
+      <Expandable title="propriedades de headers">
         <ResponseField name="name" type="string">
-          Header name
+          Nome do header
         </ResponseField>
         <ResponseField name="value" type="string">
-          Header value
+          Valor do header
         </ResponseField>
       </Expandable>
     </ResponseField>
 
     <ResponseField name="schema" type="array">
-      Parameters that the AI will extract and send to the endpoint
-      <Expandable title="schema properties">
+      Parâmetros que a IA irá extrair e enviar para o endpoint
+      <Expandable title="propriedades de schema">
         <ResponseField name="name" type="string">
-          Parameter name
+          Nome do parâmetro
         </ResponseField>
+
         <ResponseField name="type" type="string">
-          Parameter type (string, number, boolean)
+          Tipo do parâmetro (string, number, boolean)
         </ResponseField>
+
         <ResponseField name="description" type="string">
-          Description to help AI understand how to extract this parameter
+          Descrição para ajudar a IA a entender como extrair este parâmetro
         </ResponseField>
       </Expandable>
     </ResponseField>
 
     <ResponseField name="created_at" type="string">
-      ISO 8601 timestamp when the tool was created
+      Timestamp ISO 8601 de criação da ferramenta
     </ResponseField>
 
     <ResponseField name="updated_at" type="string">
-      ISO 8601 timestamp when the tool was last updated
+      Timestamp ISO 8601 da última atualização da ferramenta
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -93,7 +95,7 @@ This endpoint allows you to retrieve all mid call tools. Mid call tools enable y
   {
     "id": 1,
     "name": "get_weather",
-    "description": "Use this tool to get the current weather in a specific city. Call this when the customer asks about weather conditions.",
+    "description": "Use esta ferramenta para obter o clima atual de uma cidade específica. Utilize quando o cliente perguntar sobre condições climáticas.",
     "endpoint": "https://api.openweathermap.org/data/2.5/weather",
     "method": "GET",
     "timeout": 10,
@@ -111,17 +113,17 @@ This endpoint allows you to retrieve all mid call tools. Mid call tools enable y
       {
         "name": "city",
         "type": "string",
-        "description": "The city name to get weather for"
+        "description": "Nome da cidade para consulta do clima"
       },
       {
         "name": "temperature",
         "type": "number",
-        "description": "Current temperature value"
+        "description": "Valor da temperatura atual"
       },
       {
         "name": "is_raining",
         "type": "boolean",
-        "description": "Whether it is currently raining"
+        "description": "Indica se está chovendo no momento"
       }
     ],
     "created_at": "2025-10-10T12:00:00.000000Z",
@@ -130,8 +132,8 @@ This endpoint allows you to retrieve all mid call tools. Mid call tools enable y
   {
     "id": 2,
     "name": "send_notification",
-    "description": "Use this tool to send a notification to the customer. Call this when customer requests updates.",
-    "endpoint": "https://api.yourcompany.com/notifications/send",
+    "description": "Use esta ferramenta para enviar uma notificação ao cliente. Utilize quando o cliente solicitar atualizações.",
+    "endpoint": "https://api.suaempresa.com/notifications/send",
     "method": "POST",
     "timeout": 15,
     "headers": [
@@ -144,30 +146,27 @@ This endpoint allows you to retrieve all mid call tools. Mid call tools enable y
       {
         "name": "message",
         "type": "string",
-        "description": "The notification message to send"
+        "description": "Mensagem da notificação a ser enviada"
       },
       {
         "name": "priority_level",
         "type": "number",
-        "description": "Priority level from 1 to 5"
+        "description": "Nível de prioridade de 1 a 5"
       },
       {
         "name": "send_sms",
         "type": "boolean",
-        "description": "Whether to also send SMS notification"
+        "description": "Indica se também deve enviar notificação por SMS"
       }
     ],
     "created_at": "2025-10-09T14:30:00.000000Z",
     "updated_at": "2025-10-10T09:15:00.000000Z"
   }
 ]
-```
-
 </ResponseExample>
+Atribuindo Ferramentas aos Assistentes
+Para utilizar estas ferramentas com assistentes, consulte:
 
-### Assigning Tools to Assistants
+Criar Assistente – Utilize o parâmetro tool_ids para anexar ferramentas
 
-To use these tools with assistants, see:
-
-- **[Create Assistant](/api-reference/assistants/create-assistant)** - Attach tools using the `tool_ids` parameter
-- **[Update Assistant](/api-reference/assistants/update-assistant)** - Manage tool assignments using the `tool_ids` parameter
+Atualizar Assistente – Gerencie as atribuições de ferramentas utilizando o parâmetro tool_ids
