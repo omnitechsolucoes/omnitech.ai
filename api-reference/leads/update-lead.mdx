@@ -1,46 +1,46 @@
 ---
-title: "Update Lead"
+title: "Atualizar lead"
 api: "PUT /user/leads/{id}"
-description: "Update an existing lead in your campaigns"
+description: "Atualiza um lead existente em suas campanhas"
 ---
 
-Update a lead by providing the lead ID and the fields you want to modify. Only the fields provided in the request will be updated.
+Atualize um lead informando o ID do lead e os campos que deseja modificar. Apenas os campos fornecidos na requisição serão atualizados.
 
-## Path Parameters
+## Parâmetros de Caminho
 
 <ParamField path="id" type="integer" required>
-  The ID of the lead to update
+  ID do lead a ser atualizado
 </ParamField>
 
-## Body Parameters
+## Parâmetros do Corpo
 
 <ParamField body="campaign_id" type="integer" optional>
-  The ID of the campaign to assign the lead to
+  ID da campanha para a qual o lead será atribuído
 </ParamField>
 
 <ParamField body="phone_number" type="string" optional>
-  The phone number of the lead (will be formatted to E164)
+  Número de telefone do lead (será formatado para E.164)
 </ParamField>
 
 <ParamField body="status" type="string" optional>
-  The status of the lead. Must be one of: `created`, `completed`, `reached-max-retries`
+  Status do lead. Deve ser um dos seguintes: `created`, `completed`, `reached-max-retries`
 </ParamField>
 
 <ParamField body="variables" type="object" optional>
-  Custom variables to merge with existing lead variables
+  Variáveis personalizadas a serem mescladas com as variáveis existentes do lead
 </ParamField>
 
-## Response
+## Resposta
 
 <ResponseField name="message" type="string">
-  Success message indicating the lead was updated
+  Mensagem de sucesso indicando que o lead foi atualizado
 </ResponseField>
 
 <RequestExample>
 
 ```bash cURL
-curl -X PUT "https://app.autocalls.ai/api/user/leads/123" \
-  -H "Authorization: Bearer YOUR_API_TOKEN" \
+curl -X PUT "https://app.omnitechsolucoes.com.br/api/user/leads/123" \
+  -H "Authorization: Bearer SEU_API_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
     "campaign_id": 456,
@@ -50,60 +50,40 @@ curl -X PUT "https://app.autocalls.ai/api/user/leads/123" \
       "company": "Acme Corp"
     }
   }'
-```
-
-</RequestExample>
-
-<ResponseExample>
-
-```json Success Response
+</RequestExample> <ResponseExample>
 {
-  "message": "Lead updated successfully"
+  "message": "Lead atualizado com sucesso"
 }
-```
-
-```json Error Response - Lead Not Found
 {
-  "message": "Lead not found"
+  "message": "Lead não encontrado"
 }
-```
-
-```json Error Response - Campaign Not Found
 {
-  "message": "Campaign not found"
+  "message": "Campanha não encontrada"
 }
-```
-
-```json Error Response - Invalid Phone Number
 {
-  "message": "Invalid phone number"
+  "message": "Número de telefone inválido"
 }
-```
-
-```json Error Response - Validation Failed
 {
-  "message": "Validation failed",
+  "message": "Falha na validação",
   "errors": {
-    "campaign_id": ["The selected campaign does not exist"],
-    "status": ["This status is assigned automatically and cannot be set manually"],
-    "variables": ["Variables must be an array"]
+    "campaign_id": ["A campanha selecionada não existe"],
+    "status": ["Este status é atribuído automaticamente e não pode ser definido manualmente"],
+    "variables": ["As variáveis devem ser um array"]
   }
 }
-```
-
-```json Error Response - Invalid Fields
 {
-  "message": "Invalid fields: invalid_field, another_invalid_field"
+  "message": "Campos inválidos: invalid_field, another_invalid_field"
 }
-```
-
 </ResponseExample>
+Observações
+O lead deve pertencer ao usuário autenticado
 
-## Notes
+Ao atualizar a campanha, a nova campanha também deve pertencer ao usuário autenticado
 
-- The lead must belong to the authenticated user
-- If updating the campaign, the new campaign must also belong to the authenticated user
-- Phone numbers are automatically formatted and validated
-- Variables are merged with existing variables (not replaced)
-- Only allowed fields can be updated: `campaign_id`, `phone_number`, `status`, `variables`
-- The `status` field has restricted values for data integrity
+Os números de telefone são automaticamente formatados e validados
+
+As variáveis são mescladas com as variáveis existentes (não são substituídas)
+
+Apenas os seguintes campos podem ser atualizados: campaign_id, phone_number, status, variables
+
+O campo status possui valores restritos para garantir a integridade dos dados
