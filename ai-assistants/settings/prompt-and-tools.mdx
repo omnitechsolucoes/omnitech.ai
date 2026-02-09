@@ -1,342 +1,326 @@
 ---
-title: "Prompt & Tools"
+title: "Prompt e Ferramentas"
 icon: "wrench"
-description: "Configure your assistant's knowledge base, tools, variables, and system prompt to define its capabilities and behavior."
+description: "Configure a base de conhecimento, ferramentas, variáveis e o prompt de sistema do assistente para definir suas capacidades e comportamento."
 ---
 
-Configure the objective of the assistant and the tools it can use during calls.
+Configure o objetivo do assistente e as ferramentas que ele pode utilizar durante as chamadas.
 
-## Knowledge Base
+## Base de Conhecimento
 
-Give information to the assistant to use as a knowledge base when responding to customers. From website contents, documents, etc.
+Forneça informações para que o assistente utilize como base de conhecimento ao responder clientes, a partir de conteúdos de sites, documentos, entre outros.
 
-### Knowledge Base Selection
+### Seleção da Base de Conhecimento
 
 <AccordionGroup>
-  <Accordion title="Choose Knowledge Base" icon="book-open">
-    Select a knowledge base store containing relevant information for the assistant to use.
+  <Accordion title="Escolher Base de Conhecimento" icon="book-open">
+    Selecione uma base de conhecimento que contenha informações relevantes para o assistente utilizar.
     
-    **Requirements:**
-    - Must be created in your [Knowledge Bases](/knowledgebases) section first
-    - Shows status (Active, Processing, etc.) and description
-    - Only your own knowledge bases are available
+    **Requisitos:**
+    - Deve ser criada previamente na seção [Bases de Conhecimento](/knowledgebases)
+    - Exibe status (Ativa, Processando, etc.) e descrição
+    - Apenas bases de conhecimento do próprio usuário ficam disponíveis
     
     <Tip>
-    Create knowledge bases from website content, PDFs, or custom documents to give your assistant domain-specific information. For comprehensive setup guide including content types, processing status, website scraping, and troubleshooting, see the complete [Knowledge Base Guide](/conversation-design/knowledge-bases).
+    Crie bases de conhecimento a partir de conteúdos de sites, PDFs ou documentos personalizados para fornecer informações específicas do seu domínio ao assistente. Para um guia completo de configuração — incluindo tipos de conteúdo, status de processamento, captura de sites e resolução de problemas — consulte o [Guia Completo de Base de Conhecimento](/conversation-design/knowledge-bases).
     </Tip>
   </Accordion>
   
-  <Accordion title="Knowledge Base Mode" icon="brain">
-    Choose how the AI will use the knowledge base.
+  <Accordion title="Modo da Base de Conhecimento" icon="brain">
+    Escolha como a IA utilizará a base de conhecimento.
     
     <CardGroup cols={2}>
       <Card title="Function Call" icon="function">
-        **Recommended for most cases**
+        **Recomendado para a maioria dos casos**
         
-        Uses a function call to search for information in the knowledgebase, only when needed. More accurate and efficient.
+        Utiliza chamadas de função para buscar informações na base de conhecimento apenas quando necessário, garantindo maior precisão e eficiência.
       </Card>
       
-      <Card title="Prompt Injection" icon="syringe">
-        **For simple use cases**
+      <Card title="Injeção no Prompt" icon="syringe">
+        **Para casos simples**
         
-        Performs a search after every customer speech. More accurate but can be slower without filler audios.
+        Realiza buscas após cada fala do cliente. Pode ser mais preciso, porém tende a ser mais lento sem o uso de áudios de preenchimento.
       </Card>
     </CardGroup>
     
     <Note>
-    **Mode availability:** Speech-to-Speech and Dualplex modes only support Function Call mode.
+    **Disponibilidade do modo:** Os modos Speech-to-Speech e Dualplex suportam apenas o modo Function Call.
     </Note>
   </Accordion>
 </AccordionGroup>
 
-## Custom Mid-Call Tools
+## Ferramentas Personalizadas Durante a Chamada
 
-Create and assign your own custom tools that AI can use **mid-call** with the customer.
+Crie e atribua ferramentas personalizadas que a IA pode utilizar **durante a chamada**, em tempo real com o cliente.
 
 <CardGroup cols={2}>
-  <Card title="Create Custom Tools" icon="plus">
-    Build tools tailored to your specific business needs: API integrations, database queries, custom workflows, and external service calls.
+  <Card title="Criar Ferramentas Personalizadas" icon="plus">
+    Desenvolva ferramentas sob medida para suas necessidades de negócio: integrações com APIs, consultas a banco de dados, fluxos personalizados e chamadas a serviços externos.
     
-    **Quick action:** Direct link to tool creation page.
+    **Ação rápida:** Link direto para a página de criação de ferramentas.
   </Card>
   
-  <Card title="Assign to Assistant" icon="link">
-    Select which custom tools this assistant can use with multiple selection, search by name/description, and real-time assignment.
+  <Card title="Atribuir ao Assistente" icon="link">
+    Selecione quais ferramentas personalizadas este assistente pode utilizar, com seleção múltipla, busca por nome/descrição e atribuição em tempo real.
     
-    **Scope:** Only your own tools are available.
+    **Escopo:** Apenas ferramentas do próprio usuário ficam disponíveis.
   </Card>
 </CardGroup>
 
 <Tip>
-Read the [Custom Tools documentation](/ai-assistants/custom-tools) for detailed guides on creating and configuring custom tools.
+Leia a [Documentação de Ferramentas Personalizadas](/ai-assistants/custom-tools) para guias detalhados de criação e configuração.
 </Tip>
 
-## Default Tools
+## Ferramentas Padrão
 
-Choose built-in tools that AI can use **mid-call** with the customer.
+Escolha as ferramentas nativas que a IA pode utilizar **durante a chamada** com o cliente.
 
 <AccordionGroup>
-  <Accordion title="Multi Call Transfer" icon="phone-arrow-right">
-    Route calls to multiple destination phone numbers like different people or departments according to your flow.
+  <Accordion title="Transferência Múltipla de Chamadas" icon="phone-arrow-right">
+    Direcione chamadas para múltiplos números de destino, como pessoas ou departamentos, de acordo com o fluxo definido.
     
-    **Use cases:**
-    - Escalation to human agents
-    - Department routing
-    - Specialist handoffs
+    **Casos de uso:**
+    - Escalonamento para atendentes humanos
+    - Roteamento por departamento
+    - Transferência para especialistas
     
-    **Configuration options:**
-    - **Standard mode:** Use regular phone numbers (e.g., +1234567890)
-    - **Advanced mode:** Use SIP URI format for SIP providers (e.g., sip:+1234567890@sip-server)
+    **Opções de configuração:**
+    - **Modo padrão:** Uso de números telefônicos convencionais (ex.: +5511999999999)
+    - **Modo avançado:** Uso de URI SIP para provedores SIP (ex.: sip:+5511999999999@sip-server)
     
-    **For SIP integrations:**
-    - Set transfer to "Advanced" mode
-    - Use SIP URI format: `sip:number@sip-server`
-    - Verify your SIP provider supports SIP REFER
-    - Test with different URI formats if transfers fail
+    **Para integrações SIP:**
+    - Defina a transferência como modo "Avançado"
+    - Utilize o formato SIP URI: `sip:numero@sip-server`
+    - Verifique se seu provedor SIP suporta SIP REFER
+    - Teste diferentes formatos de URI se a transferência falhar
     
     <Note>
-    **Prompt instruction:** Include in your system prompt something like "call the transfer function when the user requests to speak with someone else" to ensure the AI uses this tool appropriately.
+    **Instrução no prompt:** Inclua no prompt de sistema algo como “chame a função de transferência quando o usuário solicitar falar com outra pessoa” para garantir o uso correto da ferramenta.
     </Note>
     
     <Tip>
-    If transfers aren't working, see our [SIP Integration troubleshooting guide](/troubleshooting/sip-integration#transfer-phone-call-not-working) for detailed solutions.
+    Caso a transferência não funcione, consulte o [Guia de Solução de Problemas de Integração SIP](/troubleshooting/sip-integration#transfer-phone-call-not-working).
     </Tip>
   </Accordion>
   
-  <Accordion title="End Call" icon="phone-slash">
-    Ends the call when the conversation is complete.
+  <Accordion title="Encerrar Chamada" icon="phone-slash">
+    Encerra a chamada quando a conversa for concluída.
     
-    **Use cases:**
-    - Natural conversation conclusion
-    - Objective achieved
-    - Customer satisfaction confirmed
+    **Casos de uso:**
+    - Finalização natural da conversa
+    - Objetivo atingido
+    - Confirmação de satisfação do cliente
     
     <Note>
-    **Prompt instruction:** If the AI doesn't call the end call function automatically, include in your system prompt "call the hang_up function to close the call" when the conversation should end.
+    **Instrução no prompt:** Caso a IA não encerre a chamada automaticamente, inclua no prompt “chamar a função hang_up para encerrar a chamada” quando apropriado.
     </Note>
   </Accordion>
   
-  <Accordion title="DTMF Input" icon="hashtag">
-    Easily send keypad inputs during outbound calls, enabling smooth navigation through IVR menus and automated workflows. The AI navigates using keypad buttons when calling and responding to prompts.
+  <Accordion title="Entrada DTMF" icon="hashtag">
+    Envie entradas de teclado durante chamadas ativas, permitindo navegação fluida por menus de URA e fluxos automatizados. A IA navega usando botões de teclado conforme as instruções.
     
-    **Use cases:**
-    - Navigate phone menus
-    - Enter extension numbers
-    - Input security codes
-    - IVR system navigation
+    **Casos de uso:**
+    - Navegação em menus telefônicos
+    - Digitação de ramais
+    - Inserção de códigos de segurança
+    - Interação com sistemas de URA
     
     <Note>
-    **Prompt instruction:** Include in your system prompt instructions about when to use DTMF input, such as "use the send_dtmf tool to navigate phone menus when needed to reach the right person."
+    **Instrução no prompt:** Inclua no prompt quando utilizar a entrada DTMF, como “use a ferramenta send_dtmf para navegar pelos menus telefônicos quando necessário”.
     </Note>
     
-    For detailed information about DTMF capabilities, see [Tools & Functions](/ai-assistants/tools-and-functions#4-dtmf-input).
+    Para mais detalhes sobre DTMF, consulte [Ferramentas e Funções](/ai-assistants/tools-and-functions#4-dtmf-input).
   </Accordion>
   
-  <Accordion title="Appointment Scheduling" icon="calendar">
-    Real-time booking scheduling integration with multiple calendar platforms.
+  <Accordion title="Agendamento de Compromissos" icon="calendar">
+    Integração em tempo real para agendamento com múltiplas plataformas de calendário.
     
-    **Available integrations:**
-    - **Cal.com:** Full setup guide available at [Cal.com Scheduling](https://docs.autocalls.ai/ai-assistants/cal-com-scheduling#cal-com-appointment-scheduling)
-    - **GoHighLevel:** Complete integration guide at [GoHighLevel Scheduling](/ai-assistants/gohighlevel-scheduling)
+    **Integrações disponíveis:**
+    - **Cal.com:** Guia completo em [Agendamento Cal.com](https://docs.omnitech.ai/ai-assistants/cal-com-scheduling#cal-com-appointment-scheduling)
+    - **GoHighLevel:** Guia de integração em [Agendamento GoHighLevel](/ai-assistants/gohighlevel-scheduling)
     
-    **Use cases:**
-    - Book appointments with calendars
-    - Check real-time availability
-    - Send automatic confirmation details
-    - Sync with existing calendar systems
+    **Casos de uso:**
+    - Agendar compromissos automaticamente
+    - Consultar disponibilidade em tempo real
+    - Enviar confirmações automáticas
+    - Sincronizar com calendários existentes
     
     <Note>
-    Available when calendar integration is enabled in your platform settings.
+    Disponível quando a integração de calendário estiver habilitada nas configurações da plataforma.
     </Note>
   </Accordion>
 </AccordionGroup>
 
-## Call Variables
+## Variáveis de Chamada
 
-Define variables that can be passed **before** making the call and used in the prompt **like {variable_name}**.
+Defina variáveis que podem ser passadas **antes** da chamada e utilizadas no prompt no formato **{nome_da_variavel}**.
 
-### Variable Configuration
+### Configuração de Variáveis
 
 <AccordionGroup>
-  <Accordion title="Variable Definition" icon="code">
-    Create call variables to pass information to your assistant before the call starts.
+  <Accordion title="Definição de Variáveis" icon="code">
+    Crie variáveis de chamada para fornecer informações ao assistente antes do início da chamada.
     
-    **Setup process:**
-    - Define variable names and default values
-    - Pass values when creating calls/leads or importing clients
-    - Variables available immediately in prompts and during calls
-    - Use for personalization and context
+    **Processo de configuração:**
+    - Defina o nome e valor padrão das variáveis
+    - Passe valores ao criar chamadas, leads ou importar clientes
+    - As variáveis ficam disponíveis imediatamente nos prompts e durante a chamada
+    - Use para personalização e contextualização
     
-    **Configuration:**
-    - **Variable name:** The identifier (e.g., `customer_name`)
-    - **Default value:** Used when not passed (e.g., "John")
+    **Configuração:**
+    - **Nome da variável:** Identificador (ex.: `customer_name`)
+    - **Valor padrão:** Utilizado quando não for informado
   </Accordion>
   
-  <Accordion title="Variable Usage" icon="code">
-    How to use call variables in your assistant:
+  <Accordion title="Uso das Variáveis" icon="code">
+    Como utilizar variáveis de chamada no assistente:
     
-    **In system prompts:**
-    - Reference variables with `{variable_name}` syntax
-    - Personalize conversations dynamically
-    - Provide context-specific information
+    **Nos prompts de sistema:**
+    - Referencie usando `{nome_da_variavel}`
+    - Personalize conversas dinamicamente
+    - Forneça contexto específico
     
-    **Examples:**
-    - `{customer_name}` for personalization ("Hello {customer_name}")
-    - `{email}` for calendar integrations
-    - `{account_type}` for tailored responses
-    - `{company}` for business context
+    **Exemplos:**
+    - `{customer_name}` para personalização
+    - `{email}` para integrações de calendário
+    - `{account_type}` para respostas personalizadas
+    - `{company}` para contexto empresarial
   </Accordion>
   
-  <Accordion title="Data Sources" icon="database">
-    Ways to populate call variables:
+  <Accordion title="Fontes de Dados" icon="database">
+    Formas de alimentar variáveis de chamada:
     
-    **Manual entry:**
-    - When creating individual calls
-    - Through campaign lead creation
+    **Entrada manual:**
+    - Ao criar chamadas individuais
+    - Durante a criação de leads em campanhas
     
-    **Import methods:**
-    - CSV import with variable columns
-    - API integration with client data
-    - Direct CRM synchronization
+    **Métodos de importação:**
+    - Importação via CSV
+    - Integração via API
+    - Sincronização direta com CRM
     
-    **Automation platform integrations:**
-    - **GoHighLevel (GHL):** Automatically pull contact data and custom fields
-    - **Google Sheets:** Import leads with variables from spreadsheet columns
-    - **Connect with 250+ popular tools** and platforms using our no-code platform
-    - **Any other platform** through webhooks for custom integrations
+    **Integrações com plataformas de automação:**
+    - **GoHighLevel (GHL):** Importação automática de dados e campos personalizados
+    - **Google Sheets:** Importação de leads por planilhas
+    - **Conexão com mais de 250 ferramentas** via plataforma no-code
+    - **Qualquer outra plataforma** via webhooks personalizados
     
-    **Platform integration:**
-    - Automatically populated from client profiles
-    - Connected to existing customer databases
-    - No-code automation workflows
+    **Integração com a plataforma:**
+    - Preenchimento automático por perfis de clientes
+    - Conexão com bancos de dados existentes
+    - Fluxos de automação sem código
   </Accordion>
 </AccordionGroup>
 
 <Note>
-Call variables are essential for personalizing AI conversations. They allow the AI to use specific customer information during calls, making interactions more relevant and effective.
+As variáveis de chamada são essenciais para personalizar conversas com IA, tornando as interações mais relevantes e eficazes.
 </Note>
 
-## Call Flow Configuration
+## Configuração do Fluxo de Chamada
 
-### Who Speaks First?
+### Quem Fala Primeiro?
 
-Control whether your assistant or the customer initiates the conversation.
+Defina se o assistente ou o cliente inicia a conversa.
 
 <CardGroup cols={2}>
-  <Card title="AI Assistant" icon="robot">
-    **Default behavior:** Assistant starts the conversation
+  <Card title="Assistente de IA" icon="robot">
+    **Comportamento padrão:** O assistente inicia a conversa
     
-    The AI will immediately greet the caller and begin the conversation flow as soon as the call connects.
+    A IA cumprimenta o cliente assim que a chamada é conectada.
     
-    **Best for:** Most outbound scenarios, sales calls, appointment reminders
+    **Ideal para:** Chamadas ativas, vendas e lembretes
   </Card>
   
-  <Card title="Customer" icon="user">
-    **Wait for customer:** Assistant listens first
+  <Card title="Cliente" icon="user">
+    **Aguardar cliente:** O assistente escuta primeiro
     
-    If you choose "Customer", the AI will wait for the customer to speak first before responding.
+    A IA aguardará o cliente falar antes de responder.
     
-    **Best for:** Inbound support calls, reception scenarios, reactive assistance
+    **Ideal para:** Chamadas receptivas, suporte e recepção
   </Card>
 </CardGroup>
 
-### Initial Message
+### Mensagem Inicial
 
-Configure the first thing your assistant says when the call begins.
+Configure a primeira mensagem que o assistente dirá ao iniciar a chamada.
 
 <AccordionGroup>
-  <Accordion title="Initial Message Text" icon="message">
-    Write the opening message your assistant will speak at the start of each call.
+  <Accordion title="Texto da Mensagem Inicial" icon="message">
+    Defina a mensagem de abertura que o assistente falará no início da chamada.
     
-    **Best practices:**
-    - Keep it concise and friendly
-    - Introduce your company/purpose clearly
-    - Set expectations for the conversation
-    - Use variables for personalization (e.g., `{customer_name}`)
+    **Boas práticas:**
+    - Seja objetivo e cordial
+    - Apresente sua empresa e propósito
+    - Defina expectativas
+    - Utilize variáveis para personalização
     
-    **Example:** "Hi {customer_name}, this is Sarah from ABC Company. I'm calling to follow up on your recent inquiry about our services. Do you have a moment to chat?"
+    **Exemplo:** "Olá {customer_name}, aqui é a OmniTech. Estou entrando em contato para dar continuidade à sua solicitação. Podemos conversar agora?"
   </Accordion>
   
-  <Accordion title="Initial Audio File" icon="volume">
-    **Optional:** Upload a custom audio file instead of text-to-speech
+  <Accordion title="Arquivo de Áudio Inicial" icon="volume">
+    **Opcional:** Envie um áudio personalizado no lugar do texto
     
-    **Requirements:**
-    - MP3 or WAV format
-    - Clear, high-quality recording
-    - Professional voice and tone
-    - Matches your assistant's voice if using voice cloning
+    **Requisitos:**
+    - Formato MP3 ou WAV
+    - Áudio claro e profissional
+    - Tom compatível com a voz do assistente
     
-    **Benefits:**
-    - Perfect pronunciation and delivery
-    - Consistent brand voice
-    - Professional first impression
-    - No text-to-speech latency for opening
+    **Benefícios:**
+    - Pronúncia perfeita
+    - Padronização da marca
+    - Primeira impressão profissional
+    - Sem latência de TTS
     
     <Tip>
-    This works best if the AI voice is cloned using the same voice used in the initial audio.
+    Funciona melhor quando a voz da IA é clonada a partir do mesmo locutor do áudio inicial.
     </Tip>
   </Accordion>
 </AccordionGroup>
 
 <Note>
-See our [Initial Message guide](/ai-assistants/initial-message) for detailed best practices and examples.
+Consulte o [Guia de Mensagem Inicial](/ai-assistants/initial-message) para exemplos e boas práticas.
 </Note>
 
-## System Prompt
+## Prompt de Sistema
 
-Define the assistant's personality, objectives, and behavior guidelines.
+Defina a personalidade, objetivos e regras de comportamento do assistente.
 
-### Prompt Configuration
+### Configuração do Prompt
 
 <CardGroup cols={2}>
-  <Card title="Custom Prompt" icon="pencil">
-    Write your own system prompt from scratch
+  <Card title="Prompt Personalizado" icon="pencil">
+    Crie seu próprio prompt de sistema do zero
     
-    - Full control over assistant behavior
-    - Tailored to specific use cases
-    - Markdown formatting supported
+    - Controle total do comportamento
+    - Adaptado ao seu caso de uso
+    - Suporte a Markdown
   </Card>
   
-  <Card title="Template Library" icon="folder">
-    Start with pre-built templates
+  <Card title="Biblioteca de Templates" icon="folder">
+    Inicie com templates prontos
     
-    - Multiple languages available
-    - Different conversation types
-    - Proven effective prompts
+    - Múltiplos idiomas
+    - Diferentes tipos de conversa
+    - Prompts validados
   </Card>
 </CardGroup>
 
-### Best Practices
+### Boas Práticas
 
 <AccordionGroup>
-  <Accordion title="Be Specific" icon="bullseye">
-    Clearly define the assistant's role, objectives, and constraints.
-    
-    **Include:**
-    - Who the assistant represents
-    - What they're trying to achieve
-    - What they should/shouldn't do
+  <Accordion title="Seja Específico" icon="bullseye">
+    Defina claramente o papel, objetivos e limitações do assistente.
   </Accordion>
   
-  <Accordion title="Set Boundaries" icon="shield">
-    Define what topics and actions are off-limits.
-    
-    **Consider:**
-    - Data privacy requirements
-    - Legal compliance
-    - Brand guidelines
+  <Accordion title="Defina Limites" icon="shield">
+    Estabeleça tópicos e ações proibidas conforme políticas e legislação.
   </Accordion>
   
-  <Accordion title="Use Examples" icon="lightbulb">
-    Provide sample conversations to guide behavior.
-    
-    **Examples help with:**
-    - Tone and style
-    - Response length
-    - Handling objections
+  <Accordion title="Use Exemplos" icon="lightbulb">
+    Forneça exemplos de conversas para guiar o comportamento.
   </Accordion>
 </AccordionGroup>
 
 <Tip>
-See our [System Prompt guide](/ai-assistants/system-prompt) for detailed best practices and examples.
+Veja o [Guia de Prompt de Sistema](/ai-assistants/system-prompt) para exemplos e recomendações avançadas.
 </Tip>
