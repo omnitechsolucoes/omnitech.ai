@@ -1,41 +1,41 @@
 ---
-title: "Update campaign status"
+title: "Atualizar status da campanha"
 api: "POST /user/campaigns/update-status"
-description: "Start or stop a campaign in the Autocalls system"
+description: "Inicia ou interrompe uma campanha no sistema OmniTech"
 ---
 
-This endpoint allows you to start or stop a campaign in the Autocalls system.
+Este endpoint permite iniciar ou interromper uma campanha no sistema OmniTech.
 
-### Request body
+### Corpo da Requisição
 
 <ParamField body="campaign_id" type="integer" required>
-  The ID of the campaign to update
+  ID da campanha a ser atualizada
 </ParamField>
 
 <ParamField body="action" type="string" required>
-  The action to perform on the campaign. Must be either "start" or "stop"
+  A ação a ser executada na campanha. Deve ser "start" ou "stop"
 </ParamField>
 
-### Response
+### Resposta
 
 <ResponseField name="message" type="string" default="Campaign started successfully.">
-  The message of the response
+  Mensagem da resposta
 </ResponseField>
 
 <ResponseField name="success" type="boolean" default="true">
-  Whether the operation was successful
+  Indica se a operação foi bem-sucedida
 </ResponseField>
 
 <ResponseField name="data" type="object">
-  The data of the response
+  Dados da resposta
   
-  <Expandable title="data properties">
+  <Expandable title="propriedades de data">
     <ResponseField name="campaign_id" type="integer">
-      The ID of the updated campaign
+      ID da campanha atualizada
     </ResponseField>
     
     <ResponseField name="status" type="string" default="in-progress">
-      The new status of the campaign (e.g., "in-progress" for started campaigns, "stopped" for stopped campaigns)
+      Novo status da campanha (ex.: "in-progress" para campanhas iniciadas, "stopped" para campanhas interrompidas)
     </ResponseField>
   </Expandable>
 </ResponseField>
