@@ -1,75 +1,75 @@
 ---
-title: "List leads"
+title: "Listar leads"
 api: "GET /user/leads"
-description: "List all leads for the authenticated user"
+description: "Lista todos os leads do usuário autenticado"
 ---
 
-This endpoint allows you to list all leads belonging to the authenticated user.
+Este endpoint permite listar todos os leads pertencentes ao usuário autenticado.
 
-### Response fields
+### Campos da Resposta
 
 <ResponseField name="leads" type="array">
-  <Expandable title="properties">
+  <Expandable title="propriedades">
     <ResponseField name="id" type="integer">
-      The id of the lead
+      ID do lead
     </ResponseField>
 
     <ResponseField name="campaign_id" type="integer">
-      The ID of the campaign this lead belongs to
+      ID da campanha à qual este lead pertence
     </ResponseField>
 
     <ResponseField name="phone_number" type="string">
-      The phone number of the lead in E.164 format
+      Número de telefone do lead no formato E.164
     </ResponseField>
 
     <ResponseField name="variables" type="object">
-      The variables associated with the lead
+      Variáveis associadas ao lead
     </ResponseField>
 
     <ResponseField name="status" type="string">
-      The status of the lead
+      Status do lead
     </ResponseField>
 
     <ResponseField name="created_at" type="string">
-      The created at date of the lead
+      Data e hora de criação do lead
     </ResponseField>
 
     <ResponseField name="updated_at" type="string">
-      The updated at date of the lead
+      Data e hora da última atualização do lead
     </ResponseField>
 
     <ResponseField name="campaign" type="object">
-      The campaign information
-      <Expandable title="campaign properties">
+      Informações da campanha
+      <Expandable title="propriedades de campaign">
         <ResponseField name="id" type="integer">
-          The id of the campaign
+          ID da campanha
         </ResponseField>
         <ResponseField name="name" type="string">
-          The name of the campaign
+          Nome da campanha
         </ResponseField>
       </Expandable>
     </ResponseField>
 
     <ResponseField name="secondary_contacts" type="array">
-      Array of secondary contact leads associated with this lead
-      <Expandable title="secondary_contacts properties">
+      Array de contatos secundários associados a este lead
+      <Expandable title="propriedades de secondary_contacts">
         <ResponseField name="id" type="integer">
-          The id of the secondary contact lead
+          ID do contato secundário
         </ResponseField>
         <ResponseField name="phone_number" type="string">
-          The phone number of the secondary contact in E.164 format
+          Número de telefone do contato secundário no formato E.164
         </ResponseField>
         <ResponseField name="variables" type="object">
-          The variables associated with the secondary contact
+          Variáveis associadas ao contato secundário
         </ResponseField>
         <ResponseField name="status" type="string">
-          The status of the secondary contact
+          Status do contato secundário
         </ResponseField>
         <ResponseField name="created_at" type="string">
-          The created at date of the secondary contact
+          Data e hora de criação do contato secundário
         </ResponseField>
         <ResponseField name="updated_at" type="string">
-          The updated at date of the secondary contact
+          Data e hora da última atualização do contato secundário
         </ResponseField>
       </Expandable>
     </ResponseField>
@@ -93,7 +93,7 @@ This endpoint allows you to list all leads belonging to the authenticated user.
     "updated_at": "2025-06-30 11:18:04",
     "campaign": {
       "id": 1,
-      "name": "My new campaign"
+      "name": "Minha nova campanha"
     },
     "secondary_contacts": [
       {
@@ -110,6 +110,4 @@ This endpoint allows you to list all leads belonging to the authenticated user.
     ]
   }
 ]
-```
-
-</ResponseExample>
+</ResponseExample> ```
