@@ -1,29 +1,29 @@
 ---
-title: "Delete call"
+title: "Excluir chamada"
 api: "DELETE /user/calls/{call}"
-description: "Delete a specific call record"
+description: "Exclui um registro de chamada específico"
 ---
 
-This endpoint allows you to delete a specific call record that belongs to the authenticated user.
+Este endpoint permite excluir um registro de chamada específico que pertença ao usuário autenticado.
 
-### Path Parameters
+### Parâmetros de Caminho
 
 <ParamField path="call" type="integer" required>
-  The unique identifier of the call to delete
+  Identificador único da chamada a ser excluída
 </ParamField>
 
-### Response
+### Resposta
 
 <ResponseField name="message" type="string">
-  Confirmation message indicating the call was deleted successfully
+  Mensagem de confirmação indicando que a chamada foi excluída com sucesso
 </ResponseField>
 
-### Error Responses
+### Respostas de Erro
 
 <ResponseField name="404 Not Found">
-  <Expandable title="Error Response">
+  <Expandable title="Resposta de Erro">
     <ResponseField name="message" type="string">
-      Error message when the call is not found or doesn't belong to the authenticated user
+      Mensagem de erro quando a chamada não é encontrada ou não pertence ao usuário autenticado
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -32,21 +32,18 @@ This endpoint allows you to delete a specific call record that belongs to the au
 
 ```json 200 Success Response
 {
-  "message": "Call deleted successfully"
+  "message": "Chamada excluída com sucesso"
 }
-```
-
-```json 404 Not Found
 {
-  "message": "Call not found"
+  "message": "Chamada não encontrada"
 }
-```
-
 </ResponseExample>
+Observações
+Apenas chamadas que pertençam a assistentes do usuário autenticado podem ser excluídas
 
-### Notes
+Após a exclusão, a chamada não poderá ser recuperada
 
-- Only calls that belong to assistants owned by the authenticated user can be deleted
-- Once a call is deleted, it cannot be recovered
-- This action will permanently remove the call record, including any associated transcript, recording, and metadata
-- The call recording file (if exists) will also be deleted from storage
+Esta ação removerá permanentemente o registro da chamada, incluindo qualquer transcrição, gravação e metadados associados
+
+O arquivo de gravação da chamada (se existir) também será removido do armazenamento
+
