@@ -1,86 +1,86 @@
 ---
-title: "Update mid call tool"
+title: "Atualizar ferramenta de uso durante a chamada"
 api: "PUT /user/tools/{id}"
-description: "Update an existing mid call tool"
+description: "Atualiza uma ferramenta de uso durante a chamada existente"
 ---
 
-This endpoint allows you to update an existing mid call tool. All fields are optional - only provide the fields you want to update.
+Este endpoint permite atualizar uma ferramenta de uso durante a chamada já existente. Todos os campos são opcionais — informe apenas os campos que deseja alterar.
 
-### Path Parameters
+### Parâmetros de Caminho
 
 <ParamField path="id" type="integer" required>
-  The unique identifier of the tool to update
+  Identificador único da ferramenta a ser atualizada
 </ParamField>
 
-### Body Parameters
+### Parâmetros do Corpo
 
 <ParamField body="name" type="string" optional>
-  Tool name - must contain only lowercase letters and underscores, and start with a letter
+  Nome da ferramenta — deve conter apenas letras minúsculas e underscores, e iniciar com uma letra
 </ParamField>
 
 <ParamField body="description" type="string" optional>
-  Detailed explanation of when and how the AI should use this tool (max 255 characters)
+  Explicação detalhada de quando e como a IA deve utilizar esta ferramenta (máx. 255 caracteres)
 </ParamField>
 
 <ParamField body="endpoint" type="string" optional>
-  Valid URL of the API endpoint to call
+  URL válida do endpoint da API a ser chamada
 </ParamField>
 
 <ParamField body="method" type="string" optional>
-  HTTP method: `GET`, `POST`, `PUT`, `PATCH`, or `DELETE`
+  Método HTTP: `GET`, `POST`, `PUT`, `PATCH` ou `DELETE`
 </ParamField>
 
 <ParamField body="timeout" type="integer" optional>
-  Request timeout in seconds (1-30)
+  Tempo limite da requisição em segundos (1–30)
 </ParamField>
 
 <ParamField body="headers" type="array" optional>
-  HTTP headers to send with the request (replaces existing headers)
-  <Expandable title="headers properties">
+  Headers HTTP enviados na requisição (substitui os headers existentes)
+  <Expandable title="propriedades de headers">
     <ParamField body="name" type="string" required>
-      Header name
+      Nome do header
     </ParamField>
     <ParamField body="value" type="string" required>
-      Header value
+      Valor do header
     </ParamField>
   </Expandable>
 </ParamField>
 
 <ParamField body="schema" type="array" optional>
-  Parameters schema (replaces existing schema)
-  <Expandable title="schema properties">
+  Esquema de parâmetros (substitui o schema existente)
+  <Expandable title="propriedades do schema">
     <ParamField body="name" type="string" required>
-      Parameter name (2-32 chars)
+      Nome do parâmetro (2–32 caracteres)
     </ParamField>
     <ParamField body="type" type="string" required>
-      Parameter type: `string`, `number`, or `boolean`
+      Tipo do parâmetro: `string`, `number` ou `boolean`
     </ParamField>
     <ParamField body="description" type="string" required>
-      Parameter description (3-255 chars)
+      Descrição do parâmetro (3–255 caracteres)
     </ParamField>
   </Expandable>
 </ParamField>
 
-### Response fields
+### Campos da Resposta
 
 <ResponseField name="message" type="string">
-  Success message
+  Mensagem de sucesso
 </ResponseField>
 
 <ResponseField name="data" type="object">
-  The updated tool object with all current values
+  Objeto da ferramenta atualizada com todos os valores atuais
 </ResponseField>
 
 <ResponseExample>
 
 ```json 200 OK
 {
-  "message": "Tool updated successfully",
+  "message": "Ferramenta atualizada com sucesso",
   "data": {
     "id": 1,
     "name": "update_customer_info",
-    "description": "Use this tool to update customer information in the system.",
-    "endpoint": "https://api.yourcompany.com/customers/update",
+    "description": "Use esta ferramenta para atualizar informações do cliente no sistema.",
+    "endpoint": "https://api.suaempresa.com/clientes/atualizar",
     "method": "POST",
     "timeout": 15,
     "headers": [
@@ -93,45 +93,38 @@ This endpoint allows you to update an existing mid call tool. All fields are opt
       {
         "name": "customer_name",
         "type": "string",
-        "description": "Full name of the customer"
+        "description": "Nome completo do cliente"
       },
       {
         "name": "customer_age",
         "type": "number",
-        "description": "Age of the customer"
+        "description": "Idade do cliente"
       },
       {
         "name": "newsletter_subscription",
         "type": "boolean",
-        "description": "Whether customer wants to subscribe to newsletter"
+        "description": "Indica se o cliente deseja receber a newsletter"
       }
     ],
     "created_at": "2025-10-10T12:00:00.000000Z",
     "updated_at": "2025-10-10T14:30:00.000000Z"
   }
 }
-```
-
-```json 404 Not Found
 {
-  "message": "Tool not found"
+  "message": "Ferramenta não encontrada"
 }
-```
-
-```json 422 Validation Error
 {
-  "message": "Validation failed",
+  "message": "Falha na validação",
   "errors": {
-    "name": ["Tool name must contain only lowercase letters and underscores, and start with a letter."]
+    "name": [
+      "O nome da ferramenta deve conter apenas letras minúsculas e underscores, e iniciar com uma letra."
+    ]
   }
 }
-```
+Gerenciamento de Atribuição da Ferramenta
+Para anexar ou remover esta ferramenta de assistentes, utilize a API de Assistentes:
 
-</ResponseExample>
+Criar Assistente – Use o parâmetro tool_ids para anexar ferramentas
 
-### Managing Tool Assignments
+Atualizar Assistente – Gerencie quais ferramentas estão atribuídas a um assistente
 
-To attach or detach this tool from assistants, use the Assistant API:
-
-- **[Create Assistant](/api-reference/assistants/create-assistant)** - Use the `tool_ids` parameter to attach tools when creating an assistant
-- **[Update Assistant](/api-reference/assistants/update-assistant)** - Use the `tool_ids` parameter to manage which tools are assigned to an assistant
