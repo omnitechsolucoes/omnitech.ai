@@ -1,37 +1,32 @@
 ---
-title: "Sync Qualified Leads to Google Sheets"
+title: "Sincronizar Leads Qualificados com o Google Sheets"
 icon: "table-list"
-description: "Learn how to automatically add qualified leads to Google Sheets after successful AI phone calls"
+description: "Aprenda como adicionar automaticamente leads qualificados no Google Sheets após chamadas de IA bem-sucedidas"
 ---
-This tutorial shows how to set up an automation that automatically adds qualified leads to a Google Sheet after successful AI phone calls, creating a powerful lead tracking and CRM system.
 
-<iframe
-  width="100%"
-  height="400"
-  src="https://www.youtube.com/embed/kv09S5wuXMs?si=9Ic3VHwV-QeL5YER"
-  title="Tutorial: How to sync qualified leads in a live Google Sheet"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen></iframe>
+Este tutorial mostra como configurar uma automação que adiciona automaticamente leads qualificados em uma planilha do Google Sheets após chamadas telefônicas bem-sucedidas feitas por IA, criando um sistema forte de tracking e “mini-CRM”.
 
-## What You'll Learn
+👉 **Vídeos e tutoriais oficiais**:  
+https://www.youtube.com/@OMNITECHSOLUCOESDIGITAIS
 
-- Setting up post-call automation with conditional logic
-- Creating Google Sheets integration for lead tracking
-- Configuring data mapping from calls to spreadsheet
-- Building a qualified leads database automatically
-- Monitoring and optimizing your lead collection process
+## O que você vai aprender
 
-## Prerequisites
+- Configurar automação pós-chamada com lógica condicional  
+- Integrar Google Sheets para rastrear leads  
+- Mapear dados da chamada para colunas da planilha  
+- Construir automaticamente uma base de leads qualificados  
+- Monitorar e otimizar o processo de coleta de leads  
 
-- Configured AI assistant with post-call variables
-- Google account with Google Sheets access
-- Understanding of post-call webhook automation
-- Access to call testing functionality
+## Pré-requisitos
 
-## Step 1: Set Up Post-Call Automation Trigger
+- Assistente de IA configurado com variáveis pós-chamada  
+- Conta Google com acesso ao Google Sheets  
+- Entendimento básico de automação via webhook pós-chamada  
+- Acesso ao recurso de testes de chamadas  
 
-We'll start by creating an automation that triggers when a phone call ends.
+## Etapa 1: Configurar o Gatilho de Automação Pós-Chamada
+
+Vamos começar criando uma automação que dispara quando uma ligação termina.
 
 <video
   autoPlay
@@ -40,13 +35,13 @@ We'll start by creating an automation that triggers when a phone call ends.
   playsinline
   src="/resources/tutorials/qualified-leads/01-create-new-flow.mp4"></video>
 
-1. **Navigate to Automation Platform**
-2. **Create a new flow** from scratch
-3. **Search for your calling platform** in the trigger section
-4. **Select "Phone Call Ended"** trigger
-   - This trigger activates when any call to your selected assistant completes
+1. **Acesse a Plataforma de Automação**
+2. **Crie um novo fluxo** do zero
+3. **Pesquise pela sua plataforma de chamadas** na seção de gatilhos
+4. **Selecione o gatilho "Phone Call Ended" (Chamada Encerrada)**
+   - Esse gatilho dispara quando qualquer chamada do assistente selecionado for concluída
 
-## Step 2: Configure Assistant and Webhook
+## Etapa 2: Configurar Assistente e Webhook
 
 <video
   autoPlay
@@ -55,14 +50,14 @@ We'll start by creating an automation that triggers when a phone call ends.
   playsinline
   src="/resources/tutorials/qualified-leads/03-select-assistant.mp4"></video>
 
-1. **Select the assistant** you want to automate
-   - Each assistant can only have one "phone call ended" automation
-   - All calls to this assistant will go through this automation
-2. **Click "Test Trigger"** to generate the webhook
-   - This creates a webhook URL in the background
-   - The webhook is automatically saved to your assistant settings
+1. **Selecione o assistente** que você quer automatizar
+   - Cada assistente pode ter apenas uma automação de "Phone Call Ended"
+   - Todas as chamadas desse assistente passarão por essa automação
+2. **Clique em "Test Trigger" (Testar Gatilho)** para gerar o webhook
+   - Isso cria uma URL de webhook por trás
+   - O webhook é salvo automaticamente nas configurações do assistente
 
-## Step 3: Verify Webhook Configuration
+## Etapa 3: Verificar Configuração do Webhook
 
 <video
   autoPlay
@@ -71,39 +66,39 @@ We'll start by creating an automation that triggers when a phone call ends.
   playsinline
   src="/resources/tutorials/qualified-leads/05-check-assistant-webhook.mp4"></video>
 
-1. **Open a new tab** and navigate to your assistant
-2. **Go to the third tab** "Post-call Actions"
-3. **Verify the webhook URL** was automatically added
+1. **Abra uma nova aba** e acesse o assistente
+2. Vá para a **terceira aba** "Post-call Actions" (Ações Pós-Chamada)
+3. **Confirme se a URL do webhook** foi adicionada automaticamente
 
 <Frame>
-  <img src="/resources/tutorials/qualified-leads/06-webhook-settings.png" alt="Webhook configuration settings" />
+  <img src="/resources/tutorials/qualified-leads/06-webhook-settings.png" alt="Configurações do webhook" />
 </Frame>
 
-4. **Review webhook settings:**
-   - **Enabled**: Webhook will trigger after calls
-   - **Completed calls only**: Only successful calls trigger automation
-   - **All calls**: Change to "No" if you want all calls (including failed) to trigger
+4. **Revise as opções do webhook:**
+   - **Enabled (Ativado)**: o webhook dispara após as chamadas
+   - **Completed calls only (Somente chamadas completadas)**: só chamadas bem-sucedidas disparam
+   - **All calls (Todas as chamadas)**: mude para "No" se quiser incluir falhas/sem resposta
 
 <Frame>
-  <img src="/resources/tutorials/qualified-leads/07-post-call-variables.png" alt="Post-call variables configuration" />
+  <img src="/resources/tutorials/qualified-leads/07-post-call-variables.png" alt="Configuração das variáveis pós-chamada" />
 </Frame>
 
-5. **Review post-call variables:**
-   - **status**: Boolean (true/false) indicating if call objective was achieved
-   - **summary**: Text summary of the call conversation
-   - These variables are extracted by AI after each call
+5. **Revise as variáveis pós-chamada:**
+   - **status**: booleano (true/false) indicando se o objetivo foi atingido
+   - **summary**: resumo textual da conversa
+   - Essas variáveis são extraídas pela IA após cada chamada
 
-## Step 4: Generate Test Call Data
+## Etapa 4: Gerar Dados de Teste com uma Ligação
 
-To configure our automation properly, we need actual call data to work with. We'll make a test call to generate the post-call variables.
+Para configurar a automação corretamente, precisamos de dados reais de uma chamada para usar como referência.
 
 <Frame>
-  <img src="/resources/tutorials/qualified-leads/08-set-test-values.png" alt="Setting test values for call variables" />
+  <img src="/resources/tutorials/qualified-leads/08-set-test-values.png" alt="Definindo valores de teste nas variáveis" />
 </Frame>
 
-1. **Set real values** in your assistant's call variables:
-   - **Set your name and email** for realistic test data
-   - These will be the default values when testing from the assistant
+1. **Defina valores reais** nas variáveis de chamada do assistente:
+   - **Coloque seu nome e e-mail** para simular um lead real
+   - Esses valores serão usados como padrão ao testar pelo assistente
 
 <video
   autoPlay
@@ -112,15 +107,15 @@ To configure our automation properly, we need actual call data to work with. We'
   playsinline
   src="/resources/tutorials/qualified-leads/09-make-test-call.mp4"></video>
 
-2. **Make a test call to generate webhook data:**
-   - Click **"Speak to Assistant"** → **"Phone Call"**
-   - **Answer when your assistant calls you**
-   - **Respond positively** to ensure the `status` variable becomes `true`
-   - **Complete the call objective** during the conversation
-   - **End the call naturally**
+2. **Faça uma ligação de teste para gerar os dados do webhook:**
+   - Clique em **"Speak to Assistant" → "Phone Call"**
+   - **Atenda quando o assistente ligar**
+   - **Responda de forma positiva** para o `status` virar `true`
+   - **Cumpra o objetivo da ligação** durante a conversa
+   - **Finalize naturalmente**
 
 <Note>
-In a real situation, the assistant will take data assigned to the lead. For testing, it uses the default values you just set.
+Em produção, o assistente usa os dados do lead. No teste, ele usa os valores padrão configurados por você.
 </Note>
 
 <video
@@ -130,22 +125,21 @@ In a real situation, the assistant will take data assigned to the lead. For test
   playsinline
   src="/resources/tutorials/qualified-leads/10-check-call-results.mp4"></video>
 
-3. **Verify call results and variable extraction:**
-   - **Navigate to your calls list** and find the recent call
-   - **Click on the call** to view details
-   - **Confirm the `status` variable is `true`** (call objective achieved)
-   - **Review the extracted `summary`** - this contains AI-generated call summary
-   - These variables are extracted after each call based on:
-     - Call transcript
-     - Variable descriptions
-     - Variable types (Boolean for status)
-     - System prompt context
+3. **Verifique o resultado da chamada e a extração das variáveis:**
+   - Vá para a lista de chamadas e encontre a chamada recente
+   - Abra os detalhes
+   - **Confirme que `status` está `true`**
+   - **Revise o `summary`** gerado pela IA
+   - A extração acontece com base em:
+     - Transcrição
+     - Descrição e tipo das variáveis
+     - Contexto do prompt do sistema
 
 <Note>
-The variables after a call are being extracted. You can refresh the page after about a minute and then you will see the extracted variables.
+As variáveis pós-chamada podem demorar um pouco para aparecer. Atualize a página após cerca de 1 minuto.
 </Note>
 
-## Step 5: Configure Automation with Call Data
+## Etapa 5: Configurar a Automação com os Dados da Chamada
 
 <video
   autoPlay
@@ -154,12 +148,11 @@ The variables after a call are being extracted. You can refresh the page after a
   playsinline
   src="/resources/tutorials/qualified-leads/11-received-call-data.mp4"></video>
 
-1. **Return to your automation tab**
-2. **Verify you received call data** from the test trigger
-   - You should see the webhook data because you clicked "Test Trigger" and then made a call
-   - The automation received the request after the call ended and variables were extracted
+1. **Volte para a aba da automação**
+2. **Confirme se os dados da chamada chegaram**
+   - Você deve ver os dados do webhook porque testou o gatilho e depois fez a ligação
 
-3. **Alternative method - resend webhook data from existing calls:**
+3. **Método alternativo — reenviar webhook de chamadas antigas:**
 
 <video
   autoPlay
@@ -168,16 +161,16 @@ The variables after a call are being extracted. You can refresh the page after a
   playsinline
   src="/resources/tutorials/qualified-leads/12-resend-webhook.mp4"></video>
 
-   - If you need to test with different call data, you can reuse any existing call
-   - **Click "Test Trigger"** again in your automation
-   - **Go to any completed call** in your platform  
-   - **Click "Resend Webhook"** to push that call's data to your automation
-   - **Return to automation tab** to see the updated data
+   - Se quiser testar com outros cenários sem fazer novas chamadas:
+   - Clique em **"Test Trigger"** novamente
+   - Vá até uma chamada completada
+   - Clique em **"Resend Webhook"**
+   - Volte na automação e veja os dados atualizados
 
-### Adding New Post-Call Variables
+### Adicionando Novas Variáveis Pós-Chamada
 
 <Note>
-If you need to add a new post-call variable after creating the automation, follow this process to update your automation with the new variable data.
+Se você criar uma variável pós-chamada nova depois da automação já existir, siga este fluxo para “atualizar” os dados que a automação recebe.
 </Note>
 
 <video
@@ -187,17 +180,16 @@ If you need to add a new post-call variable after creating the automation, follo
   playsinline
   src="/resources/tutorials/qualified-leads/add-variable.mp4"></video>
 
-1. **Define the new variable in your assistant:**
-   - Go to assistant settings → "Post-call Actions" tab
-   - Add your new post-call variable (name, type, description)
-   - **Save the assistant**
+1. **Crie a nova variável no assistente:**
+   - Assistente → aba “Post-call Actions”
+   - Adicione (nome, tipo, descrição)
+   - **Salve o assistente**
 
-2. **Update automation with new variable data:**
-   - **Return to your automation**
-   - **Click "Test Trigger"** to prepare for new webhook data
+2. **Prepare a automação para receber a nova variável:**
+   - Volte para a automação
+   - Clique em **"Test Trigger"**
 
-
-3. **Re-evaluate an existing call:**
+3. **Reavaliar uma chamada existente:**
 
 <video
   autoPlay
@@ -206,22 +198,22 @@ If you need to add a new post-call variable after creating the automation, follo
   playsinline
   src="/resources/tutorials/qualified-leads/re-evaluate.mp4"></video>
 
-   - **Go to any completed call** for this assistant
-   - **Click "Re-evaluate"** to extract the new variable from that call
-   - **Wait for processing** to complete
+   - Abra uma chamada completada do mesmo assistente
+   - Clique em **"Re-evaluate"** para extrair a nova variável daquela chamada
+   - Aguarde processar
 
-4. **Send updated data to automation:**
-   - **Click "Resend Webhook"** on the same call
-   - **Return to automation tab** 
-   - **Verify the new variable** is now available in your automation data
+4. **Enviar os dados atualizados para a automação:**
+   - Na mesma chamada, clique **"Resend Webhook"**
+   - Volte para a automação
+   - Confirme que a nova variável apareceu
 
 <Tip>
-This resend feature is useful for testing different scenarios without making new calls every time.
+O “Resend Webhook” economiza tempo: você testa cenários sem precisar gerar chamadas novas toda hora.
 </Tip>
 
-## Step 6: Add Conditional Logic for Qualified Leads
+## Etapa 6: Adicionar Lógica Condicional (Somente Leads Qualificados)
 
-We only want to add leads to Google Sheets when the call objective was achieved.
+A gente só quer enviar para o Sheets quando o objetivo da ligação foi atingido (`status = true`).
 
 <video
   autoPlay
@@ -230,9 +222,9 @@ We only want to add leads to Google Sheets when the call objective was achieved.
   playsinline
   src="/resources/tutorials/qualified-leads/13-add-branch.mp4"></video>
 
-1. **Click the "+" sign** to add a step
-2. **Search for "Branch"** in control flow
-3. **Select Branch** to create conditional logic
+1. Clique no **“+”** para adicionar uma etapa
+2. Busque por **"Branch"** (ramificação/condição)
+3. Selecione **Branch** para criar a lógica condicional
 
 <video
   autoPlay
@@ -241,14 +233,14 @@ We only want to add leads to Google Sheets when the call objective was achieved.
   playsinline
   src="/resources/tutorials/qualified-leads/14-configure-status-condition.mp4"></video>
 
-4. **Configure the branch condition:**
-   - **Select `status` variable** from call data
-   - **Choose "Boolean is true"**
-   - This creates two paths: True (qualified) and False (not qualified)
+4. **Configure a condição do Branch:**
+   - Selecione a variável **`status`** nos dados da chamada
+   - Escolha **"Boolean is true"**
+   - Isso cria dois caminhos: **True (qualificado)** e **False (não qualificado)**
 
-## Step 7: Create Google Sheets Integration
+## Etapa 7: Criar Integração com Google Sheets
 
-Now we'll set up the Google Sheets action for qualified leads (True branch).
+Agora vamos configurar a ação do Google Sheets no caminho True (qualificados).
 
 <video
   autoPlay
@@ -257,9 +249,9 @@ Now we'll set up the Google Sheets action for qualified leads (True branch).
   playsinline
   src="/resources/tutorials/qualified-leads/15-add-google-sheets-action.mp4"></video>
 
-1. **On the True branch**, click the "+" sign
-2. **Search for "Google Sheets"**
-3. **Select "Insert Row"** action
+1. No caminho **True**, clique no **“+”**
+2. Busque por **"Google Sheets"**
+3. Selecione a ação **"Insert Row" (Inserir Linha)**
 
 <video
   autoPlay
@@ -268,11 +260,11 @@ Now we'll set up the Google Sheets action for qualified leads (True branch).
   playsinline
   src="/resources/tutorials/qualified-leads/16-create-sheets-connection.mp4"></video>
 
-4. **Create a new Google Sheets connection:**
-   - Authorize with your Google account
-   - Save the connection for future use
+4. **Crie uma conexão com o Google Sheets:**
+   - Autorize com sua conta Google
+   - Salve a conexão para reutilizar depois
 
-## Step 8: Set Up Your Qualified Leads Spreadsheet
+## Etapa 8: Criar a Planilha de Leads Qualificados
 
 <video
   autoPlay
@@ -281,14 +273,14 @@ Now we'll set up the Google Sheets action for qualified leads (True branch).
   playsinline
   src="/resources/tutorials/qualified-leads/18-spreadsheet-headers.mp4"></video>
 
-1. **Create a new Google Sheet** named "successful calls" for example
+1. **Crie uma nova planilha** (ex.: “successful calls”)
 
-2. **Set up column headers:**
-   - **Column A**: `phone_number`
-   - **Column B**: `summary` 
-   - Add more columns for additional data as needed
+2. **Crie os cabeçalhos das colunas**, por exemplo:
+   - **Coluna A**: `phone_number`
+   - **Coluna B**: `summary`
+   - (opcional) outras colunas como `email`, `created_at`, `assistant_name`, etc.
 
-## Step 9: Configure Spreadsheet Selection
+## Etapa 9: Selecionar Planilha e Aba
 
 <video
   autoPlay
@@ -297,9 +289,9 @@ Now we'll set up the Google Sheets action for qualified leads (True branch).
   playsinline
   src="/resources/tutorials/qualified-leads/19-select-target-spreadsheet.mp4"></video>
 
-1. **Return to your automation**
-2. **Select your "successful calls" spreadsheet**
-3. **Select the correct sheet** (usually "Sheet1")
+1. Volte para a automação
+2. Selecione a planilha “successful calls”
+3. Selecione a aba correta (geralmente “Sheet1”)
 
 <video
   autoPlay
@@ -308,11 +300,11 @@ Now we'll set up the Google Sheets action for qualified leads (True branch).
   playsinline
   src="/resources/tutorials/qualified-leads/20-enable-headers.mp4"></video>
 
-4. **Enable "First row contains headers"**:
-   - This tells the automation about your column structure
-   - Headers should automatically load and display
+4. Ative **"First row contains headers" (Primeira linha tem cabeçalhos)**
+   - Assim a automação entende o nome das colunas
+   - Os campos devem aparecer automaticamente para mapeamento
 
-## Step 10: Map Call Data to Spreadsheet Columns
+## Etapa 10: Mapear Dados da Chamada para Colunas da Planilha
 
 <video
   autoPlay
@@ -321,11 +313,11 @@ Now we'll set up the Google Sheets action for qualified leads (True branch).
   playsinline
   src="/resources/tutorials/qualified-leads/21-map-phone-number.mp4"></video>
 
-1. **Map the phone number:**
-   - Click on the `phone_number` field
-   - **Select "Phone Call Ended"** data source
-   - **Find and select the phone number** from call data
-   - Click "Insert"
+1. **Mapear telefone:**
+   - Clique no campo `phone_number`
+   - Selecione a origem **"Phone Call Ended"**
+   - Selecione o telefone nos dados
+   - Clique em "Insert"
 
 <video
   autoPlay
@@ -334,18 +326,18 @@ Now we'll set up the Google Sheets action for qualified leads (True branch).
   playsinline
   src="/resources/tutorials/qualified-leads/23-map-summary.mp4"></video>
 
-2. **Map the call summary:**
-   - Click on the `summary` field
-   - **Navigate to "Post Call Variables"**
-   - **Select the `summary` variable**
-   - Click "Insert"
+2. **Mapear resumo (summary):**
+   - Clique no campo `summary`
+   - Vá em **"Post Call Variables"**
+   - Selecione `summary`
+   - Clique em "Insert"
 
-4. **Map any additional fields:**
-   - Email from call variables
-   - Call date/time from call metadata
-   - Any custom variables you've defined
+3. **Mapeie outros campos se quiser:**
+   - Email (variável de chamada)
+   - Data/hora da chamada (metadados)
+   - Variáveis personalizadas do seu fluxo
 
-## Step 11: Test and Verify
+## Etapa 11: Testar e Validar
 
 <video
   autoPlay
@@ -354,49 +346,49 @@ Now we'll set up the Google Sheets action for qualified leads (True branch).
   playsinline
   src="/resources/tutorials/qualified-leads/25-test-sheets-integration.mp4"></video>
 
-1. **Click "Test Step"** to verify the integration
-2. **Check for successful execution**
-3. **Go to your Google Sheet** to confirm:
-   - New row was added with correct data
-   - All mapped fields populated properly
-   - Data formatting looks correct
+1. Clique em **"Test Step"**
+2. Confirme que executou com sucesso
+3. Vá no Google Sheets e valide:
+   - Nova linha inserida
+   - Campos preenchidos corretamente
+   - Formatação ok
 
-## Step 12: Publish and Monitor
+## Etapa 12: Publicar e Monitorar
 
 <Frame>
-  <img src="/resources/tutorials/qualified-leads/27-publish-automation.png" alt="Publishing the automation" />
+  <img src="/resources/tutorials/qualified-leads/27-publish-automation.png" alt="Publicando a automação" />
 </Frame>
 
-1. **Click "Publish"** to activate your automation
-2. **Your qualified leads tracking is now live**
-3. **Monitor automation performance:**
-   - Check automation "Runs" for execution history
-   - Verify qualified leads are being added to your sheet
-   - Monitor for any failed executions
+1. Clique em **"Publish"** para ativar
+2. **Sua captação de leads qualificados está no ar**
+3. Monitore:
+   - Histórico de execuções (“Runs”)
+   - Falhas e reprocessamentos
+   - Se o `status=true` está caindo no caminho certo
 
-## Troubleshooting
+## Solução de Problemas
 
-### Common Issues
+### Problemas comuns
 
-**Leads not appearing in spreadsheet:**
-- Verify Google Sheets connection is authorized
-- Check that automation is published and active
-- Confirm calls are triggering `status` = `true`
-- Verify branch condition is configured correctly
+**Leads não aparecem na planilha:**
+- Verifique se a conexão do Google Sheets está autorizada
+- Confirme que a automação está publicada
+- Confirme que o `status` está vindo como `true`
+- Verifique a condição do Branch
 
-**Incomplete data in spreadsheet:**
-- Check all field mappings in the automation
-- Verify post-call variables are being extracted
-- Confirm spreadsheet headers match automation fields
-- Test with various call scenarios
+**Dados incompletos na planilha:**
+- Verifique os mapeamentos
+- Confirme que as variáveis pós-chamada estão sendo extraídas
+- Confirme que os cabeçalhos da planilha batem com os campos
+- Teste com chamadas diferentes
 
-## Next Steps
+## Próximos Passos
 
-Once your qualified leads automation is working:
-- **Add lead scoring** based on call quality
-- **Create follow-up automations** for hot leads
-- **Integrate with email marketing** platforms
-- **Set up analytics dashboards** for conversion tracking
-- **Expand to multiple campaigns** and lead sources
+Depois que estiver funcionando:
+- Adicionar **lead scoring** baseado na qualidade da chamada
+- Criar automações de **follow-up** para leads quentes
+- Integrar com **e-mail marketing**
+- Montar **dashboards** para conversão
+- Repetir em **múltiplas campanhas** e fontes de lead
 
-Your qualified leads will now be automatically captured and organized in Google Sheets, creating a powerful foundation for your sales and follow-up processes!
+Seus leads qualificados agora serão capturados automaticamente e organizados no Google Sheets, criando uma base forte para vendas e follow-up.
