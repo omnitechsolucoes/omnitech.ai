@@ -1,55 +1,48 @@
 ---
-title: "Delete mid call tool"
+title: "Excluir ferramenta de uso durante a chamada"
 api: "DELETE /user/tools/{id}"
-description: "Delete a mid call tool"
+description: "Exclui permanentemente uma ferramenta de uso durante a chamada"
 ---
 
-This endpoint allows you to permanently delete a mid call tool. This will also remove the tool from all assistants it was assigned to.
+Este endpoint permite excluir permanentemente uma ferramenta de uso durante a chamada. Isso também removerá a ferramenta de todos os assistentes aos quais ela estiver atribuída.
 
 ### Headers
 
 <ParamField header="Authorization" type="string" required>
-  Bearer token for authentication
+  Token Bearer para autenticação
 </ParamField>
 
 <ParamField header="Content-Type" type="string" required>
-  Must be `application/json`
+  Deve ser `application/json`
 </ParamField>
 
 <ParamField header="Accept" type="string" required>
-  Must be `application/json`
+  Deve ser `application/json`
 </ParamField>
 
-### Path Parameters
+### Parâmetros de Caminho
 
 <ParamField path="id" type="integer" required>
-  The unique identifier of the tool to delete
+  Identificador único da ferramenta a ser excluída
 </ParamField>
 
-### Response fields
+### Campos da Resposta
 
 <ResponseField name="message" type="string">
-  Success message confirming deletion
+  Mensagem de sucesso confirmando a exclusão
 </ResponseField>
 
 <ResponseExample>
 
 ```json 200 OK
 {
-  "message": "Tool deleted successfully"
+  "message": "Ferramenta excluída com sucesso"
 }
-```
-
-```json 404 Not Found
 {
-  "message": "Tool not found"
+  "message": "Ferramenta não encontrada"
 }
-```
-
 </ResponseExample>
+Observação
+Quando uma ferramenta é excluída, ela é automaticamente removida de todos os assistentes. Para gerenciar atribuições de ferramentas sem excluí-las, utilize:
 
-### Note
-
-When a tool is deleted, it is automatically removed from all assistants. To manage tool assignments without deleting the tool, use:
-
-- **[Update Assistant](/api-reference/assistants/update-assistant)** - Use the `tool_ids` parameter to remove tools from specific assistants
+Atualizar Assistente – Utilize o parâmetro tool_ids para remover ferramentas de assistentes específicos
