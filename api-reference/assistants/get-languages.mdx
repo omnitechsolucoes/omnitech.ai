@@ -1,25 +1,25 @@
 ---
-title: "Get available languages"
+title: "Obter idiomas disponíveis"
 api: "GET /user/assistants/languages"
-description: "Retrieve all available languages for assistant configuration"
+description: "Recupera todos os idiomas disponíveis para configuração de assistentes"
 ---
 
-This endpoint returns a list of all available languages that can be used when creating or updating assistants.
+Este endpoint retorna uma lista de todos os idiomas disponíveis que podem ser utilizados ao criar ou atualizar assistentes.
 
-### Response fields
+### Campos da Resposta
 
 <ResponseField name="data" type="array">
-  <Expandable title="properties">
+  <Expandable title="propriedades">
     <ResponseField name="id" type="integer">
-      The unique identifier of the language
+      Identificador único do idioma
     </ResponseField>
 
     <ResponseField name="name" type="string">
-      The display name of the language
+      Nome de exibição do idioma
     </ResponseField>
 
     <ResponseField name="iso_2" type="string">
-      The ISO 639-1 two-letter language code
+      Código do idioma em duas letras no padrão ISO 639-1
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -30,37 +30,37 @@ This endpoint returns a list of all available languages that can be used when cr
 [
   {
     "id": 1,
-    "name": "English",
+    "name": "Inglês",
     "iso_2": "en"
   },
   {
     "id": 2,
-    "name": "Spanish",
+    "name": "Espanhol",
     "iso_2": "es"
   },
   {
     "id": 3,
-    "name": "French",
+    "name": "Francês",
     "iso_2": "fr"
   },
   {
     "id": 4,
-    "name": "German",
+    "name": "Alemão",
     "iso_2": "de"
   },
   {
     "id": 5,
-    "name": "Italian",
+    "name": "Italiano",
     "iso_2": "it"
   }
 ]
-```
-
 </ResponseExample>
+Observações
+Este endpoint não requer nenhum parâmetro
 
-### Notes
+Utilize o campo name ao criar ou atualizar assistentes
 
-- This endpoint does not require any parameters
-- Use the `name` field when creating or updating assistants
-- The `iso_2` code can be useful for language-specific functionality
-- All available languages are returned in a single request
+O código iso_2 pode ser útil para funcionalidades específicas por idioma
+
+Todos os idiomas disponíveis são retornados em uma única requisição
+
