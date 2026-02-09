@@ -1,141 +1,141 @@
 ---
-title: "List calls"
+title: "Listar chamadas"
 api: "GET /user/calls"
-description: "List all calls for the authenticated user with filtering options"
+description: "Lista todas as chamadas do usuário autenticado com opções de filtragem"
 ---
 
-This endpoint allows you to list all calls belonging to the authenticated user with various filtering options.
+Este endpoint permite listar todas as chamadas pertencentes ao usuário autenticado com diversas opções de filtragem.
 
-### Query Parameters
+### Parâmetros de Consulta
 
 <ParamField query="status" type="string" optional>
-  Filter calls by status. Possible values: `initiated`, `ringing`, `busy`, `in-progress`, `ended`, `completed`, `ended_by_customer`, `ended_by_assistant`, `no-answer`, `failed`
+  Filtra chamadas por status. Valores possíveis: `initiated`, `ringing`, `busy`, `in-progress`, `ended`, `completed`, `ended_by_customer`, `ended_by_assistant`, `no-answer`, `failed`
 </ParamField>
 
 <ParamField query="type" type="string" optional>
-  Filter calls by type. Possible values: `inbound`, `outbound`, `web`
+  Filtra chamadas por tipo. Valores possíveis: `inbound`, `outbound`, `web`
 </ParamField>
 
 <ParamField query="phone_number" type="string" optional>
-  Filter calls by client phone number
+  Filtra chamadas pelo número de telefone do cliente
 </ParamField>
 
 <ParamField query="assistant_id" type="integer" optional>
-  Filter calls by assistant ID
+  Filtra chamadas pelo ID do assistente
 </ParamField>
 
 <ParamField query="campaign_id" type="integer" optional>
-  Filter calls by campaign ID
+  Filtra chamadas pelo ID da campanha
 </ParamField>
 
 <ParamField query="date_from" type="string" optional>
-  Filter calls from this date (YYYY-MM-DD format)
+  Filtra chamadas a partir desta data (formato YYYY-MM-DD)
 </ParamField>
 
 <ParamField query="date_to" type="string" optional>
-  Filter calls until this date (YYYY-MM-DD format)
+  Filtra chamadas até esta data (formato YYYY-MM-DD)
 </ParamField>
 
 <ParamField query="per_page" type="integer" optional>
-  Number of calls per page (1-100, default: 15)
+  Número de chamadas por página (1-100, padrão: 15)
 </ParamField>
 
 <ParamField query="page" type="integer" optional>
-  Page number (default: 1)
+  Número da página (padrão: 1)
 </ParamField>
 
-### Response fields
+### Campos da Resposta
 
 <ResponseField name="data" type="array">
-  <Expandable title="properties">
+  <Expandable title="propriedades">
     <ResponseField name="id" type="integer">
-      The unique identifier of the call
+      Identificador único da chamada
     </ResponseField>
 
     <ResponseField name="assistant_name" type="string">
-      The name of the assistant that handled the call
+      Nome do assistente que conduziu a chamada
     </ResponseField>
 
     <ResponseField name="campaign_name" type="string">
-      The name of the campaign this call belongs to (if applicable)
+      Nome da campanha à qual esta chamada pertence (se aplicável)
     </ResponseField>
 
     <ResponseField name="type" type="string">
-      The type of the call (`inbound`, `outbound`, or `web`)
+      Tipo da chamada (`inbound`, `outbound` ou `web`)
     </ResponseField>
 
     <ResponseField name="duration" type="integer">
-      The duration of the call in seconds
+      Duração da chamada em segundos
     </ResponseField>
 
     <ResponseField name="assistant_phone_number" type="string">
-      The phone number used by the assistant
+      Número de telefone utilizado pelo assistente
     </ResponseField>
 
     <ResponseField name="client_phone_number" type="string">
-      The phone number of the client
+      Número de telefone do cliente
     </ResponseField>
 
     <ResponseField name="status" type="string">
-      The current status of the call
+      Status atual da chamada
     </ResponseField>
 
     <ResponseField name="transcript" type="string">
-      The transcript of the call conversation
+      Transcrição da conversa da chamada
     </ResponseField>
 
     <ResponseField name="variables" type="object">
-      Variables collected during the call
+      Variáveis coletadas durante a chamada
     </ResponseField>
 
     <ResponseField name="evaluation" type="object">
-      Evaluation data for the call performance
+      Dados de avaliação do desempenho da chamada
     </ResponseField>
 
     <ResponseField name="webhook_response" type="object">
-      Response from any configured webhooks
+      Resposta de quaisquer webhooks configurados
     </ResponseField>
 
     <ResponseField name="carrier_cost" type="number">
-      The cost charged by the carrier for this call
+      Custo cobrado pela operadora para esta chamada
     </ResponseField>
 
     <ResponseField name="total_cost" type="number">
-      The total cost of the call including all fees
+      Custo total da chamada incluindo todas as taxas
     </ResponseField>
 
     <ResponseField name="answered_by" type="string">
-      Who answered the call (`human`, `machine`, or `unknown`)
+      Quem atendeu a chamada (`human`, `machine` ou `unknown`)
     </ResponseField>
 
     <ResponseField name="recording_url" type="string">
-      URL to the call recording (if available and enabled)
+      URL da gravação da chamada (se disponível e habilitada)
     </ResponseField>
 
     <ResponseField name="created_at" type="string">
-      The date and time when the call was created
+      Data e hora em que a chamada foi criada
     </ResponseField>
 
     <ResponseField name="updated_at" type="string">
-      The date and time when the call was last updated
+      Data e hora da última atualização da chamada
     </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="current_page" type="integer">
-  The current page number
+  Número da página atual
 </ResponseField>
 
 <ResponseField name="per_page" type="integer">
-  Number of items per page
+  Quantidade de itens por página
 </ResponseField>
 
 <ResponseField name="total" type="integer">
-  Total number of calls matching the criteria
+  Número total de chamadas que correspondem aos critérios
 </ResponseField>
 
 <ResponseField name="last_page" type="integer">
-  The last page number
+  Número da última página
 </ResponseField>
 
 <ResponseExample>
@@ -146,14 +146,14 @@ This endpoint allows you to list all calls belonging to the authenticated user w
   "data": [
     {
       "id": 123,
-      "assistant_name": "Sales Assistant",
-      "campaign_name": "Q4 Outreach Campaign",
+      "assistant_name": "Assistente de Vendas",
+      "campaign_name": "Campanha de Prospecção Q4",
       "type": "outbound",
       "duration": 245,
       "assistant_phone_number": "+1234567890",
       "client_phone_number": "+1987654321",
       "status": "completed",
-      "transcript": "Hello, this is Sarah from Autocalls. How are you doing today?...",
+      "transcript": "Olá, aqui é a Sarah da OmniTech. Como você está hoje?...",
       "variables": {
         "customer_name": "John Smith",
         "interest_level": "high",
@@ -173,39 +173,37 @@ This endpoint allows you to list all calls belonging to the authenticated user w
       "carrier_cost": 0.02,
       "total_cost": 0.025,
       "answered_by": "human",
-      "recording_url": "https://recordings.autocalls.ai/calls/123.mp3",
+      "recording_url": "https://recordings.omnitech.ai/calls/123.mp3",
       "created_at": "2025-08-04 14:30:00",
       "updated_at": "2025-08-04 14:34:05"
     }
   ],
-  "first_page_url": "https://app.autocalls.ai/api/user/calls?page=1",
+  "first_page_url": "https://app.omnitechsolucoes.com.br/api/user/calls?page=1",
   "from": 1,
   "last_page": 10,
-  "last_page_url": "https://app.autocalls.ai/api/user/calls?page=10",
+  "last_page_url": "https://app.omnitechsolucoes.com.br/api/user/calls?page=10",
   "links": [
     {
       "url": null,
-      "label": "&laquo; Previous",
+      "label": "&laquo; Anterior",
       "active": false
     },
     {
-      "url": "https://app.autocalls.ai/api/user/calls?page=1",
+      "url": "https://app.omnitechsolucoes.com.br/api/user/calls?page=1",
       "label": "1",
       "active": true
     },
     {
-      "url": "https://app.autocalls.ai/api/user/calls?page=2",
+      "url": "https://app.omnitechsolucoes.com.br/api/user/calls?page=2",
       "label": "2",
       "active": false
     }
   ],
-  "next_page_url": "https://app.autocalls.ai/api/user/calls?page=2",
-  "path": "https://app.autocalls.ai/api/user/calls",
+  "next_page_url": "https://app.omnitechsolucoes.com.br/api/user/calls?page=2",
+  "path": "https://app.omnitechsolucoes.com.br/api/user/calls",
   "per_page": 15,
   "prev_page_url": null,
   "to": 15,
   "total": 150
 }
-```
-
-</ResponseExample>
+</ResponseExample> ```
