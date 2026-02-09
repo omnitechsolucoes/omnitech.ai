@@ -1,159 +1,241 @@
 ---
-title: "GoHighLevel Leads Automation"
+title: "Automação de Leads do GoHighLevel"
 icon: "rocket"
-description: "Learn how to automatically call GoHighLevel leads with AI voice agents"
+description: "Aprenda como ligar automaticamente para leads do GoHighLevel usando agentes de voz com IA"
 ---
 
-This tutorial shows how to set up an automation that automatically calls new leads from GoHighLevel using AI voice agents with intelligent retry logic.
+Este tutorial mostra como configurar uma automação que liga automaticamente para novos leads do GoHighLevel utilizando agentes de voz com IA e lógica inteligente de tentativas.
 
 👉 **Vídeos e tutoriais oficiais**:  
 https://www.youtube.com/@OMNITECHSOLUCOESDIGITAIS
 
-## What You'll Learn
+## O que você vai aprender
 
-- Creating an AI assistant with custom call variables  
-- Setting up GoHighLevel integration with LeadConnector  
-- Configuring campaigns with retry logic and goal completion  
-- Mapping lead data from GoHighLevel to your assistant  
-- Testing and deploying your automation flow  
+- Criar um assistente de IA com variáveis personalizadas de chamada  
+- Integrar o GoHighLevel usando o LeadConnector  
+- Configurar campanhas com lógica de retry e conclusão por objetivo  
+- Mapear dados dos leads do GoHighLevel para o assistente  
+- Testar e colocar a automação em produção  
 
-## Prerequisites
+## Pré-requisitos
 
-- Active GoHighLevel account  
-- Autocalls.ai platform access  
-- Phone number configured for outbound calls  
+- Conta ativa no GoHighLevel  
+- Acesso à plataforma Autocalls.ai  
+- Número de telefone configurado para chamadas ativas  
 
-## Step 1: Create Your AI Assistant
+## Etapa 1: Criar o Assistente de IA
 
-First, we need to create an AI assistant that will handle the calls to your GoHighLevel leads.
-
-<Frame>
-  <img src="/resources/tutorials/gohighlevel/01-create-assistant.png" alt="Creating new AI assistant" />
-</Frame>
-
-1. **Navigate to Assistants page** and click on "Assistants" in the sidebar  
-2. **Click "New Assistant"** button to start the creation process  
-3. **Give it a name** – for this tutorial, we'll use "Test ghl"  
+Primeiro, vamos criar o assistente de IA que fará as ligações para os leads do GoHighLevel.
 
 <Frame>
-  <img src="/resources/tutorials/gohighlevel/02-assistant-basic-settings.png" alt="Assistant basic settings configuration" />
+  <img src="/resources/tutorials/gohighlevel/01-create-assistant.png" alt="Criação de um novo assistente de IA" />
 </Frame>
 
-4. **Select a phone number** for outbound calls  
-5. **Choose a voice** that fits your brand  
-6. **Set the timezone** for your target audience  
-
-## Step 2: Configure Call Variables
-
-Call variables allow you to personalize each call with specific lead information from GoHighLevel.
+1. **Acesse a página de Assistentes** pelo menu lateral  
+2. **Clique em “Novo Assistente”**  
+3. **Defina um nome** – neste tutorial, usaremos “Test ghl”  
 
 <Frame>
-  <img src="/resources/tutorials/gohighlevel/03-call-variables-tab.png" alt="Navigating to Prompts and Tools tab" />
+  <img src="/resources/tutorials/gohighlevel/02-assistant-basic-settings.png" alt="Configuração básica do assistente" />
 </Frame>
 
-1. **Go to the second tab** "Prompts and Tools"  
-2. **Locate the "Call Variables" section**  
+4. **Selecione um número de telefone** para chamadas ativas  
+5. **Escolha uma voz** alinhada à sua marca  
+6. **Defina o fuso horário** do público-alvo  
+
+## Etapa 2: Configurar Variáveis de Chamada
+
+As variáveis de chamada permitem personalizar cada ligação com informações do lead.
+
+<Frame>
+  <img src="/resources/tutorials/gohighlevel/03-call-variables-tab.png" alt="Aba Prompts e Ferramentas" />
+</Frame>
+
+1. **Acesse a segunda aba** “Prompts e Ferramentas”  
+2. **Localize a seção “Variáveis de Chamada”**  
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/gohighlevel/04-add-email-variable.mp4"></video>
 
-3. **Add custom variables** for your GoHighLevel leads:
-   - You'll see `customer_name` with default value "John"
-   - **Add `email` variable** with a default value
-   - Add any additional variables like `company_name`, `address`, etc.
+3. **Adicione variáveis personalizadas**, como:
+   - `customer_name` (já vem por padrão)
+   - **`email`**
+   - Outras como `company_name`, `address`, etc.
 
-4. **Variables can be used in multiple ways:**
-   - **In the system prompt**: `Hi {customer_name}`
-   - **For mid-call tools**: Personalized API calls
-   - **For file imports**: Bulk lead processing
-   - **For automation platform**: Dynamic data mapping
+4. **As variáveis podem ser usadas para:**
+   - **Prompt do sistema**: `Olá {customer_name}`
+   - **Ferramentas mid-call**  
+   - **Importação de arquivos**  
+   - **Mapeamento em automações**  
 
-## Step 3: Set Up Post-Call Variables
+## Etapa 3: Configurar Variáveis Pós-Chamada
 
-Post-call variables help track the success of your calls and automate follow-up actions.
-
-<Frame>
-  <img src="/resources/tutorials/gohighlevel/05-post-call-variables.png" alt="Post-call variables configuration" />
-</Frame>
-
-1. **Navigate to step 3** "Post-call Variables"  
-2. **Review the default variables:**
-   - `status` – Boolean (true/false) indicating if call objective was achieved  
-   - `summary` – Text summary of the call conversation  
+As variáveis pós-chamada servem para medir o sucesso da ligação e automatizar ações futuras.
 
 <Frame>
-  <img src="/resources/tutorials/gohighlevel/06-status-variable-explanation.png" alt="Understanding the status variable" />
+  <img src="/resources/tutorials/gohighlevel/05-post-call-variables.png" alt="Configuração de variáveis pós-chamada" />
 </Frame>
 
-The `status` variable is crucial for campaign automation:
-- **True**: Call objective achieved, lead marked as completed  
-- **False**: Call objective not met, lead will be retried  
-
-3. **Click "Create"** to finalize your assistant  
-
-## Step 4: Create Campaign with Retry Logic
-
-Now we'll create a campaign that intelligently retries leads until the call objective is achieved.
+1. **Acesse a etapa 3** “Variáveis Pós-Chamada”  
+2. **Revise as variáveis padrão:**
+   - `status`: booleano (true/false) indicando se o objetivo foi atingido  
+   - `summary`: resumo textual da conversa  
 
 <Frame>
-  <img src="/resources/tutorials/gohighlevel/07-create-campaign.png" alt="Creating new campaign" />
+  <img src="/resources/tutorials/gohighlevel/06-status-variable-explanation.png" alt="Explicação da variável status" />
 </Frame>
 
-1. **Navigate to Campaigns** page in the sidebar  
-2. **Click "New Campaign"** button  
+A variável `status` é essencial para campanhas:
+- **true** → objetivo atingido, lead finalizado  
+- **false** → objetivo não atingido, lead entra em retry  
+
+3. **Clique em “Criar”** para finalizar o assistente  
+
+## Etapa 4: Criar Campanha com Lógica de Retry
+
+Agora vamos criar uma campanha que tenta ligar novamente até o objetivo ser alcançado.
+
+<Frame>
+  <img src="/resources/tutorials/gohighlevel/07-create-campaign.png" alt="Criação de campanha" />
+</Frame>
+
+1. Acesse **Campanhas** no menu lateral  
+2. Clique em **“Nova Campanha”**  
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/gohighlevel/08-campaign-configuration.mp4"></video>
 
-3. **Configure campaign settings:**
-   - **Give your campaign a name**
-   - **Select the assistant** you just created  
+3. **Configure:**
+   - Nome da campanha  
+   - Assistente criado anteriormente  
 
-4. **Click "Create"** to save your campaign  
+4. Clique em **“Criar”**  
 
-## Step 5: Set Up GoHighLevel Integration
+## Etapa 5: Configurar Integração com GoHighLevel
 
-Now we'll create the automation that imports leads from GoHighLevel into your campaign.
+Agora vamos criar a automação que envia os leads do GoHighLevel para a campanha.
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/gohighlevel/10-automation-platform.mp4"></video>
 
-1. **Click "Automate platform"** in the sidebar  
-2. **Press "New Flow"** and select "From Scratch"  
+1. Clique em **“Plataforma de Automação”**  
+2. Selecione **“Novo Fluxo” → “Do zero”**  
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/gohighlevel/11-search-leadconnector.mp4"></video>
 
-3. **Search for "LeadConnector"** in the trigger search bar  
-4. **Click on LeadConnector** when it appears  
+3. Busque por **LeadConnector**  
+4. Selecione quando aparecer  
 
 <Frame>
-  <img src="/resources/tutorials/gohighlevel/12-select-new-contact-trigger.png" alt="Selecting new contact trigger" />
+  <img src="/resources/tutorials/gohighlevel/12-select-new-contact-trigger.png" alt="Trigger de novo contato" />
 </Frame>
 
-5. **Select "New Contact"** trigger  
-   - This will trigger for each new lead created in GoHighLevel  
+5. Escolha **“Novo Contato”**  
+   - Dispara sempre que um lead for criado  
 
-## Step 6: Connect Your GoHighLevel Account
+## Etapa 6: Conectar a Conta do GoHighLevel
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/gohighlevel/13-create-connection.mp4"></video>
 
-1. **Click "New Connection"** to link your GoHighLevel account  
-2. **Give the connection a name** (e.g., "My GoHighLevel Account")  
+1. Clique em **“Nova Conexão”**  
+2. Dê um nome para a conexão  
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/gohighlevel/14-oauth-authorization.mp4"></video>
 
-3. **Click "Connect"** to start OAuth authorization  
-4. **Authorize the connection** in the popup window  
-5. **Click "Save"** to finalize the connection  
+3. Clique em **“Conectar”**  
+4. Autorize o acesso  
+5. Clique em **“Salvar”**  
 
-## Step 7: Test the Trigger with Sample Data
+## Etapa 7: Testar o Gatilho com Dados de Exemplo
 
-Before configuring the automation, generate sample data.
+Antes de configurar o fluxo final, gere dados de teste.
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/gohighlevel/15-create-test-contact.mp4"></video>
 
-1. Create a test contact in GoHighLevel  
-2. Return to the automation platform  
-3. Click **"Load Data"** and validate the payload  
+1. Crie um contato de teste no GoHighLevel  
+2. Volte para a automação  
+3. Clique em **“Carregar Dados”**  
+4. Valide as informações  
 
-## Step 8–11, Best Practices, Troubleshooting e Next Steps  
-*(mantidos sem alteração — apenas remoção de embeds externos)*
+## Etapa 8: Configurar Ação de Campanha
 
----
+<video autoPlay muted loop playsinline src="/resources/tutorials/gohighlevel/17-add-action-step.mp4"></video>
+
+1. Clique no **“+”**  
+2. Selecione **“Adicionar Lead à Campanha”**  
+3. Escolha a campanha criada  
+
+## Etapa 9: Mapear Dados do Lead para Variáveis
+
+<Frame>
+  <img src="/resources/tutorials/gohighlevel/19-map-phone-number.png" alt="Mapeamento do telefone" />
+</Frame>
+
+1. Mapeie o **telefone**  
+2. Mapeie as variáveis:
+   - `customer_name` → nome + sobrenome  
+   - `email` → email  
+
+<Frame>
+  <img src="/resources/tutorials/gohighlevel/21-variable-mapping-complete.png" alt="Mapeamento concluído" />
+</Frame>
+
+<Tip>
+Sempre crie as variáveis no assistente antes de mapear na automação.
+</Tip>
+
+## Etapa 10: Testar e Publicar
+
+<video autoPlay muted loop playsinline src="/resources/tutorials/gohighlevel/22-test-step.mp4"></video>
+
+1. Clique em **“Testar Etapa”**  
+2. Verifique se o lead foi criado corretamente  
+
+<Frame>
+  <img src="/resources/tutorials/gohighlevel/24-publish-automation.png" alt="Publicando automação" />
+</Frame>
+
+3. Clique em **“Publicar”**  
+
+## Etapa 11: Iniciar a Campanha
+
+1. Vá até **Campanhas**  
+2. Clique em **“Iniciar”**  
+3. Os leads passarão a ser chamados automaticamente  
+
+## Boas Práticas
+
+### Variáveis
+- Defina todas antes de criar automações  
+- Use nomes claros  
+- Teste antes de ir para produção  
+
+### Campanhas
+- Máximo recomendado: **3 tentativas**  
+- Intervalo sugerido: **60 minutos**  
+
+### Qualidade dos Leads
+- Telefones válidos  
+- Emails corretos  
+- Dados atualizados  
+
+## Solução de Problemas
+
+**Leads não entram:**  
+- Verifique a conexão  
+- Confirme o trigger  
+
+**Variáveis vazias:**  
+- Verifique nomes  
+- Confira o mapeamento  
+
+**Chamadas não iniciam:**  
+- Campanha ativa  
+- Número configurado  
+- Assistente válido  
+
+## Próximos Passos
+
+- Configurar **SMS de follow-up**  
+- Integrar com **Google Sheets**  
+- Criar automações de **email**  
+- Monitorar conversões  
+
+Seus leads do GoHighLevel agora serão chamados automaticamente por agentes de IA com lógica inteligente de tentativas até que o objetivo da chamada seja alcançado.
