@@ -1,30 +1,24 @@
 ---
-title: "Phone System Integrations"
+title: "Integrações com Sistema Telefônico"
 icon: "phone-office"
-description: "Learn how to integrate Autocalls.ai with your existing PBX or VOIP infrastructure through SIP trunks"
+description: "Aprenda como integrar a OmniTech com sua infraestrutura PBX ou VOIP existente através de troncos SIP"
 ---
+Para empresas que já possuem infraestrutura PBX ou VOIP, a OmniTech pode ser integrada através de troncos SIP ou conexões diretas:
 
-For businesses with existing PBX or VOIP infrastructure, Autocalls.ai can integrate through SIP trunks or direct connections:
+## 1. Tronco SIP
+- **Como Funciona**: Configure suas credenciais SIP (servidor, usuário, senha) diretamente no dashboard. Consulte nosso [Guia Detalhado de Integração SIP](/provisioning/sip-trunking/sip-integration) para instruções passo a passo.
+- **Chamadas de Entrada/Saída**: A IA pode atender chamadas de entrada vindas do seu PBX ou realizar chamadas de saída utilizando suas faixas de números existentes.
 
-## 1. SIP Trunk
+## 2. Encaminhamento de Caller ID
+- Se o seu PBX já gerencia o roteamento de chamadas, passe a chamada para a OmniTech apenas quando determinadas condições forem atendidas (como após seleção no IVR).
 
-- **How It Works**: Configure your SIP credentials (server, username, password) directly in the dashboard. See our [detailed SIP Integration Guide](/provisioning/sip-trunking/sip-integration) for step-by-step setup instructions.
-- **Inbound/Outbound**: AI can pick up inbound calls from your PBX or place outbound calls using your existing number ranges.
+## 3. Modelo Híbrido
+- Algumas configurações avançadas mantêm agentes humanos no seu PBX, mas utilizam a IA para chamadas de alto volume ou fora do horário comercial.
+- Exemplo: _Durante o horário comercial, agentes normais atendem as chamadas. Fora do horário, as chamadas são roteadas para o assistente de IA via tronco SIP._
 
-## 2. Caller ID Forwarding
-
-- If your PBX already handles call routing, pass the call to Autocalls.ai only when certain conditions are met (like after IVR selection).
-
-## 3. Hybrid Model
-
-- Some advanced setups keep human agents on your PBX but leverage the AI for high-volume or after-hours calls.
-- Example: _During business hours, normal agents handle calls. After hours, calls route to the AI assistant via SIP trunk._
-
-## 4. Things to Note
-
-- SIP sometimes requires opening firewall ports or whitelisting IPs.
-- Carrier charges from your PBX provider still apply, plus any Autocalls.ai usage fees.
+## 4. Pontos Importantes
+- O SIP às vezes exige abertura de portas no firewall ou liberação de IPs na lista branca.
+- As tarifas da operadora do seu provedor PBX continuam sendo cobradas, além de quaisquer taxas de uso da OmniTech.
 
 ---
-
-For detailed setup instructions and best practices, visit our [SIP Integration Guide](/provisioning/sip-trunking/sip-integration).
+Para instruções detalhadas de configuração e melhores práticas, visite nosso [Guia de Integração SIP](/provisioning/sip-trunking/sip-integration).
