@@ -1,342 +1,286 @@
-title: "Automação de E-mail Pós-Chamada"
-icon: "envelope"
-description: "Aprenda como enviar automaticamente e-mails personalizados para clientes após chamadas telefônicas com IA"
+--- title: "Automação de E-mail Pós-Chamada" icon: "envelope" description: "Aprenda como enviar automaticamente e-mails personalizados para clientes após chamadas telefônicas com IA" --- 
+Este tutorial mostra como configurar uma automação que envia e-mails de acompanhamento personalizados para clientes após chamadas telefônicas com IA, com lógica condicional baseada nos resultados da chamada e conteúdo personalizado.
 
-Este tutorial mostra como configurar uma automação que envia e-mails personalizados de follow-up para clientes após chamadas telefônicas com IA, com lógica condicional baseada nos resultados da chamada e conteúdo personalizado.
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/f0b7cMXqWWI?si=9Ic3VHwV-QeL5YER" title="Tutorial: Como enviar um e-mail após o término da chamada" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
-<iframe width="100%" height="400" src="https://www.youtube.com/embed/f0b7cMXqWWI?si=9Ic3VHwV-QeL5YER" title="Tutorial: Como enviar um e-mail após o término da chamada telefônica" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-O que você vai aprender
+## O Que Você Vai Aprender
+- Configurar automação de e-mail pós-chamada com gatilhos condicionais
+- Configurar modelos de e-mail com conteúdo dinâmico a partir das chamadas
+- Mapear dados da chamada e variáveis para o conteúdo do e-mail
+- Criar diferentes fluxos de e-mail com base no sucesso da chamada
+- Melhores práticas para comunicação de acompanhamento profissional
 
-Configurar automação de e-mail pós-chamada com gatilhos condicionais
+## Pré-requisitos
+- Assistente de IA configurado com variáveis pós-chamada e coleta de e-mail
+- Integração com serviço de e-mail (Gmail)
+- Entendimento de automação via webhook pós-chamada
+- Acesso à funcionalidade de teste de chamadas
 
-Configurar modelos de e-mail com conteúdo dinâmico das chamadas
-
-Mapear dados e variáveis da chamada para o conteúdo do e-mail
-
-Criar diferentes fluxos de e-mail com base no sucesso da chamada
-
-Boas práticas para comunicação profissional de follow-up
-
-Pré-requisitos
-
-Assistente de IA configurado com variáveis pós-chamada e coleta de e-mail
-
-Integração com serviço de e-mail (Gmail)
-
-Entendimento de automação via webhook pós-chamada
-
-Acesso à funcionalidade de testes de chamadas
-
-Etapa 1: Criar automação de e-mail pós-chamada
-
-Vamos criar uma automação que será acionada após chamadas telefônicas e enviará e-mails personalizados com base nos resultados da chamada.
+## Passo 1: Criar Automação de E-mail Pós-Chamada
+Vamos criar uma automação que é acionada após chamadas telefônicas e envia e-mails personalizados com base nos resultados da chamada.
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/post-call-email/01-create-email-automation.mp4"></video>
 
-Acesse a Plataforma de Automação
+1. **Navegue até a Plataforma de Automação**
+2. **Crie um novo fluxo** do zero
+3. **Pesquise pela sua plataforma de chamadas** nos gatilhos
+4. **Selecione o gatilho "Phone Call Ended"**
+   - Isso captura dados de todas as chamadas concluídas para o assistente selecionado
 
-Crie um novo fluxo do zero
-
-Pesquise pela sua plataforma de chamadas nos gatilhos
-
-Selecione o gatilho "Phone Call Ended"
-
-Isso captura dados de todas as chamadas concluídas do assistente selecionado
-
-Etapa 2: Configurar o assistente e a integração de webhook
+## Passo 2: Configurar Assistente e Integração de Webhook
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/post-call-email/03-select-assistant-for-email.mp4"></video>
 
-Selecione o assistente desejado
+1. **Selecione o assistente desejado**
+   - Cada assistente suporta apenas uma automação pós-chamada
+   - Todas as chamadas para este assistente irão acionar este fluxo de e-mail
+2. **Clique em "Test Trigger"** para configurar o webhook
+   - Isso gera e salva automaticamente uma URL de webhook
+   - O webhook é armazenado nas configurações pós-chamada do seu assistente
 
-Cada assistente suporta apenas uma automação pós-chamada
-
-Todas as chamadas desse assistente acionarão este fluxo de e-mail
-
-Clique em "Test Trigger" para configurar o webhook
-
-Isso gera e salva automaticamente a URL do webhook
-
-O webhook é armazenado nas configurações pós-chamada do assistente
-
-Etapa 3: Verificar a configuração do assistente
+## Passo 3: Verificar Configuração do Assistente
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/post-call-email/05-check-assistant-webhook.mp4"></video>
 
-Abra o assistente em uma nova aba
+1. **Abra seu assistente** em uma nova aba
+2. **Navegue até "Post-call Actions"** (terceira aba)
+3. **Confirme que a URL do webhook** foi configurada automaticamente
 
-Acesse a aba "Post-call Actions" (terceira aba)
+<Frame>
+<img src="/resources/tutorials/post-call-email/06-webhook-settings.png" alt="Webhook trigger configuration" />
+</Frame>
 
-Confirme que a URL do webhook foi configurada automaticamente
+4. **Revise as configurações do gatilho:**
+   - **Enabled**: A automação é acionada após as chamadas
+   - **Completed calls only**: Recomendado para e-mails de acompanhamento
+   - **All calls**: Selecione "No" para incluir chamadas falhas
 
-<Frame> <img src="/resources/tutorials/post-call-email/06-webhook-settings.png" alt="Configuração do gatilho de webhook" /> </Frame>
+<Frame>
+<img src="/resources/tutorials/post-call-email/07-post-call-variables.png" alt="Post-call variables for email content" />
+</Frame>
 
-Revise as configurações do gatilho:
+5. **Verifique as variáveis pós-chamada:**
+   - **status**: Booleano que indica o sucesso da chamada
+   - **email**: E-mail do cliente (certifique-se de que isso é coletado durante as chamadas)
 
-Enabled: A automação será acionada após as chamadas
+## Passo 4: Garantir a Coleta de E-mail
+Para que a automação de e-mail funcione, seu assistente deve coletar os endereços de e-mail dos clientes.
 
-Completed calls only: Recomendado para e-mails de follow-up
+<Frame>
+<img src="/resources/tutorials/post-call-email/08-set-test-values.png" alt="Call variables including email collection" />
+</Frame>
 
-All calls: Selecione "No" para incluir chamadas com falha
+1. **Verifique as variáveis de chamada do seu assistente:**
+   - Certifique-se de que a variável email está definida
+   - Defina um e-mail de teste padrão para fins de teste. **Use seu endereço de e-mail real** para testes.
+   - Considere tornar a coleta de e-mail parte do seu script de chamada
 
-<Frame> <img src="/resources/tutorials/post-call-email/07-post-call-variables.png" alt="Variáveis pós-chamada para conteúdo de e-mail" /> </Frame>
-
-Verifique as variáveis pós-chamada:
-
-status: Booleano indicando sucesso da chamada
-
-email: E-mail do cliente (garanta que seja coletado durante a chamada)
-
-Etapa 4: Garantir a coleta de e-mail
-
-Para que a automação de e-mail funcione, o assistente precisa coletar os endereços de e-mail dos clientes.
-
-<Frame> <img src="/resources/tutorials/post-call-email/08-set-test-values.png" alt="Variáveis de chamada incluindo coleta de e-mail" /> </Frame>
-
-Verifique as variáveis de chamada do assistente:
-
-Garanta que a variável email esteja definida
-
-Defina um e-mail padrão para testes. Use seu e-mail real para testar
-
-Considere tornar a coleta de e-mail parte do roteiro da chamada
-
-Etapa 5: Gerar chamada de teste com dados de e-mail
+## Passo 5: Gerar Chamada de Teste com Dados de E-mail
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/post-call-email/09-make-test-call.mp4"></video>
 
-Faça uma chamada de teste para gerar dados do webhook:
+1. **Faça uma chamada de teste para gerar dados do webhook:**
+   - Clique em **"Speak to Assistant"** → **"Phone Call"**
+   - **Atenda quando seu assistente ligar para você**
+   - **Responda de forma positiva** para garantir que a variável status se torne true
+   - **Complete o objetivo da chamada** durante a conversa
+   - **Encerre a chamada naturalmente**
 
-Clique em "Speak to Assistant" → "Phone Call"
-
-Atenda quando o assistente ligar
-
-Responda positivamente para garantir que a variável status seja true
-
-Conclua o objetivo da chamada durante a conversa
-
-Finalize a chamada normalmente
-
-<Note> Em um cenário real, o assistente utilizará os dados atribuídos ao lead. Para testes, ele usa os valores padrão configurados. </Note>
+<Note>
+Em uma situação real, o assistente pegará os dados atribuídos ao lead. Para testes, ele usa os valores padrão que você acabou de definir.
+</Note>
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/post-call-email/10-check-call-results.mp4"></video>
 
-Verifique os resultados da chamada e a extração das variáveis:
+2. **Verifique os resultados da chamada e a extração de variáveis:**
+   - **Navegue até a lista de chamadas** e encontre a chamada recente
+   - **Clique na chamada** para ver os detalhes
+   - **Confirme que a variável status é true** (objetivo da chamada alcançado)
 
-Acesse a lista de chamadas e localize a chamada recente
+   Essas variáveis são extraídas após cada chamada com base em:
+   - Transcrição da chamada
+   - Descrições das variáveis
+   - Tipos das variáveis (Boolean para status)
+   - Contexto do prompt do sistema
 
-Clique na chamada para ver os detalhes
-
-Confirme que a variável status está como true
-
-As variáveis são extraídas com base em:
-
-Transcrição da chamada
-
-Descrições das variáveis
-
-Tipos das variáveis (Boolean para status)
-
-Contexto do system prompt
-
-<Note> As variáveis pós-chamada são extraídas após o término da chamada. Atualize a página após cerca de um minuto para visualizá-las. </Note>
+<Note>
+As variáveis após uma chamada estão sendo extraídas. Você pode atualizar a página após cerca de um minuto e então verá as variáveis extraídas.
+</Note>
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/post-call-email/11-received-call-data.mp4"></video>
 
-Retorne à aba da automação
-
-Verifique se os dados da chamada foram recebidos
-
-Os dados aparecem porque você clicou em "Test Trigger" e realizou a chamada
-
-A automação recebeu a requisição após o término da chamada e extração das variáveis
-
-Método alternativo – reenviar dados de webhook de chamadas existentes:
+1. **Retorne à aba da sua automação**
+2. **Verifique se você recebeu os dados da chamada** do gatilho de teste
+   - Você deve ver os dados do webhook porque clicou em "Test Trigger" e depois fez uma chamada
+   - A automação recebeu a requisição após o término da chamada e a extração das variáveis
+3. **Método alternativo - reenviar dados do webhook a partir de chamadas existentes:**
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/post-call-email/12-resend-webhook.mp4"></video>
 
-Caso precise testar com dados diferentes, reutilize qualquer chamada existente
+   - Se precisar testar com dados de chamadas diferentes, você pode reutilizar qualquer chamada existente
+   - **Clique novamente em "Test Trigger"** na sua automação
+   - **Vá para qualquer chamada concluída** na sua plataforma
+   - **Clique em "Resend Webhook"** para enviar os dados daquela chamada para sua automação
+   - **Retorne à aba da automação** para ver os dados atualizados
 
-Clique novamente em "Test Trigger"
+### Adicionando Novas Variáveis Pós-Chamada
 
-Acesse uma chamada concluída
-
-Clique em "Resend Webhook"
-
-Retorne à aba da automação para ver os dados atualizados
-
-Adicionando novas variáveis pós-chamada
-<Note> Se precisar adicionar uma nova variável pós-chamada após criar a automação, siga este processo para atualizar os dados. </Note>
+<Note>
+Se precisar adicionar uma nova variável pós-chamada após criar a automação, siga este processo para atualizar sua automação com os novos dados da variável.
+</Note>
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/post-call-email/add-variable.mp4"></video>
 
-Defina a nova variável no assistente:
-
-Vá em configurações do assistente → aba "Post-call Actions"
-
-Adicione a nova variável (nome, tipo, descrição)
-
-Salve o assistente
-
-Atualize a automação para receber a nova variável:
-
-Retorne à automação
-
-Clique em "Test Trigger"
-
-Reavaliar uma chamada existente:
+1. **Defina a nova variável no seu assistente:**
+   - Vá para as configurações do assistente → aba "Post-call Actions"
+   - Adicione sua nova variável pós-chamada (nome, tipo, descrição)
+   - **Salve o assistente**
+2. **Atualize a automação com os novos dados da variável:**
+   - **Retorne à sua automação**
+   - **Clique em "Test Trigger"** para preparar para os novos dados do webhook
+3. **Reavalie uma chamada existente:**
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/post-call-email/re-evaluate.mp4"></video>
 
-Abra uma chamada concluída desse assistente
+   - **Vá para qualquer chamada concluída** deste assistente
+   - **Clique em "Re-evaluate"** para extrair a nova variável daquela chamada
+   - **Aguarde o processamento** ser concluído
+4. **Envie os dados atualizados para a automação:**
+   - **Clique em "Resend Webhook"** na mesma chamada
+   - **Retorne à aba da automação**
+   - **Verifique que a nova variável** agora está disponível nos dados da sua automação
 
-Clique em "Re-evaluate"
+<Tip>
+Este recurso de reenvio é útil para testar diferentes cenários sem precisar fazer novas chamadas toda vez.
+</Tip>
 
-Aguarde o processamento
-
-Enviar dados atualizados para a automação:
-
-Clique em "Resend Webhook"
-
-Retorne à automação
-
-Confirme que a nova variável está disponível
-
-<Tip> O recurso de reenvio é útil para testar diferentes cenários sem realizar novas chamadas. </Tip>
-Etapa 6: Configurar lógica condicional de e-mail
-
-Queremos enviar e-mails apenas quando o objetivo da chamada for alcançado.
+## Passo 6: Configurar Lógica Condicional de E-mail
+Queremos adicionar leads ao Google Sheets apenas quando o objetivo da chamada foi alcançado.
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/post-call-email/13-add-branch.mp4"></video>
 
-Clique no botão "+" para adicionar uma etapa
-
-Pesquise por "Branch" no controle de fluxo
-
-Selecione Branch para criar a lógica condicional
+1. **Clique no sinal de "+"** para adicionar um passo
+2. **Pesquise por "Branch"** no controle de fluxo
+3. **Selecione Branch** para criar lógica condicional
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/post-call-email/14-configure-status-condition.mp4"></video>
 
-Configure a condição do branch:
+4. **Configure a condição do branch:**
+   - **Selecione a variável status** dos dados da chamada
+   - **Escolha "Boolean is true"**
+   - Isso cria dois caminhos: True (qualificado) e False (não qualificado)
 
-Selecione a variável status
-
-Escolha "Boolean is true"
-
-Isso cria dois caminhos: True (qualificado) e False (não qualificado)
-
-Etapa 7: Configurar integração com serviço de e-mail
+## Passo 7: Configurar Integração com Serviço de E-mail
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/post-call-email/15-add-email-action.mp4"></video>
 
-No branch True, clique em "+"
-
-Pesquise pelo serviço de e-mail (Gmail, Outlook, SMTP, etc.)
-
-Selecione a ação "Send Email"
+1. **No branch True**, clique em "+"
+2. **Pesquise pelo seu serviço de e-mail** (Gmail, Outlook, SMTP, etc.)
+3. **Selecione a ação "Send Email"**
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/post-call-email/16-create-email-connection.mp4"></video>
 
-Crie a conexão com o serviço de e-mail:
+4. **Crie a conexão com o serviço de e-mail:**
+   - Autorize com seu provedor de e-mail
+   - Configure as definições SMTP se estiver usando e-mail personalizado
+   - Salve a conexão para uso futuro
 
-Autorize o provedor
-
-Configure SMTP se necessário
-
-Salve a conexão
-
-Etapa 8: Configurar conteúdo e destinatários do e-mail
+## Passo 8: Configurar Conteúdo do E-mail e Destinatários
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/post-call-email/17-map-recipient-email.mp4"></video>
 
-Configurar destinatário:
-
-Clique no campo "To"
-
-Selecione o e-mail do cliente a partir das variáveis
-
-Garanta que o e-mail esteja corretamente mapeado
-
-Definir assunto do e-mail:
-
-Use conteúdo dinâmico: "Obrigado pelo seu tempo, {customer_name}!"
-
-Inclua o nome da empresa ou referência da chamada
+1. **Configure o destinatário:**
+   - Clique no campo "To" de e-mail
+   - **Selecione o e-mail do cliente** das variáveis da chamada
+   - Certifique-se de que o endereço de e-mail está mapeado corretamente
+2. **Defina o assunto do e-mail:**
+   - Use conteúdo dinâmico: "Obrigado pelo seu tempo, {customer_name}!"
+   - Inclua nome da empresa ou referência da chamada
+   - Mantenha o assunto profissional e relevante
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/post-call-email/19-compose-email-body.mp4"></video>
 
-Criar o corpo do e-mail com conteúdo dinâmico:
+1. **Escreva o corpo do e-mail com conteúdo dinâmico:**
+   - **Clique no campo "Body"** para começar a escrever seu e-mail
+   - **Digite o conteúdo do seu e-mail** com placeholders para variáveis
+   - **Exemplo de modelo de e-mail:**
 
-Olá {customer_name},
+Hi {customer_name},
 
-Obrigado por dedicar seu tempo para falar conosco hoje. Abaixo está um resumo da nossa conversa:
+Obrigado por reservar um tempo para falar conosco hoje. Aqui está a transcrição da nossa conversa:
 
 {formatted_transcript}
 
-Próximos passos:
-- Faremos o follow-up conforme combinado
-- Fique à vontade para entrar em contato em caso de dúvidas
-- [Inclua os próximos passos específicos do seu negócio]
+Próximos Passos:
+- Faremos o acompanhamento conforme discutido
+- Fique à vontade para entrar em contato com qualquer dúvida
+- [Inclua próximos passos específicos de acordo com seu negócio]
 
 Atenciosamente,
 [Seu Nome/Empresa]
 [Informações de Contato]
 
-Etapa 10: Templates avançados de e-mail
+2. **Adicione variáveis dinâmicas ao seu e-mail:**
+   - **Para substituir {customer_name}:**
+     - **Clique onde deseja inserir a variável** no texto do e-mail
+     - **Um popup aparecerá** com as variáveis disponíveis
+     - **Pesquise e selecione "customer_name"** das variáveis da chamada
+     - **Clique em "Insert"** para adicionar a variável
+   - **Para substituir {formatted_transcript}:**
+     - **Clique onde deseja inserir a transcrição** no texto do e-mail
+     - **Navegue até "Post Call Variables"** no popup
+     - **Selecione a variável "formatted_transcript"**
+     - **Clique em "Insert"** para adicionar a variável
 
-Você pode criar e-mails mais profissionais utilizando HTML:
+## Passo 10: Modelos de E-mail Avançados
+Você pode criar e-mails mais profissionais usando formatação HTML:
 
-Selecione "HTML" como tipo de corpo
+1. **Selecione "HTML" como tipo de corpo** na sua ação de e-mail
+2. **No campo body, adicione código HTML** para formatação aprimorada
+3. **Use variáveis dinâmicas** da mesma forma que nos e-mails de texto simples
 
-Adicione código HTML para melhor formatação
-
-Use variáveis dinâmicas da mesma forma
-
-Etapa 11: Testar automação de e-mail
+## Passo 11: Testar a Automação de E-mail
 
 <video autoPlay muted loop playsinline src="/resources/tutorials/post-call-email/22-test-email-sending.mp4"></video>
 
-Clique em "Test Step"
+1. **Clique em "Test Step"** para enviar e-mail de teste
+2. **Verifique a entrega bem-sucedida** nos resultados do teste
+3. **Confira sua caixa de entrada de e-mail:**
+   - Verifique se o e-mail foi recebido
+   - Confirme que o conteúdo dinâmico foi preenchido corretamente
+   - Revise a formatação e o profissionalismo
 
-Verifique o envio com sucesso
+## Passo 12: Publicar e Monitorar
 
-Confira sua caixa de e-mail
+<Frame>
+<img src="/resources/tutorials/post-call-email/25-publish-email-automation.png" alt="Publishing email automation" />
+</Frame>
 
-Etapa 12: Publicar e monitorar
-<Frame> <img src="/resources/tutorials/post-call-email/25-publish-email-automation.png" alt="Publicando automação de e-mail" /> </Frame>
+1. **Clique em "Publish"** para ativar sua automação de e-mail
+2. **Monitore as execuções da automação** para entrega bem-sucedida de e-mails
 
-Clique em "Publish"
+## Melhores Práticas
 
-Monitore as execuções da automação
+### Conteúdo do E-mail
+- **Tom profissional** adequado ao seu setor
+- **Linhas de assunto claras** que indicam o propósito
+- **Conteúdo personalizado** usando dados da chamada de forma eficaz
+- **Chamada para ação clara** para os próximos passos
 
-Boas práticas
-Conteúdo de e-mail
+## Solução de Problemas
 
-Tom profissional
+### Problemas Comuns
 
-Assuntos claros
+**E-mails não estão sendo enviados:**
+- Verifique a conexão e autorização do serviço de e-mail
+- Confirme que os endereços de e-mail dos clientes são válidos
+- Verifique se a ação de e-mail está no branch condicional correto
+- Confirme que a automação está publicada e ativa
 
-Conteúdo personalizado
+**Conteúdo dinâmico não está sendo preenchido:**
+- Verifique o mapeamento de variáveis no modelo de e-mail
+- Confirme que as variáveis pós-chamada estão sendo extraídas corretamente
+- Certifique-se de que as variáveis da chamada contêm dados de e-mail
+- Teste com diferentes cenários de chamada
 
-Chamada para ação objetiva
-
-Solução de problemas
-Problemas comuns
-
-E-mails não enviados:
-
-Verifique a integração com o serviço de e-mail
-
-Confirme se os endereços são válidos
-
-Verifique se a automação está ativa
-
-Conteúdo dinâmico não aparece:
-
-Verifique o mapeamento das variáveis
-
-Confirme a extração das variáveis pós-chamada
-
-Teste com diferentes cenários
-
-Seus clientes agora receberão e-mails profissionais e personalizados após cada chamada bem-sucedida, fortalecendo o relacionamento e aumentando as taxas de conversão.
+Seus clientes agora receberão e-mails de acompanhamento profissionais e personalizados após cada chamada bem-sucedida, melhorando o relacionamento e as taxas de conversão!
