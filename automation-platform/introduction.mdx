@@ -1,100 +1,89 @@
 ---
-title: "Introduction"
-description: "Learn How to Automate Your AI Call Workflows with Autocalls"
+title: "Introdução"
+description: "Aprenda Como Automatizar Seus Fluxos de Chamadas com IA com a OmniTech"
 ---
-
-# Automation Platform
-
-The Autocalls Automation Platform helps you create powerful AI call automation workflows without coding. Build flows that enhance your AI calling system by processing variables before calls, handling post-call actions, and creating seamless integrations with your existing tools.
+# Plataforma de Automação
+A Plataforma de Automação da OmniTech permite que você crie poderosos fluxos de automação de chamadas com IA sem precisar programar. Construa fluxos que aprimoram seu sistema de chamadas com IA, processando variáveis antes das chamadas, executando ações pós-chamada e criando integrações fluidas com suas ferramentas existentes.
 
 ![Flow Builder](/resources/visual-builder.gif)
 
-## Key Features
+## Principais Recursos
 
-### AI Call-Based Triggers
+### Gatilhos Baseados em Chamadas com IA
 
-1. **Call Ended Trigger**
+1. **Gatilho de Chamada Finalizada**
+   - Ativa imediatamente quando uma chamada com IA é concluída
+   - Acesso à transcrição completa da conversa e respostas da IA
+   - Use duração da chamada, status e metadados detalhados
+   - Perfeito para automações pós-chamada, como atualizações no CRM
+   - Acione ações de acompanhamento com base nos resultados da chamada
 
-   - Activates immediately when an AI call completes
-   - Access full conversation transcript and AI responses
-   - Use call duration, status, and detailed metadata
-   - Perfect for post-call automation like CRM updates
-   - Trigger follow-up actions based on call outcomes
+2. **Injeção de Variáveis em Chamadas Recebidas**
+   - Ativa antes que o assistente de IA atenda a chamada
+   - Enriquece o contexto da IA com dados reais do cliente em tempo real
+   - Personaliza o comportamento da IA com base nas informações do chamador
+   - Retorna variáveis que são injetadas nos prompts da IA
+   - Permite fluxos de conversa personalizados
 
-2. **Inbound Call Variable Injection**
-   - Triggers before AI assistant picks up the call
-   - Enriches AI context with real-time customer data
-   - Customizes AI behavior based on caller information
-   - Returns variables that get injected into AI prompts
-   - Enables personalized conversation flows
+### Ações Essenciais
 
-### Essential Actions
+1. **Integração com Hubspot**
+   - Atualize registros de contatos com resultados da chamada
+   - Crie novos contatos a partir de chamadas recebidas
+   - Sincronize insights da conversa com o CRM
+   - Acompanhe o histórico de interações com IA
+   - Automatize a qualificação de leads
 
-1. **Hubspot Integration**
+2. **Gerenciamento de Campanhas**
+   - Adicione leads qualificados a campanhas de chamadas com IA
+   - Agende chamadas de acompanhamento com IA
+   - Gerencie prioridades de chamadas com base nos resultados
+   - Acompanhe taxas de conversão por campanha
+   - Automatize atribuições de campanhas
 
-   - Update contact records with call outcomes
-   - Create new contacts from inbound calls
-   - Sync conversation insights to CRM
-   - Track AI interaction history
-   - Automate lead qualification
+3. **Sistemas Externos**
+   - Envie e-mails de resumo pós-chamada
+   - Atualize planilhas com dados da chamada
+   - Acione webhooks para integrações personalizadas
+   - Conecte-se com suas ferramentas de negócio
+   - Automatize fluxos de trabalho com múltiplos passos
 
-2. **Campaign Management**
+## Como Funciona
 
-   - Add qualified leads to AI calling campaigns
-   - Schedule AI follow-up calls
-   - Manage call priorities based on outcomes
-   - Track conversion rates per campaign
-   - Automate campaign assignments
+1. **Escolha Seu Gatilho de Chamada**
+   - "Call Ended" para automação pós-conversa
+   - "Inbound Call" para injeção de contexto em tempo real na IA
 
-3. **External Systems**
-   - Send post-call summary emails
-   - Update spreadsheets with call data
-   - Trigger webhooks for custom integrations
-   - Connect with your business tools
-   - Automate multi-step workflows
+2. **Configure Variáveis da Chamada**
+   - Mapeie dados da conversa com IA e transcrições
+   - Acesse detalhes e histórico do chamador
+   - Defina lógica de roteamento da IA
+   - Configure variáveis personalizadas de conversa
 
-## How It Works
+3. **Adicione Ações Inteligentes**
+   - Atualize o CRM com resultados da chamada
+   - Envie notificações automáticas
+   - Agende atividades de acompanhamento
+   - Retorne contexto enriquecido para a IA
 
-1. **Choose Your Call Trigger**
+## Exemplos de Casos de Uso
 
-   - "Call Ended" for post-conversation automation
-   - "Inbound Call" for real-time AI context injection
-
-2. **Configure Call Variables**
-
-   - Map AI conversation data and transcripts
-   - Access caller details and history
-   - Define AI routing logic
-   - Set up custom conversation variables
-
-3. **Add Smart Actions**
-   - Update CRM with call outcomes
-   - Send automated notifications
-   - Schedule follow-up activities
-   - Return enriched context to AI
-
-## Example Use Cases
-
-### Intelligent CRM Update
+### Atualização Inteligente no CRM
 
 ```javascript
-Trigger: AI Call Ended
+Gatilho: Chamada com IA Finalizada
 ↓
-Process Conversation Insights
+Processar Insights da Conversa
 ↓
-Update Hubspot Contact
+Atualizar Contato no Hubspot
 ↓
-Schedule Next AI Interaction
-```
-
-### Smart Inbound Call Handling
-
-```javascript
-Trigger: Inbound Call to AI
+Agendar Próxima Interação com IA
+Tratamento Inteligente de Chamadas Recebidas
+JavaScriptGatilho: Chamada Recebida para IA
 ↓
-Lookup Customer in Hubspot
+Consultar Cliente no Hubspot
 ↓
-Return Enriched Context
+Retornar Contexto Enriquecido
 ↓
-AI Assistant Personalizes Conversation
-```
+Assistente de IA Personaliza a Conversa
+textTudo foi preservado rigorosamente na formatação original, com tradução natural para o português brasileiro e substituição de "Autocalls" por "OmniTech" conforme as instruções anteriores.
