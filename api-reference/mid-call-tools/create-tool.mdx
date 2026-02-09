@@ -1,107 +1,107 @@
 ---
-title: "Create mid call tool"
+title: "Criar ferramenta de uso durante a chamada"
 api: "POST /user/tools"
-description: "Create a new mid call tool"
+description: "Cria uma nova ferramenta para uso durante a chamada"
 ---
 
-This endpoint allows you to create a new mid call tool that can be used by your AI assistants to interact with external APIs during calls.
+Este endpoint permite criar uma nova ferramenta de uso durante a chamada que pode ser utilizada pelos seus assistentes de IA para interagir com APIs externas durante as ligações.
 
-### Body Parameters
+### Parâmetros do Corpo
 
 <ParamField body="name" type="string" required>
-  Tool name - must contain only lowercase letters and underscores, and start with a letter (e.g., `get_weather`, `book_appointment`)
+  Nome da ferramenta - deve conter apenas letras minúsculas e underscores, e começar com uma letra (ex.: `get_weather`, `book_appointment`)
 </ParamField>
 
 <ParamField body="description" type="string" required>
-  Detailed explanation of when and how the AI should use this tool (max 255 characters)
+  Explicação detalhada de quando e como a IA deve utilizar esta ferramenta (máximo de 255 caracteres)
 </ParamField>
 
 <ParamField body="endpoint" type="string" required>
-  Valid URL of the API endpoint to call
+  URL válida do endpoint de API a ser chamado
 </ParamField>
 
 <ParamField body="method" type="string" required>
-  HTTP method: `GET`, `POST`, `PUT`, `PATCH`, or `DELETE`
+  Método HTTP: `GET`, `POST`, `PUT`, `PATCH` ou `DELETE`
 </ParamField>
 
 <ParamField body="timeout" type="integer" optional>
-  Request timeout in seconds (1-30, default: 10)
+  Timeout da requisição em segundos (1-30, padrão: 10)
 </ParamField>
 
 <ParamField body="headers" type="array" optional>
-  HTTP headers to send with the request
-  <Expandable title="headers properties">
+  Headers HTTP a serem enviados na requisição
+  <Expandable title="propriedades de headers">
     <ParamField body="name" type="string" required>
-      Header name
+      Nome do header
     </ParamField>
     <ParamField body="value" type="string" required>
-      Header value
+      Valor do header
     </ParamField>
   </Expandable>
 </ParamField>
 
 <ParamField body="schema" type="array" optional>
-  Parameters that the AI will extract from conversation and send to the endpoint
-  <Expandable title="schema properties">
+  Parâmetros que a IA irá extrair da conversa e enviar para o endpoint
+  <Expandable title="propriedades de schema">
     <ParamField body="name" type="string" required>
-      Parameter name (2-32 chars, must start with letter, can contain letters and underscores)
+      Nome do parâmetro (2-32 caracteres, deve começar com letra, pode conter letras e underscores)
     </ParamField>
     <ParamField body="type" type="string" required>
-      Parameter type: `string`, `number`, or `boolean`
+      Tipo do parâmetro: `string`, `number` ou `boolean`
     </ParamField>
     <ParamField body="description" type="string" required>
-      Description to help AI understand how to extract this parameter (3-255 chars)
+      Descrição para ajudar a IA a entender como extrair este parâmetro (3-255 caracteres)
     </ParamField>
   </Expandable>
 </ParamField>
 
-### Response fields
+### Campos da Resposta
 
 <ResponseField name="message" type="string">
-  Success message
+  Mensagem de sucesso
 </ResponseField>
 
 <ResponseField name="data" type="object">
-  The created tool object
-  <Expandable title="data properties">
+  Objeto da ferramenta criada
+  <Expandable title="propriedades de data">
     <ResponseField name="id" type="integer">
-      The unique identifier of the tool
+      Identificador único da ferramenta
     </ResponseField>
 
     <ResponseField name="name" type="string">
-      The name of the tool
+      Nome da ferramenta
     </ResponseField>
 
     <ResponseField name="description" type="string">
-      Tool description
+      Descrição da ferramenta
     </ResponseField>
 
     <ResponseField name="endpoint" type="string">
-      API endpoint URL
+      URL do endpoint da API
     </ResponseField>
 
     <ResponseField name="method" type="string">
-      HTTP method
+      Método HTTP
     </ResponseField>
 
     <ResponseField name="timeout" type="integer">
-      Request timeout in seconds
+      Timeout da requisição em segundos
     </ResponseField>
 
     <ResponseField name="headers" type="array">
-      HTTP headers
+      Headers HTTP
     </ResponseField>
 
     <ResponseField name="schema" type="array">
-      Parameter schema
+      Esquema de parâmetros
     </ResponseField>
 
     <ResponseField name="created_at" type="string">
-      ISO 8601 timestamp
+      Timestamp ISO 8601
     </ResponseField>
 
     <ResponseField name="updated_at" type="string">
-      ISO 8601 timestamp
+      Timestamp ISO 8601
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -110,12 +110,12 @@ This endpoint allows you to create a new mid call tool that can be used by your 
 
 ```json 201 Created
 {
-  "message": "Tool created successfully",
+  "message": "Ferramenta criada com sucesso",
   "data": {
     "id": 1,
     "name": "check_order_status",
-    "description": "Use this tool to check the status of a customer's order.",
-    "endpoint": "https://api.yourstore.com/orders/status",
+    "description": "Use esta ferramenta para verificar o status do pedido de um cliente.",
+    "endpoint": "https://api.sualoja.com/orders/status",
     "method": "GET",
     "timeout": 10,
     "headers": [
@@ -132,47 +132,38 @@ This endpoint allows you to create a new mid call tool that can be used by your 
       {
         "name": "order_id",
         "type": "string",
-        "description": "The customer's order ID"
+        "description": "ID do pedido do cliente"
       },
       {
         "name": "order_number",
         "type": "number",
-        "description": "The numeric order number"
+        "description": "Número do pedido (numérico)"
       },
       {
         "name": "priority_order",
         "type": "boolean",
-        "description": "Whether this is a priority order"
+        "description": "Indica se este é um pedido prioritário"
       }
     ],
     "created_at": "2025-10-10T12:00:00.000000Z",
     "updated_at": "2025-10-10T12:00:00.000000Z"
   }
 }
-```
-
-```json 422 Validation Error
 {
-  "message": "The name field must contain only lowercase letters and underscores, and start with a letter.",
+  "message": "O campo name deve conter apenas letras minúsculas e underscores, e começar com uma letra.",
   "errors": {
     "name": [
-      "Tool name must contain only lowercase letters and underscores, and start with a letter."
+      "O nome da ferramenta deve conter apenas letras minúsculas e underscores, e começar com uma letra."
     ]
   }
 }
-```
-
-```json 422 Plan Limit Reached
 {
-  "message": "You have reached your plan limit of 5 mid call tools. Please upgrade your plan to create more tools."
+  "message": "Você atingiu o limite do seu plano de 5 ferramentas de uso durante a chamada. Faça upgrade do seu plano para criar mais ferramentas."
 }
-```
-
 </ResponseExample>
+Anexando Ferramentas aos Assistentes
+Após criar uma ferramenta, você precisa anexá-la a um assistente para utilizá-la durante as chamadas. As ferramentas são gerenciadas pela API de Assistentes:
 
-### Attaching Tools to Assistants
+Criar Assistente - Use o parâmetro tool_ids para anexar ferramentas ao criar um assistente
 
-After creating a tool, you need to attach it to an assistant to use it during calls. Tools are managed through the Assistant API:
-
-- **[Create Assistant](/api-reference/assistants/create-assistant)** - Use the `tool_ids` parameter to attach tools when creating an assistant
-- **[Update Assistant](/api-reference/assistants/update-assistant)** - Use the `tool_ids` parameter to add, remove, or replace tools on an existing assistant
+Atualizar Assistente - Use o parâmetro tool_ids para adicionar, remover ou substituir ferramentas em um assistente existente
