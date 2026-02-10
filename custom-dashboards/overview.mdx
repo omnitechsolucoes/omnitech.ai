@@ -1,197 +1,197 @@
 ---
-title: "Custom Dashboards"
+title: "Dashboards Personalizados"
 icon: "chart-line"
-description: "Create personalized dashboards with widgets to track your call metrics and performance"
+description: "Crie dashboards personalizados com widgets para acompanhar métricas de chamadas e desempenho"
 ---
 
-Custom Dashboards let you build tailored analytics views with drag-and-drop widgets. Track the metrics that matter most to your business with stats, charts, and tables.
+Os Dashboards Personalizados permitem criar visualizações analíticas sob medida com widgets de arrastar e soltar. Acompanhe as métricas mais importantes para o seu negócio com estatísticas, gráficos e tabelas.
 
-## What are Custom Dashboards?
+## O que são Dashboards Personalizados?
 
-Personalized analytics pages you create with widgets displaying your call data. Each dashboard contains multiple widgets showing different data views.
+Páginas analíticas personalizadas que você cria com widgets exibindo seus dados de chamadas. Cada dashboard contém vários widgets mostrando diferentes visões de dados.
 
 <CardGroup cols={3}>
-  <Card title="Stat Widgets" icon="chart-simple">
-    Single metrics like total calls, averages, or success rates
+  <Card title="Widgets de Estatística" icon="chart-simple">
+    Métricas únicas como total de chamadas, médias ou taxas de sucesso
   </Card>
 
-  <Card title="Chart Widgets" icon="chart-line">
-    Visual trends with 8 chart types (line, bar, pie, etc.)
+  <Card title="Widgets de Gráfico" icon="chart-line">
+    Tendências visuais com 8 tipos de gráfico (linha, barra, pizza, etc.)
   </Card>
 
-  <Card title="Table Widgets" icon="table">
-    Detailed records with custom columns and filters
+  <Card title="Widgets de Tabela" icon="table">
+    Registros detalhados com colunas e filtros personalizados
   </Card>
 </CardGroup>
 
-## Quick Start
+## Início Rápido
 
-### Create a Dashboard
+### Criar um Dashboard
 
-1. Click **"Create Custom Dashboard"** in sidebar
-2. Enter name (e.g., "Sales Performance")
-3. Choose icon
-4. Click **"Create Dashboard"**
+1. Clique em **"Create Custom Dashboard"** na barra lateral
+2. Informe o nome (ex.: "Desempenho de Vendas")
+3. Escolha o ícone
+4. Clique em **"Create Dashboard"**
 
-### Add Widgets
+### Adicionar Widgets
 
-**Option 1: Use Presets** (21 ready-made widgets)
-1. Click **"Unlock to customize"**
-2. Click **"Add"** button
-3. Select preset widget (marked with emoji 📊📈📋)
-4. Click **"Save"**
+**Opção 1: Usar Presets** (21 widgets prontos)
+1. Clique em **"Unlock to customize"**
+2. Clique no botão **"Add"**
+3. Selecione o widget preset (marcado com emoji 📊📈📋)
+4. Clique em **"Save"**
 
-**Option 2: Create Custom Widget**
-1. Click **"Manage Widgets"** → **"Create New Widget"**
-2. Choose type: Statistic, Chart, or Table
-3. Configure data source and options
-4. Save widget
-5. Add to dashboard
+**Opção 2: Criar Widget Personalizado**
+1. Clique em **"Manage Widgets"** → **"Create New Widget"**
+2. Escolha o tipo: Estatística, Gráfico ou Tabela
+3. Configure a fonte de dados e opções
+4. Salve o widget
+5. Adicione ao dashboard
 
-## Widget Types
+## Tipos de Widget
 
-### Stat Widget 📊
+### Widget de Estatística 📊
 
-Single number with optional comparison and mini-chart.
+Número único com comparação opcional e mini-gráfico.
 
-**Example uses:**
-- Total calls this month
-- Average call duration
-- Success rate percentage
+**Exemplos de uso:**
+- Total de chamadas no mês
+- Duração média das chamadas
+- Percentual de sucesso
 
-**Key options:**
-- Data source: calls, leads, campaigns, assistants, phone_numbers, sms
-- Aggregation: COUNT, SUM, AVG, MAX, MIN
-- Color: Primary (Blue), Success (Green), Warning (Orange), Danger (Red), Info (Cyan), Gray
-- Label and description text
-- Show mini chart (daily trend)
-- Compare with previous period (percentage change)
-- Date range: Today, Yesterday, Last 7/14/30/60/90 days, Last 6 months, Last year
-- Conditions (filters)
+**Principais opções:**
+- Fonte de dados: calls, leads, campaigns, assistants, phone_numbers, sms
+- Agregação: COUNT, SUM, AVG, MAX, MIN
+- Cor: Primary (Azul), Success (Verde), Warning (Laranja), Danger (Vermelho), Info (Ciano), Gray
+- Texto de rótulo e descrição
+- Mostrar mini-gráfico (tendência diária)
+- Comparar com período anterior (variação percentual)
+- Intervalo de datas: Today, Yesterday, Last 7/14/30/60/90 days, Last 6 months, Last year
+- Condições (filtros)
 
-### Chart Widget 📈
+### Widget de Gráfico 📈
 
-Visualize trends and distributions.
+Visualização de tendências e distribuições.
 
-**Chart types:**
-- **Line** - Trends over time
-- **Bar** - Compare categories or time periods
-- **Area** - Filled trend chart
-- **Pie** - Proportions (requires Group By)
-- **Donut** - Pie with center hole (requires Group By)
-- **Polar Area** - Circular with varying radius (requires Group By)
-- **Radar** - Multi-axis comparison
-- **Radial Bar** - Single progress/percentage indicator
+**Tipos de gráfico:**
+- **Line** - Tendências ao longo do tempo
+- **Bar** - Comparação de categorias ou períodos
+- **Area** - Gráfico de tendência preenchido
+- **Pie** - Proporções (requer Group By)
+- **Donut** - Pizza com furo central (requer Group By)
+- **Polar Area** - Circular com raio variável (requer Group By)
+- **Radar** - Comparação multi-eixo
+- **Radial Bar** - Indicador único de progresso/percentual
 
-**Key options:**
-- Data source: calls, leads, campaigns, assistants, phone_numbers, sms
-- Aggregation: COUNT, SUM, AVG, MAX, MIN
-- Chart type: Line Chart, Bar Chart, Area Chart, Pie Chart, Donut Chart, Polar Area, Radar, Radial Bar
-- Color: Primary (Blue), Success (Green), Warning (Orange), Danger (Red), Info (Cyan), Gray
-- Group by period: Hourly, Daily, Weekly, Monthly (for time-series)
-- Group by field: status, campaign, assistant, any column (for categories)
-- Chart height: 200-800px
-- Show grid lines, legend, tooltips, data labels, toolbar
-- Line curve: smooth, straight, stepline
-- Line width: 1-10px
-- Gradient (radialBar only)
-- Date range: Today, Yesterday, Last 7/14/30/60/90 days, Last 6 months, Last year
-- Conditions (filters)
+**Principais opções:**
+- Fonte de dados: calls, leads, campaigns, assistants, phone_numbers, sms
+- Agregação: COUNT, SUM, AVG, MAX, MIN
+- Tipo de gráfico: Line Chart, Bar Chart, Area Chart, Pie Chart, Donut Chart, Polar Area, Radar, Radial Bar
+- Cor: Primary (Azul), Success (Verde), Warning (Laranja), Danger (Vermelho), Info (Ciano), Gray
+- Agrupar por período: Hourly, Daily, Weekly, Monthly (para séries temporais)
+- Agrupar por campo: status, campaign, assistant, qualquer coluna (para categorias)
+- Altura do gráfico: 200-800px
+- Exibir linhas de grade, legenda, tooltips, rótulos de dados, barra de ferramentas
+- Curva da linha: smooth, straight, stepline
+- Espessura da linha: 1-10px
+- Gradiente (apenas radialBar)
+- Intervalo de datas: Today, Yesterday, Last 7/14/30/60/90 days, Last 6 months, Last year
+- Condições (filtros)
 
-### Table Widget 📋
+### Widget de Tabela 📋
 
-Detailed records with sortable columns.
+Registros detalhados com colunas ordenáveis.
 
-**Example uses:**
-- Recent calls with details
-- Failed calls for review
-- Lead contact history
+**Exemplos de uso:**
+- Chamadas recentes com detalhes
+- Chamadas com falha para revisão
+- Histórico de contato do lead
 
-**Key options:**
-- Data source: calls, leads, campaigns, assistants, phone_numbers, sms
-- Campaign filter (for leads - enables variable columns)
-- Assistant filter (for calls - enables evaluation field columns)
-- Column selection: basic, relationships, evaluation fields, lead variables
-- Sort by: any basic column
-- Sort direction: desc (newest first), asc (oldest first)
-- Rows per page: 1-100
-- Date range: Today, Yesterday, Last 7/14/30/60/90 days, Last 6 months, Last year
-- Conditions (filters)
+**Principais opções:**
+- Fonte de dados: calls, leads, campaigns, assistants, phone_numbers, sms
+- Filtro de campanha (para leads – habilita colunas de variáveis)
+- Filtro de assistente (para calls – habilita colunas de campos de avaliação)
+- Seleção de colunas: básicas, relacionamentos, campos de avaliação, variáveis do lead
+- Ordenar por: qualquer coluna básica
+- Direção de ordenação: desc (mais recentes primeiro), asc (mais antigas primeiro)
+- Linhas por página: 1-100
+- Intervalo de datas: Today, Yesterday, Last 7/14/30/60/90 days, Last 6 months, Last year
+- Condições (filtros)
 
-## Filtering Data
+## Filtragem de Dados
 
-All widgets support powerful filters:
+Todos os widgets suportam filtros avançados:
 
-**Date ranges:** Today, Yesterday, Last 7/14/30/60/90 days, Last 6 months, Last year
+**Intervalos de datas:** Today, Yesterday, Last 7/14/30/60/90 days, Last 6 months, Last year
 
-**Conditions:** Multiple AND filters
-- Status equals "completed"
-- Duration greater than 60 seconds
-- Assistant name equals "Sales Bot"
+**Condições:** Múltiplos filtros AND
+- Status igual a "completed"
+- Duração maior que 60 segundos
+- Nome do assistente igual a "Sales Bot"
 
-**Evaluation fields:** Filter by post-call evaluation values
-- Column: Extracted Variables
-- Extracted Variable Name: Custom variable
-- Custom Variable Name: appointment_booked
-- Operator: =
-- Variable Value: true
+**Campos de avaliação:** Filtrar por valores de avaliação pós-chamada
+- Coluna: Extracted Variables
+- Nome da Variável Extraída: Variável personalizada
+- Nome da Variável Personalizada: appointment_booked
+- Operador: =
+- Valor da Variável: true
 
-## Layout Management
+## Gerenciamento de Layout
 
-### Edit Mode
+### Modo de Edição
 
-1. Click **"Unlock to customize"**
-2. Drag widgets to reorder
-3. Resize widgets (1-12 columns wide)
-4. Remove widgets with X button
-5. Click **"Save"** to persist
-6. Click **"Lock"** to exit edit mode
+1. Clique em **"Unlock to customize"**
+2. Arraste os widgets para reorganizar
+3. Redimensione widgets (1-12 colunas de largura)
+4. Remova widgets com o botão X
+5. Clique em **"Save"** para salvar
+6. Clique em **"Lock"** para sair do modo de edição
 
-### Best Practices
+### Melhores Práticas
 
-**Widget sizing:**
-- Stats: 3-4 columns (fit 3-4 per row)
-- Charts: 6-12 columns
-- Tables: 12 columns (full width)
+**Tamanho dos widgets:**
+- Estatísticas: 3-4 colunas (cabem 3-4 por linha)
+- Gráficos: 6-12 colunas
+- Tabelas: 12 colunas (largura total)
 
-**Layout tips:**
-- Put KPIs at top
-- Group related metrics
-- Place tables at bottom
+**Dicas de layout:**
+- Coloque KPIs no topo
+- Agrupe métricas relacionadas
+- Posicione tabelas na parte inferior
 
-## Common Use Cases
+## Casos de Uso Comuns
 
-### Sales Dashboard
-- Stat: Successful calls (filter by evaluation field "appointment_booked")
-- Chart: Daily trend of successful calls
-- Table: Recent successful calls with appointment details
+### Dashboard de Vendas
+- Estatística: Chamadas bem-sucedidas (filtro por campo de avaliação "appointment_booked")
+- Gráfico: Tendência diária de chamadas bem-sucedidas
+- Tabela: Chamadas recentes bem-sucedidas com detalhes de agendamento
 
-### Support Quality
-- Stat: Average call duration
-- Chart: Call status breakdown (pie chart)
-- Table: Recent calls with evaluation scores
+### Qualidade de Suporte
+- Estatística: Duração média das chamadas
+- Gráfico: Distribuição de status das chamadas (gráfico de pizza)
+- Tabela: Chamadas recentes com pontuações de avaliação
 
-### Campaign Performance
-- Stat: Total campaign calls
-- Chart: Calls per campaign (bar chart)
-- Table: Top performing campaigns
+### Desempenho de Campanha
+- Estatística: Total de chamadas da campanha
+- Gráfico: Chamadas por campanha (gráfico de barras)
+- Tabela: Campanhas com melhor desempenho
 
-## Troubleshooting
+## Solução de Problemas
 
-**Widget shows "No data":**
-- Expand date range
-- Check filters aren't too restrictive
-- Verify you have records
+**Widget exibindo "No data":**
+- Amplie o intervalo de datas
+- Verifique se os filtros não estão restritivos demais
+- Confirme se existem registros
 
-**Slow loading:**
-- Reduce widget count (keep under 20)
-- Use date range filters
-- Clear browser cache
+**Carregamento lento:**
+- Reduza a quantidade de widgets (mantenha abaixo de 20)
+- Utilize filtros de intervalo de datas
+- Limpe o cache do navegador
 
-**Dashboard not in sidebar:**
-- Refresh page
-- Check plan includes feature
+**Dashboard não aparece na barra lateral:**
+- Atualize a página
+- Verifique se o plano inclui o recurso
 
 <Note>
-For detailed configuration, see individual widget type guides.
+Para configuração detalhada, consulte os guias individuais de cada tipo de widget.
 </Note>
