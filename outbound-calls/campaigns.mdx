@@ -1,48 +1,48 @@
 ---
-title: "Creating & Managing Campaigns"
+title: "Criação e Gerenciamento de Campanhas"
 icon: "bullhorn"
-description: "Step-by-step guide to creating and managing outbound call campaigns, including lead imports and monitoring"
+description: "Guia passo a passo para criar e gerenciar campanhas de chamadas outbound, incluindo importação de leads e monitoramento"
 ---
 
-An outbound "campaign" determines when, how, and to whom calls are made. Campaigns automate calls to multiple leads using your AI assistant with intelligent scheduling and retry logic.
+Uma **campanha outbound** define **quando**, **como** e **para quem** as chamadas serão feitas. As campanhas automatizam ligações para múltiplos leads usando seu assistente de IA, com agendamento inteligente e lógica de tentativas.
 
-## Quick Setup
+## Configuração Rápida
 
-1. **Go to Outbound / Campaigns** in your dashboard
-2. **Click "Create New Campaign"**:
-   - **Name**: e.g. "January Promo," "Payment Reminder," etc.
-   - **Assistant**: which AI assistant will handle these calls?
-   - **Schedule**: choose time windows and allowed days
+1. **Acesse Outbound / Campaigns** no painel
+2. **Clique em “Create New Campaign”**:
+   - **Name**: ex. “Promoção Janeiro”, “Lembrete de Pagamento”
+   - **Assistant**: qual assistente de IA fará as chamadas?
+   - **Schedule**: defina janelas de horário e dias permitidos
 
-## Lead Import Options
+## Opções de Importação de Leads
 
-- **CSV File**: Upload phone numbers (plus any extra columns, like name or account number)
-- **Google Sheets**: Connect via the no-code platform or direct integration to pull leads
-- **CRM Integration**: HubSpot, GoHighLevel, etc. can send leads directly via API or automation
+- **Arquivo CSV**: Envie números de telefone e colunas extras (nome, contrato, conta, etc.)
+- **Google Sheets**: Integração via plataforma no-code ou conexão direta
+- **Integração com CRM**: HubSpot, GoHighLevel e outros via API ou automações
 
-## Key Settings
+## Configurações Principais
 
-**Call Retries & Scheduling:**
-- **Max Retries**: e.g., attempt each lead up to 2 times if they don't answer
-- **Retry Interval**: minutes/hours between retries
-- **Time Window**: e.g., only call between 9 AM and 6 PM local time to avoid inconveniencing leads
+### Tentativas e Agendamento
+- **Max Retries**: número máximo de tentativas por lead (ex.: 2 ou 3)
+- **Retry Interval**: intervalo em minutos ou horas entre tentativas
+- **Time Window**: janela de chamadas (ex.: apenas das 9h às 18h no horário local)
 
-**Monitoring & Control:**
-- Once live, calls happen automatically during allowed hours
-- You can **pause** or **stop** the campaign anytime to revise your script or leads list
-- **Campaign Reports** show call results, answer rates, and duration analytics
+### Monitoramento e Controle
+- Após ativada, a campanha executa chamadas automaticamente nos horários permitidos
+- É possível **pausar** ou **encerrar** a campanha a qualquer momento
+- **Relatórios da campanha** mostram resultados, taxa de atendimento e duração das chamadas
 
-## Best Practices
+## Boas Práticas
 
-- **Conservative scheduling**: Business hours, respect time zones
-- **Start with 2-3 retries**: Monitor and adjust based on feedback
-- **Clean lead data**: Valid numbers, remove duplicates
-- **Monitor costs**: Large campaigns can run thousands of parallel calls
+- **Agendamento conservador**: Horário comercial e respeito ao fuso do lead
+- **Comece com 2–3 tentativas**: Ajuste conforme o retorno
+- **Base de leads limpa**: Números válidos, sem duplicidade
+- **Acompanhe custos**: Campanhas grandes podem gerar alto consumo de minutos
 
 <Note>
-**Large campaigns** with thousands of leads can run concurrently, as AI can handle parallel calls. Watch your minute usage to avoid unexpected costs.
+**Campanhas grandes**, com milhares de leads, podem rodar em paralelo, já que a IA suporta múltiplas chamadas simultâneas. Monitore o consumo de minutos para evitar custos inesperados.
 </Note>
 
 ---
 
-For comprehensive setup instructions, advanced features, lead management, status tracking, and troubleshooting, see the complete [Campaigns Documentation](/campaigns/index).
+Para instruções completas, recursos avançados, gestão de leads, controle de status e troubleshooting, consulte a [Documentação Completa de Campanhas](/campaigns/index).
