@@ -1,45 +1,61 @@
 ---
-title: "How It Works (Quick Overview)"
+title: "Como Funciona (Visão Geral Rápida)"
 icon: "diagram-project"
-description: "Understand the technical flow of how Autocalls.ai processes and handles phone conversations using AI"
+description: "Entenda o fluxo técnico de como a plataforma processa e gerencia conversas telefônicas com IA"
 ---
 
-Autocalls.ai blends **AI voice recognition** with **LLM-based replies** to conduct live phone conversations. Below is a simplified flow:
+A plataforma combina **reconhecimento de voz por IA** com **respostas baseadas em LLM** para conduzir conversas telefônicas em tempo real. Abaixo está um fluxo simplificado do funcionamento:
 
-1. **Caller or Lead is Dialed**
+## Fluxo Geral
 
-   - **Inbound**: A customer dials your assigned phone number.
-   - **Outbound**: Autocalls.ai's system calls a list of phone numbers from your campaign.
+1. **Chamada Iniciada (Caller ou Lead)**
 
-2. **Speech Recognition**  
-   The AI listens to what the person says and transcribes it into text in real time.
+   - **Inbound:** Um cliente liga para o número telefônico atribuído.
+   - **Outbound:** O sistema realiza chamadas para uma lista de contatos a partir de uma campanha.
 
-3. **LLM Decision**  
-   Autocalls.ai uses a large language model (LLM) and your configured "system prompt" to craft a reply or decide the next action (like transferring the call).
+2. **Reconhecimento de Fala**
 
-4. **Voice Output**  
-   The AI's response is converted to natural-sounding speech via our voice engine (ElevenLabs voices).
+   - A IA escuta o que a pessoa diz.
+   - O áudio é transcrito para texto em tempo real.
 
-5. **Result & Actions**
+3. **Decisão pelo LLM**
 
-   - For **Inbound**: The AI may answer questions, verify info, or take a message.
-   - For **Outbound**: The AI can pitch a product, qualify leads, or transfer interested callers to a human agent.
+   - O modelo de linguagem (LLM) analisa o texto.
+   - O **system prompt** define o tom, as regras e a próxima ação (responder, transferir, encerrar, etc.).
 
-6. **Data & Reporting**  
-   You get transcripts, call recordings, call outcomes (like "no answer" or "success"), and the ability to automate follow-up actions.
+4. **Geração de Voz**
 
-## Distinctions: Inbound vs. Outbound
+   - A resposta é convertida em áudio natural por meio do motor de voz (ex.: vozes ElevenLabs).
 
-- **Inbound**
+5. **Resultado e Ações**
 
-  - Caller dials a number you rented or integrated.
-  - AI picks up, greets, and handles queries or routes the caller if needed.
+   - **Inbound:** A IA responde dúvidas, valida informações ou registra recados.
+   - **Outbound:** A IA apresenta ofertas, qualifica leads ou transfere para um atendente humano.
 
-- **Outbound**
-  - You upload or sync leads.
-  - AI dials each number, follows your call script, possibly transfers if the lead is interested.
+6. **Dados e Relatórios**
 
-## Next Steps
+   - Transcrição completa da chamada
+   - Gravação de áudio
+   - Status da chamada (sucesso, não atendida, falha, etc.)
+   - Possibilidade de automações pós-chamada (CRM, e-mail, planilhas)
 
-- Learn about [**Key Terminology**](/introduction/key-terminology) (like "AI Assistant," "Campaign," etc.).
-- Jump into [**Getting Started**](/getting-started) to set up your first AI assistant.
+## Diferenças Entre Inbound e Outbound
+
+### Inbound
+
+- O cliente liga para um número alugado ou integrado via SIP.
+- A IA atende automaticamente.
+- Segue o prompt configurado para suporte, vendas ou triagem.
+- Pode transferir para um humano se necessário.
+
+### Outbound
+
+- Leads são importados ou sincronizados.
+- A IA liga automaticamente para cada contato.
+- Segue um roteiro definido no prompt.
+- Pode transferir chamadas qualificadas para agentes humanos.
+
+## Próximos Passos
+
+- Veja os [**Conceitos Principais**](/introduction/key-terminology), como “Assistente de IA” e “Campanha”.
+- Acesse [**Primeiros Passos**](/getting-started) para configurar seu primeiro assistente.
