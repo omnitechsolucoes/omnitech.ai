@@ -1,41 +1,46 @@
 ---
-title: "Assigning Numbers to Assistants"
+title: "Vinculando Números aos Assistentes"
 icon: "link"
-description: "Learn how to connect your phone numbers to AI assistants for both inbound and outbound calls"
+description: "Aprenda como conectar números telefônicos aos assistentes de IA para chamadas inbound e outbound"
 ---
 
-After you've acquired a number (or configured SIP or Caller ID), you'll need to assign it to your AI assistant. The process is the same whether you're using the number for inbound or outbound calls.
+Após adquirir um número telefônico (ou configurar SIP ou Caller ID), é necessário vinculá-lo a um assistente de IA. O processo é o mesmo tanto para chamadas inbound quanto outbound.
 
-## Assigning a Number
+## Atribuindo um Número
 
-1. Go to **Assistants** → **(Your Assistant)** → **[Settings](/ai-assistants/settings/general#phone-number-configuration)**
-2. Under **Phone Numbers**, select a number from your Autocalls.ai inventory
-3. Click **Save** to apply the changes
+1. Acesse **Assistentes** → **(Seu Assistente)** → **Configurações**
+2. Na seção **Números Telefônicos**, selecione um número disponível no inventário da plataforma
+3. Clique em **Salvar** para aplicar as alterações
 
-## Number Usage
+## Uso do Número
 
-Once assigned, the number can be used for:
+Depois de vinculado, o número pode ser utilizado para:
 
-- **Inbound**: Callers dialing this number will reach your AI assistant
-- **Outbound**: The number will appear as Caller ID for outbound campaigns
-- **Both**: The same number can handle both inbound and outbound calls
+- **Inbound**  
+  Chamadas recebidas nesse número serão atendidas pelo assistente de IA
 
-## Number Verification
+- **Outbound**  
+  O número será exibido como Caller ID nas campanhas outbound
 
-For numbers not rented from Autocalls.ai:
+- **Inbound e Outbound**  
+  O mesmo número pode operar nos dois modos simultaneamente
 
-- You'll need to verify ownership via **OTP code** or a **verification call**
-- Once verified, the number can be used for both inbound and outbound
-- Verification status persists across different assistants
+## Verificação de Número
 
-## Testing
+Para números que não foram adquiridos diretamente pela plataforma:
 
-Before going live:
+- Será necessário confirmar a posse do número via **código OTP** ou **chamada de verificação**
+- Após a validação, o número poderá ser usado tanto para inbound quanto outbound
+- O status de verificação permanece válido para outros assistentes
 
-1. Make an inbound test call to verify the assistant answers
-2. Run a test outbound call to check Caller ID display
-3. Verify any specific features (call transfers, voicemail, etc.)
+## Testes
+
+Antes de colocar em produção, recomenda-se:
+
+1. Realizar uma chamada inbound de teste para confirmar o atendimento
+2. Executar uma chamada outbound de teste para validar o Caller ID
+3. Conferir funcionalidades específicas (transferência de chamadas, detecção de voicemail, etc.)
 
 ---
 
-**Tip:** Always test both inbound and outbound functionality after making any changes to number assignments.
+**Dica:** Sempre teste chamadas inbound e outbound após alterar a atribuição de números para garantir que tudo esteja funcionando corretamente.
