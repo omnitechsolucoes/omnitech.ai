@@ -1,116 +1,116 @@
 ---
-title: "Leads Overview"
+title: "Visão Geral de Leads"
 icon: "users"
-description: "Manage your campaign contacts with primary leads, secondary contacts, and custom variables"
+description: "Gerencie os contatos das suas campanhas com leads principais, contatos secundários e variáveis personalizadas"
 ---
 
-Leads are the contacts that your campaigns will call. Each lead can have multiple phone numbers (secondary contacts) and custom variables that your AI assistant can use during conversations.
+Leads são os contatos que suas campanhas irão ligar. Cada lead pode ter **múltiplos números de telefone** (contatos secundários) e **variáveis personalizadas** que o assistente de IA utiliza durante as conversas.
 
-## What are Leads?
+## O que são Leads?
 
-Leads represent the people or businesses you want to contact through your campaigns. The lead system supports:
+Leads representam pessoas ou empresas que você deseja contatar por meio das campanhas. O sistema de leads oferece suporte a:
 
 <CardGroup cols={2}>
-  <Card title="Primary Contacts" icon="user">
-    **Main contact** for each lead
+  <Card title="Contato Principal" icon="user">
+    **Contato principal** de cada lead
     
-    The primary phone number and contact information
+    Número de telefone principal e informações básicas
   </Card>
   
-  <Card title="Secondary Contacts" icon="users">
-    **Additional phone numbers** for the same lead
+  <Card title="Contatos Secundários" icon="users">
+    **Números adicionais** para o mesmo lead
     
-    Backup contacts, decision makers, or alternative numbers
+    Contatos alternativos, decisores ou números de backup
   </Card>
   
-  <Card title="Custom Variables" icon="code">
-    **Personalized information** for AI conversations
+  <Card title="Variáveis Personalizadas" icon="code">
+    **Informações personalizadas** para conversas com IA
     
-    Names, preferences, history, or any data your assistant needs
+    Nome, preferências, histórico ou qualquer dado necessário
   </Card>
   
-  <Card title="Status Tracking" icon="chart-line">
-    **Progress monitoring** through campaign lifecycle
+  <Card title="Controle de Status" icon="chart-line">
+    **Acompanhamento de progresso**
     
-    Track call attempts, completions, and retry status
+    Monitoramento de tentativas, chamadas concluídas e retries
   </Card>
 </CardGroup>
 
-## Lead Status System
+## Sistema de Status do Lead
 
-Every lead moves through different statuses during campaign execution:
+Cada lead passa por diferentes status durante a execução da campanha:
 
 <AccordionGroup>
   <Accordion title="Created" icon="plus">
-    **Ready to call** - Lead is queued for first contact attempt
+    **Pronto para ligar** — Lead na fila para a primeira tentativa de contato
   </Accordion>
   
   <Accordion title="Scheduled" icon="calendar">
-    **Queued for retry** - Scheduled for next call attempt based on campaign settings
+    **Agendado para retry** — Nova tentativa programada conforme as regras da campanha
   </Accordion>
   
   <Accordion title="Processing" icon="phone">
-    **Currently being called** - Call is in progress
+    **Em chamada** — Ligação em andamento
   </Accordion>
   
   <Accordion title="Rescheduled" icon="clock">
-    **Waiting for retry** - Will be called again after retry interval
+    **Aguardando nova tentativa** — Será chamado após o intervalo configurado
   </Accordion>
   
   <Accordion title="Max Retries" icon="ban">
-    **Retry limit reached** - Maximum call attempts exceeded
+    **Limite de tentativas atingido** — Número máximo de chamadas excedido
   </Accordion>
   
   <Accordion title="Completed" icon="check">
-    **Successfully contacted** - Call completed or goal achieved
+    **Concluído com sucesso** — Chamada finalizada ou objetivo atingido
   </Accordion>
 </AccordionGroup>
 
-## Primary vs Secondary Contacts
+## Contato Principal vs. Contatos Secundários
 
-### Primary Contacts
-- **Main lead record** with complete information
-- **First to be called** in campaign sequence  
-- **Inherits campaign variables** from assistant settings
-- **Controls overall lead status** and completion
+### Contato Principal
+- **Registro principal** do lead com todas as informações
+- **Primeiro a ser chamado** na sequência da campanha
+- **Herda variáveis da campanha** configuradas no assistente
+- **Controla o status geral** do lead
 
-### Secondary Contacts
-- **Additional phone numbers** for the same person/business
-- **Called if primary doesn't answer** (based on campaign retry settings)
-- **Independent status tracking** from primary contact
-- **Can have unique variables** different from primary
+### Contatos Secundários
+- **Números adicionais** da mesma pessoa ou empresa
+- **Chamados caso o principal não atenda** (conforme regras de retry)
+- **Status independente** do contato principal
+- **Podem ter variáveis próprias**, diferentes do principal
 
 <Tip>
-**Use case example:** A business lead might have the main office number as primary contact, with the decision maker's direct line and mobile as secondary contacts.
+**Exemplo de uso:** Uma empresa pode ter o telefone geral como contato principal e o telefone direto do decisor e o celular como contatos secundários.
 </Tip>
 
-## Variables System
+## Sistema de Variáveis
 
-Variables personalize AI conversations with lead-specific information. They are inherited from [assistant configuration](/ai-assistants/settings/prompt-and-tools#call-variables) and can be customized per lead.
+Variáveis personalizam as conversas com informações específicas do lead. Elas são herdadas da [configuração do assistente](/ai-assistants/settings/prompt-and-tools#call-variables) e podem ser ajustadas por lead.
 
-**Usage in conversations:** Assistant uses variables like `{customer_name}` and `{company}` for personalized responses.
+**Uso nas conversas:** O assistente utiliza variáveis como `{customer_name}` e `{company}` para respostas personalizadas.
 
-## Key Features
+## Funcionalidades Principais
 
-### Lead Management
-- **Manual creation** or **CSV/Excel import** with validation
-- **Status tracking** through campaign lifecycle
-- **Export capabilities** with filtering options
+### Gestão de Leads
+- **Criação manual** ou **importação via CSV/Excel** com validação
+- **Acompanhamento de status** ao longo da campanha
+- **Exportação de dados** com filtros
 
-### Campaign Integration
-- **Single campaign** assignment per lead
-- **Automatic status updates** based on call outcomes  
-- **Manual status control** for campaign management
+### Integração com Campanhas
+- **Vinculação a uma única campanha**
+- **Atualização automática de status** conforme o resultado das chamadas
+- **Controle manual de status** para gestão operacional
 
-### Best Practices
-- **Phone format:** International format without spaces (+1234567890)
-- **Clean data:** Accurate, current contact information
-- **Logical organization:** Prioritize secondary contacts appropriately
+### Boas Práticas
+- **Formato do telefone:** Internacional sem espaços (+1234567890)
+- **Dados limpos:** Informações atualizadas e corretas
+- **Organização lógica:** Priorize corretamente os contatos secundários
 
 <Note>
-For troubleshooting lead management issues, see [Leads Troubleshooting](/troubleshooting/leads).
+Para solucionar problemas comuns, veja [Solução de Problemas de Leads](/troubleshooting/leads).
 </Note>
 
 <Note>
-For detailed setup instructions, see [Managing Leads](/leads/managing-leads) and [Importing Leads](/leads/importing-leads).
+Para instruções detalhadas, consulte [Gerenciamento de Leads](/leads/managing-leads) e [Importação de Leads](/leads/importing-leads).
 </Note>
