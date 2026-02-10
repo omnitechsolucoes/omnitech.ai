@@ -1,35 +1,40 @@
 ---
-title: "Scripts & Prompts for Sales or Collections"
+title: "Scripts & Prompts para Vendas ou Cobranças"
 icon: "file-lines"
-description: "Learn how to write effective system prompts and scripts for outbound sales and collection calls"
+description: "Aprenda a escrever system prompts e roteiros eficazes para chamadas outbound de vendas e cobranças"
 ---
 
-The power of outbound calling lies in having a clear, well-structured conversation flow. Here's how to craft an effective script.
+A eficiência das chamadas outbound depende de um fluxo de conversa claro e bem estruturado. Veja como criar scripts eficazes para diferentes cenários.
 
-## 1. System Prompt Best Practices
+## 1. Boas Práticas para System Prompt
 
-- **Introduce Your Company**: _"You are the Sales Bot for Ace Marketing…"_
-- **Purpose**: _"…you offer a 20% discount if the user is interested, or schedule a callback if uncertain."_
-- **Objection Handling**: _"…if they say 'no budget', attempt to collect a reason or set a reminder for next month."_
+- **Apresentação da Empresa**:  
+  _"Você é um assistente de vendas de uma empresa e deve se apresentar de forma profissional."_
 
-## 2. Example (Sales Prompt)
+- **Objetivo da Chamada**:  
+  _"Seu objetivo é oferecer um desconto de 20% se o cliente demonstrar interesse ou agendar um retorno caso esteja em dúvida."_
+
+- **Tratamento de Objeções**:  
+  _"Se o cliente disser que não possui orçamento, tente entender o motivo ou sugerir um contato futuro."_
+
+## 2. Exemplo (Prompt de Vendas)
 
 ```plaintext
-"You are the Sales Bot for ACME Corp. Greet politely, mention the new product launch, and offer a 10% discount if the lead is interested. If they ask for more info, invite them to schedule a call with a human agent. If they refuse or express disinterest, politely end the call."
-```
+"Você é um assistente de vendas. Cumprimente o contato de forma educada, apresente um novo produto ou serviço e ofereça um desconto de 10% caso haja interesse. 
+Se o cliente solicitar mais informações, ofereça o agendamento de uma conversa com um atendente humano. 
+Caso demonstre desinteresse, encerre a chamada de forma cordial."
+3. Exemplo (Prompt de Cobrança)
+"Você é um assistente responsável por cobranças. Cumprimente o contato, confirme o nome e a última data de pagamento. 
+Se houver intenção de pagamento, colete informações ou agende um retorno. 
+Caso o contato se recuse, registre o motivo e finalize a chamada educadamente."
+4. Tratamento de Respostas (Sim / Não / Talvez)
+Sim
+Avance com detalhes, confirmação ou transferência para um atendente humano.
 
-## 3. Example (Collections Prompt)
+Não
+Respeite a decisão, registre o desinteresse e encerre a chamada.
 
-```plaintext
-"You are the Collections Bot for ABC Finance. Greet the user, verify their name and last payment date. If they confirm a willingness to pay, gather payment details or schedule a callback. If they refuse, politely note the reason and end the call."
-```
+Talvez
+Ofereça um follow-up, agendamento futuro ou envio de mais informações.
 
-## 4. Handling Yes/No/Maybe
-
-- **Yes**: Provide details or transfer to a human for finalizing.
-- **No**: Respectfully close, mark lead as not interested.
-- **Maybe**: Offer to schedule a follow-up call or provide more info.
-
----
-
-**Tip:** Keep your script short and direct. The AI can adapt, but a concise prompt helps keep calls focused and efficient.
+Dica: Mantenha os scripts curtos e objetivos. A IA consegue se adaptar ao diálogo, mas prompts concisos ajudam a manter a chamada focada e eficiente.
