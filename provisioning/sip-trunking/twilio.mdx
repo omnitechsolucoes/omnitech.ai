@@ -1,31 +1,31 @@
 ---
-title: "Twilio Integration"
-description: "A step by step guide to connect to your Twilio account via SIP trunking"
+title: "Integração com Twilio"
+description: "Guia passo a passo para conectar sua conta Twilio via SIP Trunking"
 ---
 
-## Step 1: Create Elastic SIP Trunking
+## Etapa 1: Criar Elastic SIP Trunking
 
-1. Create the trunk, give it a name, and toggle some general settings
+1. Crie o trunk, defina um nome e ajuste algumas configurações gerais
    <Frame>
      <img
        src="/resources/twillio-create-elastic-sip1.jpeg"
-       alt="Create Elastic SIP Trunking"
+       alt="Criar Elastic SIP Trunking"
      />
    </Frame>
 
-2. Setup termination (this is for outbound)
+2. Configure a terminação (para chamadas de saída)
 
-- the termination SIP URI here is important, we would use it in later steps. You might want to use a localized termination uri that’s near your region. You can expand and view your localized uris in the twilio console.
+- O SIP URI de terminação é importante, pois será utilizado em etapas posteriores. Recomenda-se utilizar um URI de terminação localizado próximo à sua região. Você pode expandir e visualizar URIs localizados no console da Twilio.
     <Frame>
       <img
         src="/resources/twillio-setup-termination1.jpeg"
-        alt="Setup Termination"
+        alt="Configurar Terminação"
       />
     </Frame>
 
-- For your elastic SIP trunk to accept our outbound request, you need to whitelist IP address or create a auth with username and password.
+- Para que o Elastic SIP Trunk aceite requisições de saída, é necessário liberar IPs ou criar autenticação com usuário e senha.
 
-{/* - If you opt for the auth route, you need to specify the username and password in the next step when importing the number to Autocalls.
+{/* - Caso opte por autenticação, será necessário informar usuário e senha na etapa de importação do número para a OmniTech.
    <Frame>
      <img
        src="/resources/twillio-auth-route.jpeg"
@@ -33,7 +33,7 @@ description: "A step by step guide to connect to your Twilio account via SIP tru
      />
    </Frame> */}
 
-- Currently Autocalls SIP server does not have a static IP, so if you opt for the IP route, you need to whitelist all the IP addresses in the range like following:
+- Atualmente, o servidor SIP da OmniTech não possui IP fixo. Portanto, se optar por liberação por IP, é necessário autorizar todos os IPs do intervalo conforme abaixo:
 
    <Frame>
      <img
@@ -49,153 +49,151 @@ description: "A step by step guide to connect to your Twilio account via SIP tru
      />
    </Frame>
 
-3. Setup origination (this is for inbound)
+3. Configure a originação (para chamadas de entrada)
 
-- Here you will specify Autocalls SIP server address as the origination SIP URI: ```sip:5wed79aeavr.sip.livekit.cloud ``` 
+- Informe o endereço SIP da OmniTech como URI de originação: ```sip:5wed79aeavr.sip.livekit.cloud ``` 
 
     <Frame>
       <img
         src="/resources/twillio-setup-origination1.jpeg"
-        alt="Setup Origination"
+        alt="Configurar Originação"
       />
     </Frame>
 
-## Step 2: Move numbers to Elastic SIP Trunking
+## Etapa 2: Mover números para o Elastic SIP Trunking
 
-You’ve created the elastic SIP trunk, now you would need to purchase numbers / move existing numbers to this trunk.
+Após criar o Elastic SIP Trunk, será necessário comprar números ou mover números existentes para este trunk.
 
    <Frame>
      <img
        src="/resources/twillio-move-numbers1.jpeg"
-       alt="Move numbers to Elastic SIP Trunking"
+       alt="Mover números para Elastic SIP Trunking"
      />
    </Frame>
 
-## Step 3: Import numbers to Autocalls
+## Etapa 3: Importar números para a OmniTech
 
-Now the number is set up with your elastic SIP trunking, you need to import the number to Autocalls so that we will know how to route the call.
+Com o número configurado no Elastic SIP Trunking, é necessário importá-lo para a OmniTech para que o roteamento das chamadas seja reconhecido.
 
-1. Go to your Autocalls.ai dashboard
-2. Navigate to ** Your Phone Numbers**
-3. Click “Integrate SIP trunk”
+1. Acesse o painel da OmniTech
+2. Navegue até **Your Phone Numbers**
+3. Clique em “Integrate SIP trunk”
 
    <Frame>
      <img
        src="/resources/twillio-import-autocalls-sip1.png"
-       alt="Import numbers to Autocalls"
+       alt="Importar números para OmniTech"
      />
    </Frame>
-4. Fill in your details based on your integration type 
-```
-Phone number: e.g., +1 555 0123
-Username: Your extension username
-Password: Your extension password
-```
+4. Preencha os dados conforme o tipo de integração
+Número de telefone: ex.: +55 11 5555 0123
+Usuário: usuário do ramal
+Senha: senha do ramal
+
    <Frame>
      <img
        src="/resources/twillio-autocalls-auth-integration.png"
-       alt="Fill in your details based on your integration type"
+       alt="Preencher dados conforme tipo de integração"
      />
    </Frame>
 
-5. Here you will supply the termination SIP URI you set up in Step 1.
-```
-Server address: e.g., xxx.pstn.twillio.com
-```
+5. Informe o SIP URI de terminação configurado na Etapa 1
+Endereço do servidor: ex.: xxx.pstn.twillio.com
+
 
    <Frame>
      <img
        src="/resources/twillio-outbound-settings.PNG"
-       alt="Twillio Connect Number via SIP"
+       alt="Conectar número Twilio via SIP"
      />
    </Frame>
 
-6. Here select Authorization type as you opted in step 2. 
+6. Selecione o tipo de autorização conforme definido anteriormente
 
-{/* - If you opted for auth route select Username and password.
+{/* - Caso tenha optado por autenticação, selecione Usuário e Senha.
 
    <Frame>
      <img
        src="/resources/twillio-autocalls-credentials-auth-type.png"
-       alt="Twillio Autocalls Credentials Auth Type"
+       alt="Tipo de Autenticação"
      />
    </Frame> */}
 
-- If IP type is the option you have selected, add the IPs 
-```
+- Caso a opção seja por IP, adicione os IPs:
 54.244.51.0
-  54.244.51.1  
-  54.244.51.2
-  54.244.51.3
+54.244.51.1
+54.244.51.2
+54.244.51.3
 54.172.60.0
-  54.172.60.1
-  54.172.60.2
-  54.172.60.3
-```
+54.172.60.1
+54.172.60.2
+54.172.60.3
+
    <Frame>
      <img
        src="/resources/twillio-autocalls-credentials-ip-type1.png"
-       alt="Twillio Autocalls Credentials IP Type"
+       alt="Credenciais IP"
      />
    </Frame> 
    
-7. Select the country of where your SIP trunk is located. 
+7. Selecione o país onde o SIP Trunk está localizado
 
     <Frame>
       <img
         src="/resources/twillio-autocalls-sip-country.png"
-        alt="Twillio Autocalls SIP Country"
+        alt="País do SIP Trunk"
       />
     </Frame>
 
-### Step 4: Verify Setup
+### Etapa 4: Verificar Configuração
 
-After configuration:
+Após a configuração:
 
-1. Make a test call to your number/extension
-2. Check that the AI assistant answers
-3. Use the test call feature to verify outbound calling
+1. Faça uma chamada de teste para o número/ramal
+2. Verifique se o assistente de IA atende
+3. Utilize o recurso de teste para validar chamadas de saída
 
-## Security Requirements
+## Requisitos de Segurança
 
-Your SIP credentials need to be secure:
+As credenciais SIP devem ser seguras:
 
-- **Username**: Your extension number or provider-supplied username
-- **Password must have**:
-  - 12 or more characters
-  - Numbers
-  - Upper and lowercase letters
-  - Special characters recommended
-## Common Issues
+- **Usuário**: número do ramal ou usuário fornecido pela operadora
+- **A senha deve conter**:
+  - 12 ou mais caracteres
+  - Números
+  - Letras maiúsculas e minúsculas
+  - Caracteres especiais (recomendado)
+
+## Problemas Comuns
 
 <AccordionGroup>
-  <Accordion title="After connecting, inbound works but outbound does not work?">
-    - Check your Termination SIP URI If there’s a space in it, please remove. Also you should use a localized termination uri that’s near your region. Check out this [doc](https://www.twilio.com/docs/global-infrastructure/localized-uris/termination) to select one.
-    - Check your user name and credentials Please make sure you entered the right user name and credentials which shows in this dialog. Please note the user name is not the friendly name that shows in the credential list. The friendly is different to user name, you need to double check if you happen to give a different name.
+  <Accordion title="Após conectar, entrada funciona mas saída não?">
+    - Verifique o SIP URI de terminação. Caso exista espaço, remova-o. Utilize um URI localizado próximo à sua região. Consulte este [documento](https://www.twilio.com/docs/global-infrastructure/localized-uris/termination).
+    - Verifique usuário e credenciais. Certifique-se de que o usuário informado é o correto. O nome amigável não é o mesmo que o usuário real.
     
     <Frame>
      <img
        src="/resources/twillio-outbound-not-work.png"
-       alt="Twillio outbound not work"
+       alt="Saída Twilio não funciona"
      />
    </Frame>
   </Accordion>
 
 {" "}
 
-<Accordion title="How do I set up dialing to international countries?">
-- Search “geo” to find the “Voice Geographic Permissions” setting.  
+<Accordion title="Como configurar chamadas internacionais?">
+- Pesquise por “geo” e localize a opção “Voice Geographic Permissions”.  
     <Frame>
      <img
        src="/resources/twillio-setup-dialing-international.png"
-       alt="Twillio setup dialing international"
+       alt="Configurar discagem internacional"
      />
    </Frame>
-- Choose “Elastic Sip Trunking” in selector, and select the countries you would like to dial. 
+- Selecione “Elastic SIP Trunking” e marque os países desejados. 
     <Frame>
      <img
        src="/resources/twillio-choose-elastic-sip-trunking.png"
-       alt="Twillio setup dialing international"
+       alt="Selecionar países para discagem"
      />
    </Frame>
 
@@ -206,7 +204,7 @@ Your SIP credentials need to be secure:
 ---
 
 <Note>
-  Need help setting up? Our support team specializes in helping customers
-  integrate their phone systems. We'll guide you through the entire process,
-  ensuring a smooth setup with your specific phone system configuration.
+  Precisa de ajuda para configurar? Nossa equipe de suporte é especializada em
+  auxiliar na integração de sistemas telefônicos e irá guiá-lo em todo o processo,
+  garantindo uma configuração adequada ao seu ambiente.
 </Note>
