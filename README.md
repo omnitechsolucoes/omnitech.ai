@@ -1,6 +1,6 @@
 # White‑Label da Documentação (Mintlify)
 
-A **Omnitech** é uma empresa de tecnologia especializada em **soluções de comunicação digital e omnichannel**, oferecendo recursos como Discador Automático, PABX Virtual, URA Inteligente, Chatbot, Atendimento Omnichannel, SMS, RCS, VoIP e integrações via API.
+A **Omnitech** é uma empresa de tecnologia especializada em **soluções de comunicação digital e omnichannel**, oferecendo recursos como Agentes de IA, Discador Automático, PABX Virtual, URA Inteligente, Chatbot, Atendimento Omnichannel, SMS, RCS, VoIP e integrações via API. Nesse material, você encontrará detalhes a respeito da solução de IA.
 
 Dentre essas soluções, o modelo white-label abordado nesta documentação refere-se exclusivamente à Plataforma de Chamadas Automatizadas com IA da Omnitech, permitindo que parceiros e clientes utilizem essa solução específica com sua própria marca, identidade visual e domínio.
 
