@@ -1,26 +1,26 @@
 ---
-title: "LinkedIn App Setup"
+title: "Configuração do App do LinkedIn"
 icon: "linkedin"
-description: "This document provides instructions on correctly setting up a LinkedIn application so that users can log in/register via LinkedIn on your site."
+description: "Este documento fornece instruções para configurar corretamente um aplicativo do LinkedIn para permitir login e cadastro de usuários via LinkedIn no seu site."
 ---
 
-## Creating a new app
+## Criando um novo app
 
-You need to create a LinkedIn app to allow users to log in to your site with their LinkedIn accounts. To create a new LinkedIn app, please do the following:
+Você precisa criar um aplicativo no LinkedIn para permitir que usuários façam login no seu site usando suas contas do LinkedIn. Para criar um novo app, siga os passos abaixo:
 
-- Go to the LinkedIn developer site: https://developer.linkedin.com/. 
-- Click the “Create App” button on the banner.
-- To correctly create the application, please fill in the application sections, which are explained below.
+- Acesse o site de desenvolvedores do LinkedIn: https://developer.linkedin.com/  
+- Clique no botão **“Create App”** no banner.
+- Para criar corretamente o aplicativo, preencha as seções solicitadas, conforme explicado abaixo.
 
-## Create an app
+## Criar um app
 
-- **Application Name**  – Enter a name for your application.
-- **Company name**  – Select an existing company or choose a New Company. If you select the new company, you will be asked to enter a company name. 
-- **Description**  – Enter a name for your application.
-- **Business Email**  – Enter your email address.
-- **Legal terms**  – Read the terms of service and check the box to confirm that you have read and agree to the terms.
+- **Application Name** – Informe o nome do seu aplicativo.  
+- **Company name** – Selecione uma empresa existente ou escolha **New Company**. Caso escolha uma nova empresa, será solicitado o nome dela.  
+- **Description** – Informe uma descrição para o aplicativo.  
+- **Business Email** – Informe seu endereço de e-mail.  
+- **Legal terms** – Leia os termos de uso e marque a caixa confirmando que leu e concorda com os termos.
 
-Click the project button in the top menu and you'll see the **Select a project** pop-up. Click the **NEW PROJECT** button create a project.
+Clique no botão de projeto no menu superior e você verá o pop-up **Select a project**. Clique em **NEW PROJECT** para criar um projeto.
 
    <Frame>
      <img
@@ -29,18 +29,18 @@ Click the project button in the top menu and you'll see the **Select a project**
      />
    </Frame>
 
-## Products
+## Produtos
 
-Once you have clicked on the **Create app** button, you'll be redirected to the Products tab.
+Após clicar em **Create app**, você será redirecionado para a aba **Products**.
 
    <Frame>
      <img
        src="/resources/linkedin-products-tab.png"
-       alt="Linkedin Products Tab"
+       alt="LinkedIn Products Tab"
      />
    </Frame>
 
-Scroll down the product list until you find **Sign In with LinkedIn using OpenID Connect** and click the **Request Access** button.
+Role a lista de produtos até encontrar **Sign In with LinkedIn using OpenID Connect** e clique no botão **Request Access**.
 
    <Frame>
      <img
@@ -49,7 +49,7 @@ Scroll down the product list until you find **Sign In with LinkedIn using OpenID
      />
    </Frame>
 
-Read the terms; if you agree with the terms, click on the checkbox and proceed by clicking on the **Request Access** button.
+Leia os termos; se concordar, marque a caixa de confirmação e clique em **Request Access**.
 
    <Frame>
      <img
@@ -58,9 +58,9 @@ Read the terms; if you agree with the terms, click on the checkbox and proceed b
      />
    </Frame>
 
-## Auth
+## Autenticação (Auth)
 
-Go to the Auth tab and add Redirect URLs. 
+Acesse a aba **Auth** e adicione as URLs de redirecionamento.
 
    <Frame>
      <img
@@ -69,10 +69,10 @@ Go to the Auth tab and add Redirect URLs.
      />
    </Frame>
 
-## OAuth 2.0 settings
+## Configurações OAuth 2.0
 
-In the redirects URLs, you just need to enter your site e.g.: https://sss.com/login/linkedin-openid/callback 
-
+Nas URLs de redirecionamento, basta informar o endereço do seu site, por exemplo:  
+`https://seusite.com/login/linkedin-openid/callback`
 
    <Frame>
      <img
@@ -81,9 +81,9 @@ In the redirects URLs, you just need to enter your site e.g.: https://sss.com/lo
      />
    </Frame>
 
-## Scopes
+## Escopos (Scopes)
 
-The OAuth 2.0 scopes will appear a few seconds after you have added and updated the redirect URLs in OAuth 2.0 Settings.
+Os escopos do OAuth 2.0 aparecerão alguns segundos após você adicionar e salvar as URLs de redirecionamento nas configurações do OAuth 2.0.
 
    <Frame>
      <img
@@ -92,22 +92,27 @@ The OAuth 2.0 scopes will appear a few seconds after you have added and updated 
      />
    </Frame>
 
-## Application details
+## Detalhes do aplicativo
 
-If the app is successfully created, you will see the following details.
-    <Frame>
-      <img
-         src="/resources/linkedin-app-details.png"
-         alt="LinkedIn App Details"
-      />
-    </Frame> 
- You will need to copy the **API Key** and **Secret Key** and add them to the white-label > Settings > Social Logins > LinkedIn Login Configuration.
-    <Frame>
-      <img
-         src="/resources/linkedin-whitelabel-configuration.png"
-         alt="LinkedIn App Details"
-      />
-    </Frame> 
+Se o app for criado com sucesso, você verá os seguintes detalhes:
+
+   <Frame>
+     <img
+       src="/resources/linkedin-app-details.png"
+       alt="LinkedIn App Details"
+     />
+   </Frame>
+
+Você precisará copiar a **API Key** e a **Secret Key** e adicioná-las em:  
+**White-label → Settings → Social Logins → LinkedIn Login Configuration** na plataforma **OmniTech**.
+
+   <Frame>
+     <img
+       src="/resources/linkedin-whitelabel-configuration.png"
+       alt="LinkedIn White-label Configuration"
+     />
+   </Frame>
+
 ---
 
-**Need help?** Contact our support team for assistance with any step of the setup process.
+**Precisa de ajuda?** Entre em contato com o time de suporte da OmniTech para auxílio em qualquer etapa da configuração.
