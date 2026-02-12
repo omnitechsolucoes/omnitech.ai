@@ -1,27 +1,27 @@
 ---
-title: "General Setup Issues"
+title: "Problemas Gerais de Configuração"
 icon: "wrench"
-description: "Troubleshoot common setup problems including AI response issues, OTP verification, and credential errors"
+description: "Solucione problemas comuns de configuração, incluindo falhas de resposta da IA, verificação por OTP e erros de credenciais"
 ---
 
-Some common pitfalls when first configuring Autocalls.ai:
+Algumas armadilhas comuns ao configurar a **OmniTech** pela primeira vez:
 
-## 1. AI Not Responding or Call Dropping
+## 1. IA Não Responde ou Chamada Cai
 
-- **Check the System Prompt**: Possibly missing instructions.
-- **Voice Activity Detection**: If set too low or high, it may cause awkward silences or interruptions.
-- **Connection**: If your internet or SIP trunk is unstable, calls might drop.
+- **Verifique o Prompt do Sistema**: Pode estar faltando instruções essenciais.
+- **Detecção de Atividade de Voz**: Se estiver muito baixa ou alta, pode causar silêncios estranhos ou interrupções.
+- **Conexão**: Se sua internet ou SIP trunk estiver instável, as chamadas podem cair.
 
-## 2. Not Receiving OTP (for Caller ID Verification)
+## 2. Não Recebe OTP (para Verificação de Caller ID)
 
-- **Carrier Blocks**: Some operators filter out short codes or unknown international SMS.
-- **Try Alternate Method**: Ask support if you can verify by a quick voice call or another phone line.
+- **Bloqueios da Operadora**: Algumas operadoras filtram SMS de códigos curtos ou mensagens internacionais desconhecidas.
+- **Método Alternativo**: Solicite ao suporte a verificação por chamada de voz rápida ou por outra linha telefônica.
 
-## 3. Credential Errors
+## 3. Erros de Credenciais
 
-- **SIP**: Wrong username/password? Double-check with your PBX provider.
-- **API/Webhooks**: Ensure you copied the correct token or endpoint URL.
+- **SIP**: Usuário ou senha incorretos? Confirme com seu provedor PBX.
+- **API/Webhooks**: Verifique se o token ou a URL do endpoint foram copiados corretamente.
 
 ---
 
-**Tip:** Look at call logs for error codes if a call fails. Usually, it'll show a reason like "Number not found" or "Network unreachable."
+**Dica:** Consulte os logs de chamadas para ver códigos de erro quando uma chamada falhar. Normalmente aparece um motivo como "Number not found" ou "Network unreachable."
