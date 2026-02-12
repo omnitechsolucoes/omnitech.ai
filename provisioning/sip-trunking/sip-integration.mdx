@@ -1,287 +1,273 @@
 ---
 title: "Overview"
-description: "Connect your existing phone system and numbers to Autocalls.ai"
+description: "Conecte seu sistema telefônico e números existentes à OmniTech"
 ---
 
 <Note>
-  This guide will help you understand and set up SIP integration. If you need
-  clarification during setup, our support team is available to assist.
+  Este guia ajudará você a entender e configurar a integração SIP. Se precisar
+  de esclarecimentos durante a configuração, nossa equipe de suporte está disponível para ajudar.
 </Note>
 
-## What is SIP Integration?
+## O que é Integração SIP?
 
-SIP (Session Initiation Protocol) integration allows you to connect your existing phone system to Autocalls.ai. Think of it as building a bridge between your current phone setup and our AI platform. This means you can:
+A integração SIP (Session Initiation Protocol) permite que você conecte seu sistema telefônico existente à OmniTech. Pense nisso como construir uma ponte entre sua estrutura atual de telefonia e nossa plataforma de IA. Isso significa que você pode:
 
-- Use your existing phone numbers with our AI assistants
-- Keep your current phone system and provider
-- Make and receive calls through your existing setup
-- Maintain full control of your numbers
-- Reduce carrier costs by using local VoIP providers with better rates
+- Utilizar seus números de telefone existentes com nossos assistentes de IA
+- Manter seu sistema telefônico e provedor atual
+- Realizar e receber chamadas através da sua própria estrutura
+- Manter controle total sobre seus números
+- Reduzir custos de operadora utilizando provedores VoIP locais com melhores tarifas
 
-## How It Works
+## Como Funciona
 
-When you integrate your phone system with Autocalls.ai:
+Quando você integra seu sistema telefônico à OmniTech:
 
-1. **Inbound Calls**: Calls to your numbers are routed through your phone system to our AI assistants
-2. **Outbound Calls**: Our AI assistants can make calls appearing from your numbers
-3. **Management**: You keep managing your numbers through your current provider
-4. **Cost Efficiency**: Leverage your VoIP provider's competitive rates for call termination
+1. **Chamadas de Entrada**: As chamadas para seus números são roteadas pelo seu sistema telefônico até nossos assistentes de IA
+2. **Chamadas de Saída**: Nossos assistentes de IA realizam chamadas exibindo seus números
+3. **Gerenciamento**: Você continua administrando seus números através do seu provedor atual
+4. **Eficiência de Custos**: Aproveite as tarifas competitivas do seu provedor VoIP para terminação de chamadas
 
-## Integration Options
+## Opções de Integração
 
-You can connect your phone system to Autocalls.ai in two ways:
+Você pode conectar seu sistema telefônico à OmniTech de duas formas:
 
-### 1. PBX Extension Integration
+### 1. Integração via Ramal PBX
 
-This is like giving our AI platform an "extension" on your phone system:
+É como fornecer um “ramal” do seu sistema para nossa plataforma de IA:
 
-- **What it is**: Connect a specific extension from your PBX/phone system
-- **Perfect for**:
-  - Testing the integration
-  - Routing specific extensions to AI
-  - Simple setup with existing phone systems
-- **You'll need**:
-  - Your extension number (e.g., 1000)
-  - Extension username and password
-  - Your PBX server address (e.g., pbx.yourcompany.com)
+- **O que é**: Conectar um ramal específico do seu PBX/sistema telefônico
+- **Ideal para**:
+  - Testar a integração
+  - Direcionar ramais específicos para a IA
+  - Configuração simples em sistemas já existentes
+- **Você precisará de**:
+  - Número do ramal (ex.: 1000)
+  - Usuário e senha do ramal
+  - Endereço do servidor PBX (ex.: pbx.suaempresa.com)
 
-**Real-world example**:
+**Exemplo prático**:
 
-```
-Your office uses extensions 1001-1010 for staff
-You set up extension 1011 for the AI assistant
-Calls to 1011 go to the AI
-The AI can make calls appearing as extension 1011
-```
+Seu escritório utiliza os ramais 1001-1010 para a equipe
+Você cria o ramal 1011 para o assistente de IA
+Chamadas para 1011 vão para a IA
+A IA pode realizar chamadas aparecendo como o ramal 1011
 
-### 2. Direct Number Integration
 
-This connects specific phone numbers to our platform:
+### 2. Integração Direta de Número (DID)
 
-- **What it is**: Route one or more of your phone numbers to our AI
-- **Perfect for**:
-  - Dedicated AI phone lines
-  - Customer service numbers
-  - Sales or support lines
-- **You'll need**:
-  - Your phone number (e.g., +1 555 0123)
-  - SIP credentials from your provider
-  - Provider's SIP server address
+Conecta números específicos à nossa plataforma:
 
-**Real-world example**:
+- **O que é**: Direcionar um ou mais números diretamente para a IA
+- **Ideal para**:
+  - Linhas dedicadas para IA
+  - Números de atendimento ao cliente
+  - Linhas de vendas ou suporte
+- **Você precisará de**:
+  - Número de telefone (ex.: +1 555 0123)
+  - Credenciais SIP fornecidas pelo seu provedor
+  - Endereço do servidor SIP do provedor
 
-```
-You have a support number: +1 555 0123
-You connect this number to our AI
-All calls to +1 555 0123 are handled by the AI assistant
-The AI makes outbound calls showing +1 555 0123
-```
+**Exemplo prático**:
 
-## Authentication & Call Flow
+Você possui um número de suporte: +1 555 0123
+Você conecta esse número à IA
+Todas as chamadas para +1 555 0123 são atendidas pelo assistente de IA
+A IA realiza chamadas exibindo +1 555 0123
 
-### Bidirectional Configuration
 
-The SIP integration uses the same credentials for both inbound and outbound calls:
+## Autenticação e Fluxo de Chamadas
 
-- **Inbound Calls** (VoIP → Autocalls.ai):
+### Configuração Bidirecional
 
-  ```
-  Your VoIP system authenticates using username/password
-  ↓
-  Calls reach our platform
-  ↓
-  AI assistant answers
-  ```
+A integração SIP utiliza as mesmas credenciais tanto para chamadas de entrada quanto de saída:
 
-- **Outbound Calls** (Autocalls.ai → VoIP):
-  ```
-  AI initiates call
-  ↓
-  Our platform authenticates to your VoIP using same username/password
-  ↓
-  Call reaches destination
-  ```
+- **Chamadas de Entrada** (VoIP → OmniTech):
 
-### Credential Synchronization
+Seu sistema VoIP autentica usando usuário/senha
+↓
+As chamadas chegam à nossa plataforma
+↓
+O assistente de IA atende
 
-For the integration to work properly:
 
-1. The credentials you set in Autocalls.ai dashboard must match exactly with your VoIP configuration
-2. The same username/password combination is used for both directions
-3. Any changes to credentials must be updated in both systems
+- **Chamadas de Saída** (OmniTech → VoIP):
+A IA inicia a chamada
+↓
+Nossa plataforma autentica no seu VoIP usando o mesmo usuário/senha
+↓
+A chamada é encaminhada ao destino
+
+
+### Sincronização de Credenciais
+
+Para que a integração funcione corretamente:
+
+1. As credenciais configuradas no painel da OmniTech devem corresponder exatamente às do seu VoIP
+2. A mesma combinação de usuário/senha é usada em ambas as direções
+3. Qualquer alteração deve ser atualizada nos dois sistemas
 
 <Warning>
-  If you change credentials in your VoIP system, remember to update them in
-  Autocalls.ai dashboard (and vice versa) to maintain the connection.
+Se você alterar as credenciais no seu sistema VoIP, lembre-se de atualizá-las
+no painel da OmniTech (e vice-versa) para manter a conexão ativa.
 </Warning>
 
-## Setting Up Your Integration
+## Configurando Sua Integração
 
-### Step 1: Gather Your Information
+### Etapa 1: Reúna as Informações
 
-For PBX Extension:
+Para Ramal PBX:
 
-```
-Extension number: e.g., 1000
-Server address: e.g., pbx.company.com
-Username: Your extension username
-Password: Your extension password
-```
+Número do ramal: ex.: 1000
+Endereço do servidor: ex.: pbx.empresa.com
+Usuário: usuário do ramal
+Senha: senha do ramal
 
-For Direct Number:
 
-```
-Phone number: e.g., +1 555 0123
-SIP server: e.g., sip.provider.com
-Username: Provided by your phone company
-Password: Provided by your phone company
-```
+Para Número Direto:
 
-### Step 2: Configure in Dashboard
+Número de telefone: ex.: +1 555 0123
+Servidor SIP: ex.: sip.provedor.com
+Usuário: fornecido pela operadora
+Senha: fornecida pela operadora
 
-1. Go to your Autocalls.ai dashboard
-2. Navigate to **Your Phone Numbers**
-3. Click "Integrate SIP trunk"
 
-### Step 3: Select SIP Trunk Type 
+### Etapa 2: Configuração no Painel
 
-At the top of the form, select one of these trunk types:
+1. Acesse o painel da OmniTech
+2. Vá em **Seus Números**
+3. Clique em "Integrar SIP trunk"
 
-- **SIP Extension** - Use this if you already have an existing SIP credential (an extension) provided by your VoIP provider.
-- **Phone Number (DID)** - Use this if you want to integrate a dedicated Direct Inward Dial (DID) number instead of a generic SIP extension.
+### Etapa 3: Selecionar Tipo de SIP Trunk
 
-For PBX Extension:
-```
-Extension number: e.g., 1000
-Username: Your extension username
-Password: Your extension password
-```
+No topo do formulário, selecione um dos tipos:
+
+- **SIP Extension** - Utilize se você já possui uma credencial SIP (ramal) fornecida pelo seu provedor VoIP.
+- **Phone Number (DID)** - Utilize se deseja integrar um número DID dedicado em vez de um ramal genérico.
+
+Para Ramal PBX:
+Número do ramal: ex.: 1000
+Usuário: usuário do ramal
+Senha: senha do ramal
+
 <img height="200" src="/resources/sip-integration-sip-type.png" />
 
-For Direct Number:
+Para Número Direto:
 
-```
-Phone number: e.g., +1 555 0123
-Username: Provided by your phone company
-Password: Provided by your phone company
-```
+Número de telefone: ex.: +1 555 0123
+Usuário: fornecido pela operadora
+Senha: fornecida pela operadora
+
 <img height="200" src="/resources/sip-integration-did.png" />
 
-### Step 4: Outbound Settings
+### Etapa 4: Configurações de Saída
 
-These settings control how Autocalls.ai sends outbound calls through your SIP provider.
+Essas configurações controlam como a OmniTech envia chamadas de saída pelo seu provedor SIP.
 
-- **SIP Address** - Enter the address/server of the SIP trunk without the port.
-- **Outbound Proxy (Fixed IP)** - Some SIP providers require calls to originate from a single, whitelisted IP address. Configure this as follows:
-  - **Toggle ON** - If your SIP provider requires a fixed source IP, enable Outbound proxy will come from a fixed IP address. Autocalls.ai will then send all outbound requests through a known static IP.
-  Use this option only if your provider explicitly requires a single source IP.
-  - **Toggle OFF:** - If your provider accepts calls from any IP, leave this option off. In that case, Autocalls.ai will send calls from dynamic IPs.
+- **SIP Address** - Insira o endereço/servidor do trunk SIP sem a porta.
+- **Outbound Proxy (IP Fixo)** - Alguns provedores exigem que as chamadas sejam originadas de um único IP autorizado. Configure assim:
+  - **Ativado (ON)** - Se seu provedor exigir IP fixo, ative esta opção. A OmniTech enviará todas as requisições de saída por um IP estático conhecido.
+  Use apenas se o provedor exigir explicitamente.
+  - **Desativado (OFF)** - Se o provedor aceitar chamadas de qualquer IP, mantenha desativado. Nesse caso, a OmniTech utilizará IPs dinâmicos.
 
-```
-SIP address: (e.g., pbx.company.com/sip.provider.com)
-```
+SIP address: (ex.: pbx.empresa.com/sip.provedor.com)
+
 <img height="200" src="/resources/sip-integration-outbound.png" />
 
-### Step 5: Number Format Configuration
+### Etapa 5: Configuração de Formato de Número
 
-This tells our system how to format phone numbers when making calls. Choose based on your provider's requirements:
+Define como os números serão formatados ao realizar chamadas:
 
-1. **International with +**
+1. **Internacional com +**
 
-   ```
-   Format: +[country][number]
-   Example: +1 202 555 0123
-   SIP Request: sip:+12025550123@your.pbx.com
-   ```
+Formato: +[código do país][número]
+Exemplo: +1 202 555 0123
+SIP Request: sip:+12025550123@your.pbx.com
 
-2. **International without +**
 
-   ```
-   Format: [country][number]
-   Example: 1 202 555 0123
-   SIP Request: sip:12025550123@your.pbx.com
-   ```
+2. **Internacional sem +**
 
-3. **National format**
-   ```
-   Format: [local number]
-   Example: 0741926265
-   SIP Request: sip:0741926265@your.pbx.com
-   ```
+Formato: [código do país][número]
+Exemplo: 1 202 555 0123
+SIP Request: sip:12025550123@your.pbx.com
 
-### Step 6: Inbound Settings
 
-These settings determine how Autocalls.ai receives and authenticates inbound calls from your SIP provider.
+3. **Formato Nacional**
+Formato: [número local]
+Exemplo: 0741926265
+SIP Request: sip:0741926265@your.pbx.com
 
-1. **Our SIP Address** - Autocalls.ai assigns a unique inbound SIP URI ```5wed79aeavr.sip.livekit.cloud```. Your SIP provider must be configured to send inbound calls to this address by pointing their outbound trunk or routing rule to this URI.
-2. **IP Address (Whitelist IPs)** - If your SIP provider can send calls from a known set of public IP addresses, choose IP Address. Then add each provider IP to the whitelist under Inbound Authentication.
-3. **Username and Password** - If your provider supports SIP auth, choose Username and password. The same credentials you entered under Outbound Settings (username/password) will be used to authenticate inbound calls. Make sure your provider’s PBX is configured to include those credentials.
+
+### Etapa 6: Configurações de Entrada
+
+Essas configurações determinam como a OmniTech recebe e autentica chamadas de entrada do seu provedor SIP.
+
+1. **Our SIP Address** - A OmniTech atribui um URI SIP exclusivo de entrada ```5wed79aeavr.sip.livekit.cloud```. Seu provedor deve configurar o envio de chamadas para esse endereço.
+2. **IP Address (Whitelist IPs)** - Se seu provedor enviar chamadas a partir de IPs públicos fixos, selecione IP Address e adicione-os à whitelist.
+3. **Username and Password** - Se o provedor suportar autenticação SIP, selecione Username and password. As mesmas credenciais de saída serão utilizadas.
 
 <img height="200" src="/resources/sip-integration-inbound.png" />
 
-### Step 7: Country Selection 
-Select the country where your SIP trunk is provisioned.
+### Etapa 7: Seleção de País
+
+Selecione o país onde seu SIP trunk está provisionado.
 
 <img height="200" src="/resources/sip-integration-country.png" />
 
-### Step 8: Verify Setup
+### Etapa 8: Verificação
 
-After configuration:
+Após configurar:
 
-1. Make a test call to your number/extension
-2. Check that the AI assistant answers
-3. Use the test call feature to verify outbound calling
+1. Faça uma chamada de teste para seu número/ramal
+2. Verifique se a IA atende
+3. Utilize a função de teste para validar chamadas de saída
 
-## Security Requirements
+## Requisitos de Segurança
 
-Your SIP credentials need to be secure:
+Suas credenciais SIP devem ser seguras:
 
-- **Username**: Your extension number or provider-supplied username
-- **Password must have**:
-  - 12 or more characters
-  - Numbers
-  - Upper and lowercase letters
-  - Special characters recommended
+- **Usuário**: Número do ramal ou usuário fornecido pela operadora
+- **Senha deve conter**:
+- 12 ou mais caracteres
+- Números
+- Letras maiúsculas e minúsculas
+- Caracteres especiais recomendados
 
-## Common Questions
+## Perguntas Frequentes
 
 <AccordionGroup>
-  <Accordion title="Can I use multiple numbers?">
-    Yes! You can integrate multiple extensions or direct numbers with our platform.
-  </Accordion>
-
-{" "}
-
-<Accordion title="Will I lose control of my numbers?">
-  No, you maintain full control through your current provider. The integration
-  only establishes a connection between your system and our platform.
+<Accordion title="Posso usar múltiplos números?">
+ Sim! Você pode integrar vários ramais ou números diretos à nossa plataforma.
 </Accordion>
 
 {" "}
 
-<Accordion title="Can I still use my numbers for regular calls?">
-  Yes, you can set up routing rules in your phone system to decide which calls
-  go to the AI and which go to your regular phone system.
+<Accordion title="Perco o controle dos meus números?">
+Não, você mantém total controle através do seu provedor atual. A integração
+apenas cria a conexão entre seu sistema e nossa plataforma.
 </Accordion>
 
 {" "}
 
-<Accordion title="What if I need to change settings later?">
-  You can update your integration settings anytime through the dashboard. All
-  configuration options remain accessible after initial setup.
+<Accordion title="Posso continuar usando meus números normalmente?">
+Sim, você pode configurar regras de roteamento para decidir quais chamadas
+vão para a IA e quais seguem para seu sistema convencional.
 </Accordion>
 
-  <Accordion title="How does this help with call costs?">
-    By using your own VoIP provider, you can take advantage of their local rates
-    and existing agreements, which are often more competitive than standard carrier
-    rates. This is especially beneficial for international calls.
-  </Accordion>
+{" "}
+
+<Accordion title="Posso alterar configurações depois?">
+Sim, você pode atualizar as configurações a qualquer momento pelo painel.
+</Accordion>
+
+<Accordion title="Como isso reduz custos de chamada?">
+ Ao utilizar seu próprio provedor VoIP, você aproveita tarifas locais e acordos existentes,
+ geralmente mais competitivos do que tarifas padrão de operadora.
+</Accordion>
 </AccordionGroup>
 
 ---
 
 <Note>
-  Need help setting up? Our support team specializes in helping customers
-  integrate their phone systems. We'll guide you through the entire process,
-  ensuring a smooth setup with your specific phone system configuration.
+Precisa de ajuda para configurar? Nossa equipe de suporte é especializada em
+integrar sistemas telefônicos e pode orientá-lo durante todo o processo.
 </Note>
