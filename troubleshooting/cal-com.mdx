@@ -1,110 +1,110 @@
 ---
-title: "Cal.com Issues"
+title: "Problemas com Cal.com"
 icon: "calendar-days"
-description: "Troubleshoot common Cal.com integration issues"
+description: "Solucione problemas comuns de integração com o Cal.com"
 ---
 
-Solutions for common Cal.com integration problems.
+Soluções para problemas comuns de integração com o Cal.com.
 
-## Connection Issues
+## Problemas de Conexão
 
-### Invalid API Key
+### API Key Inválida
 
-**Problem:** Events not loading or sync fails
+**Problema:** Eventos não carregam ou a sincronização falha
 
-**Solution:**
-- Verify API key is active in Cal.com → Settings → Developer → API Keys
-- Ensure key includes `cal_live_` prefix
-- Generate a new API key if needed
+**Solução:**
+- Verifique se a API key está ativa em Cal.com → Settings → Developer → API Keys
+- Confirme se a chave contém o prefixo `cal_live_`
+- Gere uma nova API key, se necessário
 
-### Events Not Loading
+### Eventos Não Carregam
 
-**Problem:** Event dropdown is empty after entering API key
+**Problema:** O dropdown de eventos fica vazio após inserir a API key
 
-**Solution:**
-- Check API key is correct
-- Click outside the API key field to trigger event loading
-- Refresh the page if events still don't appear
-- Verify you have events created in Cal.com
+**Solução:**
+- Verifique se a API key está correta
+- Clique fora do campo da API key para disparar o carregamento dos eventos
+- Atualize a página se os eventos não aparecerem
+- Confirme se existem eventos criados no Cal.com
 
-## Sync Issues
+## Problemas de Sincronização
 
-### Sync Event Failed
+### Falha ao Sincronizar Evento
 
-**Problem:** "Sync Event" button fails or shows error
+**Problema:** O botão "Sync Event" falha ou exibe erro
 
-**Solution:**
-1. Click **"Troubleshoot"** button instead
-2. This resets all booking fields to correct configuration
-3. Verify changes in Cal.com event settings
+**Solução:**
+1. Clique no botão **"Troubleshoot"**
+2. Isso redefine todos os campos de agendamento para a configuração correta
+3. Verifique as alterações nas configurações do evento no Cal.com
 
-### Field Configuration Errors
+### Erros de Configuração de Campos
 
-**Problem:** Getting errors about required fields or missing fields
+**Problema:** Erros sobre campos obrigatórios ou campos ausentes
 
-**Solution:**
-- Click **"Troubleshoot"** to reset fields
-- Only name, email, phone should be required
-- All other fields (location, guests, etc.) should be optional
+**Solução:**
+- Clique em **"Troubleshoot"** para redefinir os campos
+- Apenas nome, e-mail e telefone devem ser obrigatórios
+- Todos os outros campos (localização, convidados, etc.) devem ser opcionais
 
-## Booking Failures
+## Falhas de Agendamento
 
-### No Calendar Invites Sent
+### Convites de Calendário Não Enviados
 
-**Problem:** Bookings succeed but customer doesn't receive invite
+**Problema:** O agendamento é concluído, mas o cliente não recebe o convite
 
-**Solution:**
-- Define `email` variable in [assistant settings](/ai-assistants/settings/prompt-and-tools#call-variables)
-- Pass customer email when creating leads
-- Verify email format is valid
+**Solução:**
+- Defina a variável `email` nas [configurações do assistente](/ai-assistants/settings/prompt-and-tools#call-variables)
+- Envie o e-mail do cliente ao criar os leads
+- Verifique se o formato do e-mail é válido
 
-### Phone Number Missing
+### Número de Telefone Ausente
 
-**Problem:** Phone number doesn't appear in calendar events
+**Problema:** O número de telefone não aparece nos eventos do calendário
 
-**Solution:**
-- Click **"Sync Event"** or **"Troubleshoot"** button
-- This automatically adds the phone field to the event
-- Phone number is included after sync
+**Solução:**
+- Clique em **"Sync Event"** ou **"Troubleshoot"**
+- Isso adiciona automaticamente o campo de telefone ao evento
+- O número passa a ser incluído após a sincronização
 
-### Booking Time Zone Issues
+### Problemas de Fuso Horário no Agendamento
 
-**Problem:** Appointments scheduled at wrong time
+**Problema:** Compromissos são agendados em horário incorreto
 
-**Solution:**
-- Check time zone in Cal.com event settings
-- Verify assistant is getting correct time from customer
-- Test with specific time mentions during call
+**Solução:**
+- Verifique o fuso horário nas configurações do evento no Cal.com
+- Confirme se o assistente está recebendo o horário correto do cliente
+- Teste mencionando horários específicos durante a chamada
 
-## Testing Issues
+## Problemas de Testes
 
-### Web Call Bookings Fail
+### Agendamentos via Web Call Falham
 
-**Problem:** Bookings work inconsistently with web calls
+**Problema:** Agendamentos funcionam de forma inconsistente com chamadas via web
 
-**Solution:**
-- Use real phone calls for testing (not web calls)
-- Web calls may not pass phone variable correctly
-- When using web calls, provide phone in international format with + prefix (e.g., "+1 555-123-4567")
-- Phone calls ensure all variables are transmitted correctly
+**Solução:**
+- Utilize chamadas telefônicas reais para testes (não chamadas web)
+- Chamadas web podem não enviar corretamente a variável de telefone
+- Ao usar chamadas web, informe o telefone no formato internacional com prefixo + (ex.: "+1 555-123-4567")
+- Chamadas telefônicas garantem que todas as variáveis sejam transmitidas corretamente
 
-### Multiple Calendars Not Working
+### Múltiplos Calendários Não Funcionam
 
-**Problem:** Only one calendar works or events conflict
+**Problema:** Apenas um calendário funciona ou há conflito entre eventos
 
-**Solution:**
-- Each calendar should have different event selected
-- Use distinct event names (e.g., "15min", "30min")
-- Sync each event separately after adding
+**Solução:**
+- Cada calendário deve ter um evento diferente selecionado
+- Utilize nomes de eventos distintos (ex.: "15min", "30min")
+- Sincronize cada evento separadamente após adicioná-lo
 
-## Getting Help
+## Obtendo Ajuda
 
-If issues persist:
+Se os problemas persistirem:
 
-1. Check call transcripts for booking attempts
-2. Verify Cal.com event shows in Cal.com dashboard
-3. Test with simple phone call booking
-4. Contact support with:
-   - Error message screenshot
-   - Cal.com event settings screenshot
-   - Call transcript showing booking attempt
+1. Verifique as transcrições das chamadas para tentativas de agendamento
+2. Confirme se o evento aparece no painel do Cal.com
+3. Teste com um agendamento simples via chamada telefônica
+4. Entre em contato com o suporte informando:
+   - Captura de tela da mensagem de erro
+   - Captura de tela das configurações do evento no Cal.com
+   - Transcrição da chamada mostrando a tentativa de agendamento
