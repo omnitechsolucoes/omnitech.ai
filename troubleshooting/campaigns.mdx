@@ -1,198 +1,198 @@
 ---
-title: "Campaign Issues"
+title: "Problemas em Campanhas"
 icon: "wrench"
-description: "Solve common campaign issues and optimize performance"
+description: "Resolva problemas comuns em campanhas e otimize o desempenho"
 ---
 
-Quick solutions for common campaign problems and performance optimization tips.
+Soluções rápidas para problemas comuns em campanhas e dicas de otimização de desempenho.
 
-## Campaign Won't Start
+## A Campanha Não Inicia
 
-### Phone Number Not Configured
-**Error:** "Your agent does not have a phone number setup"
+### Número de Telefone Não Configurado
+**Erro:** "Your agent does not have a phone number setup"
 
-**Solution:**
-1. Go to your [Assistant Settings](/ai-assistants/settings/general#phone-number-configuration)
-2. Configure a phone number (Platform number, SIP, or Caller ID)
-3. Save assistant settings
-4. Try starting campaign again
+**Solução:**
+1. Acesse as [Configurações do Assistente](/ai-assistants/settings/general#phone-number-configuration)
+2. Configure um número de telefone (Número da plataforma, SIP ou Caller ID)
+3. Salve as configurações do assistente
+4. Tente iniciar a campanha novamente
 
-### Insufficient Balance
-**Error:** "Insufficient balance to start the campaign"
+### Saldo Insuficiente
+**Erro:** "Insufficient balance to start the campaign"
 
-**Solution:**
-1. Check your account balance in billing section
-2. Add funds to your account
-3. Return to campaign and click start
+**Solução:**
+1. Verifique o saldo da conta na área de cobrança
+2. Adicione créditos à conta
+3. Retorne à campanha e clique em iniciar
 
-### No Leads to Call
-**Error:** "No leads to call"
+### Nenhum Lead para Ligar
+**Erro:** "No leads to call"
 
-**Solution:**
-1. Add leads manually or import from CSV
-2. Verify leads have valid phone numbers
-3. Check that leads aren't all marked as completed
-4. Ensure "Mark complete when no leads" setting matches your needs
+**Solução:**
+1. Adicione leads manualmente ou importe via CSV
+2. Verifique se os leads possuem números de telefone válidos
+3. Confirme se os leads não estão todos marcados como concluídos
+4. Garanta que a opção "Mark complete when no leads" esteja adequada à sua necessidade
 
-## No Calls Being Made
+## Nenhuma Chamada Sendo Realizada
 
-### Outside Allowed Hours
-**Issue:** Campaign shows as running but no calls happening
+### Fora do Horário Permitido
+**Problema:** A campanha aparece como ativa, mas nenhuma chamada ocorre
 
-**Check:**
-- Current time is within allowed calling hours
-- Today is an allowed calling day
-- Assistant timezone matches expected schedule
+**Verifique:**
+- O horário atual está dentro do intervalo permitido
+- O dia atual está habilitado para chamadas
+- O fuso horário do assistente está configurado corretamente
 
-**Solution:** Adjust allowed hours or wait until next allowed time window
+**Solução:** Ajuste os horários permitidos ou aguarde a próxima janela válida
 
-### All Leads Called
-**Issue:** Campaign appears idle
+### Todos os Leads Já Foram Chamados
+**Problema:** A campanha parece ociosa
 
-**Check:**
-- All primary leads have been attempted maximum times
-- Secondary contacts have been tried
-- Goal completion status if using goal-based retry
+**Verifique:**
+- Todos os leads primários atingiram o número máximo de tentativas
+- Contatos secundários já foram tentados
+- Status de conclusão por objetivo, se estiver usando retry baseado em metas
 
-**Solution:** Add more leads or review retry settings
+**Solução:** Adicione novos leads ou revise as configurações de retry
 
-## Call Quality Issues
+## Problemas de Qualidade de Chamada
 
-### High Failure Rate
-**Symptoms:** Many calls marked as "Failed"
+### Alta Taxa de Falha
+**Sintomas:** Muitas chamadas marcadas como "Failed"
 
-**Common causes:**
-- Invalid phone numbers in lead list
-- Network connectivity issues
-- Carrier restrictions
+**Causas comuns:**
+- Números inválidos na lista de leads
+- Problemas de conectividade de rede
+- Restrições da operadora
 
-**Solutions:**
-1. **Clean lead data:** Remove invalid numbers
-2. **Test single calls:** Try calling individual leads manually
-3. **Check number format:** Ensure proper formatting (+1234567890)
-4. **Contact support:** For persistent technical issues
+**Soluções:**
+1. **Higienize os dados:** Remova números inválidos
+2. **Teste chamadas individuais:** Ligue manualmente para alguns leads
+3. **Verifique o formato:** Use o padrão correto (+1234567890)
+4. **Contate o suporte:** Para problemas técnicos persistentes
 
-### Low Answer Rate
-**Symptoms:** Most calls go to voicemail or unanswered
+### Baixa Taxa de Atendimento
+**Sintomas:** A maioria das chamadas cai na caixa postal ou não é atendida
 
-**Optimization:**
-1. **Adjust calling hours:** Try different time windows
-2. **Review retry interval:** Space out attempts more
-3. **Check lead quality:** Verify numbers are current
-4. **Caller ID setup:** Ensure professional caller ID display
+**Otimização:**
+1. **Ajuste os horários de chamada:** Teste janelas diferentes
+2. **Revise o intervalo de retry:** Espaçe melhor as tentativas
+3. **Avalie a qualidade dos leads:** Confirme se os números estão atualizados
+4. **Caller ID profissional:** Garanta uma identificação adequada
 
-## Retry Logic Problems
+## Problemas de Lógica de Retry
 
-### Too Many Retries
-**Issue:** Leads complaining about excessive calls
+### Muitas Tentativas
+**Problema:** Leads reclamam de excesso de chamadas
 
-**Solutions:**
-1. **Reduce max retries:** Lower from 5 to 2-3 attempts
-2. **Increase retry interval:** Space calls 2-4 hours apart
-3. **Disable voicemail retry:** Accept voicemail as contact
-4. **Review goal variables:** Ensure proper completion tracking
+**Soluções:**
+1. **Reduza o máximo de retries:** De 5 para 2–3 tentativas
+2. **Aumente o intervalo:** Espaçe chamadas em 2–4 horas
+3. **Desative retry em voicemail:** Considere voicemail como contato válido
+4. **Revise variáveis de objetivo:** Garanta rastreamento correto
 
-### Not Enough Retries
-**Issue:** Missing potential contacts with limited attempts
+### Poucas Tentativas
+**Problema:** Perda de contatos potenciais por poucas tentativas
 
-**Solutions:**
-1. **Increase max retries:** Up to 5 attempts
-2. **Enable voicemail retry:** Continue until human contact
-3. **Adjust retry interval:** Try different times of day
-4. **Use goal-based retry:** For high-value prospects
+**Soluções:**
+1. **Aumente o máximo de retries:** Até 5 tentativas
+2. **Ative retry em voicemail:** Continue até contato humano
+3. **Ajuste intervalos:** Teste diferentes horários do dia
+4. **Use retry baseado em objetivo:** Para prospects de alto valor
 
-## Goal Completion Issues
+## Problemas de Conclusão por Objetivo
 
-### Goal Variable Not Working
-**Issue:** Retry until goal completed not functioning
+### Variável de Objetivo Não Funciona
+**Problema:** Retry até concluir objetivo não está funcionando
 
-**Requirements:**
-1. **Post-call variables** must be configured in assistant
-2. **Boolean variable** must exist in post-call schema
-3. **Variable name** must match exactly in campaign settings
-4. **AI extraction** must be working properly
+**Requisitos:**
+1. **Variáveis pós-chamada** devem estar configuradas no assistente
+2. **Variável booleana** deve existir no schema pós-chamada
+3. **Nome da variável** deve corresponder exatamente ao da campanha
+4. **Extração da IA** deve estar funcionando corretamente
 
-**Solution:** Test assistant's post-call variable extraction with manual calls
+**Solução:** Teste a extração de variáveis pós-chamada com ligações manuais
 
-### False Goal Completion
-**Issue:** Leads marked complete incorrectly
+### Conclusão Falsa de Objetivo
+**Problema:** Leads marcados como concluídos incorretamente
 
-**Debugging:**
-1. **Review call transcripts** for AI extraction errors
-2. **Test variable definitions** with sample calls
-3. **Adjust AI prompt** for clearer goal criteria
-4. **Refine variable descriptions** in assistant settings
+**Depuração:**
+1. **Revise transcrições** para erros de extração
+2. **Teste definições de variáveis** com chamadas de exemplo
+3. **Ajuste o prompt da IA** para critérios mais claros
+4. **Refine descrições das variáveis** nas configurações do assistente
 
-## Performance Optimization
+## Otimização de Desempenho
 
-### Slow Campaign Progress
-**Causes:**
-- Conservative retry intervals
-- Limited allowed calling hours
-- High failure rate reducing available leads
+### Progresso Lento da Campanha
+**Causas:**
+- Intervalos de retry conservadores
+- Horários de chamada limitados
+- Alta taxa de falhas reduzindo leads disponíveis
 
-**Solutions:**
-1. **Parallel processing:** Create multiple smaller campaigns
-2. **Optimize timing:** Use peak answer hours
-3. **Clean data:** Remove problematic numbers
-4. **Increase calling window:** Extend allowed hours
+**Soluções:**
+1. **Processamento paralelo:** Crie várias campanhas menores
+2. **Otimize horários:** Utilize horários de maior taxa de atendimento
+3. **Limpe dados:** Remova números problemáticos
+4. **Amplie a janela:** Estenda os horários permitidos
 
-### System Resource Issues
-**Symptoms:** Delayed calls, processing bottlenecks
+### Problemas de Recursos do Sistema
+**Sintomas:** Atrasos nas chamadas, gargalos de processamento
 
-**Solutions:**
-1. **Reduce concurrent campaigns:** Limit active campaigns
-2. **Stagger campaign starts:** Don't start multiple campaigns simultaneously
-3. **Contact support:** For platform performance issues
+**Soluções:**
+1. **Reduza campanhas simultâneas:** Limite campanhas ativas
+2. **Escalone inícios:** Evite iniciar várias campanhas ao mesmo tempo
+3. **Contate o suporte:** Para problemas de performance da plataforma
 
-## Lead Management Issues
+## Problemas de Gestão de Leads
 
-### Duplicate Contacts
-**Issue:** Same person called multiple times from different leads
+### Contatos Duplicados
+**Problema:** A mesma pessoa recebe várias chamadas de leads diferentes
 
-**Prevention:**
-1. **Data cleanup:** Remove duplicates before import
-2. **Phone number validation:** Check for format variations
-3. **Lead deduplication:** Use tools to identify duplicates
+**Prevenção:**
+1. **Limpeza de dados:** Remova duplicados antes da importação
+2. **Validação de números:** Verifique variações de formato
+3. **Deduplicação:** Utilize ferramentas para identificar duplicatas
 
-### Secondary Contact Confusion
-**Issue:** Unclear which contact was reached
+### Confusão com Contatos Secundários
+**Problema:** Não fica claro qual contato foi atendido
 
-**Solution:**
-1. **Clear naming:** Use descriptive names for secondary contacts
-2. **Call notes:** Review transcripts to identify who answered
-3. **Lead organization:** Group related contacts properly
+**Solução:**
+1. **Nomenclatura clara:** Use nomes descritivos para contatos secundários
+2. **Notas de chamada:** Revise transcrições para identificar quem atendeu
+3. **Organização dos leads:** Agrupe contatos relacionados corretamente
 
-## Common Error Messages
+## Mensagens de Erro Comuns
 
 ### "Campaign is already in progress"
-**Solution:** Campaign is already running. Pause it first to make changes.
+**Solução:** A campanha já está em execução. Pause-a para realizar alterações.
 
 ### "Campaign is not running"
-**Solution:** Campaign is paused or stopped. Start it to resume calling.
+**Solução:** A campanha está pausada ou encerrada. Inicie para retomar as chamadas.
 
 ### "Assistant timezone not set"
-**Solution:** Configure timezone in assistant settings before creating campaign.
+**Solução:** Configure o fuso horário do assistente antes de criar a campanha.
 
-## Getting Help
+## Obtendo Ajuda
 
-### Before Contacting Support
-1. **Check error messages** for specific guidance
-2. **Review campaign settings** for obvious issues
-3. **Test with single lead** to isolate problems
-4. **Check account status** and billing
+### Antes de Contatar o Suporte
+1. **Verifique mensagens de erro** para orientações específicas
+2. **Revise configurações da campanha** em busca de problemas óbvios
+3. **Teste com um único lead** para isolar a falha
+4. **Confira status da conta** e cobrança
 
-### Information to Provide
-- Campaign ID and name
-- Error messages received
-- Steps taken before issue occurred
-- Expected vs actual behavior
-- Assistant and phone number configuration
+### Informações a Fornecer
+- ID e nome da campanha
+- Mensagens de erro recebidas
+- Passos realizados antes do problema
+- Comportamento esperado vs. atual
+- Configuração do assistente e do número
 
 <Warning>
-**Campaign delays:** Allow 10-15 minutes after starting before expecting calls to begin. The system needs time to initialize and queue leads.
+**Atrasos de campanha:** Aguarde de 10 a 15 minutos após iniciar antes de esperar chamadas. O sistema precisa de tempo para inicializar e enfileirar os leads.
 </Warning>
 
 <Note>
-For additional help with campaign optimization, see [Campaign Best Practices](/campaigns/best-practices).
+Para mais ajuda na otimização de campanhas, consulte [Boas Práticas de Campanhas](/campaigns/best-practices).
 </Note>
