@@ -142,11 +142,15 @@ https://api.exemplo.com/pedidos/status
 
 Com variáveis:
 https://api.exemplo.com/pedidos/{order_id}/status
-A IA substituirá automaticamente {order_id} pelo valor real coletado durante a conversa.
+```
+
+A IA substituirá automaticamente `{order_id}` pelo valor real coletado durante a conversa.
 
 Testes Facilitados
-<Card title="Testes Automáticos" icon="vial"> Clique em **Testar Ferramenta** para executar um teste com dados fictícios: - Parâmetros string: "test" - Parâmetros numéricos: 1 - Parâmetros booleanos: true
-Você visualizará o código de resposta e o corpo da resposta para validar o funcionamento.
+<Card title="Testes Automáticos" icon="vial">
+  Clique em **Testar Ferramenta** para executar um teste com dados fictícios:
+  Parâmetros string: "test", Parâmetros numéricos: 1, Parâmetros booleanos: true.
+  Você visualizará o código de resposta e o corpo da resposta para validar o funcionamento.
 </Card>
 
 Recurso Avançado: Integração com Plataforma de Automação
@@ -183,26 +187,43 @@ Aplicar regras de negócio complexas
 Tratar erros de forma controlada
 
 Exemplos Reais de Uso
-<AccordionGroup> <Accordion title="Consulta de Pedido" icon="magnifying-glass"> ```yaml Name: check_order Endpoint: https://api.sualoja.com/pedidos/{order_number} Parameters: - Name: order_number Type: string Description: "Referência do pedido (formato: ORD-XXXXX)" ```
-A IA irá:
-1. Solicitar o número do pedido
-2. Consultar o status
-3. Informar prazos e situação ao cliente
-</Accordion> <Accordion title="Disponibilidade de Agenda" icon="calendar"> ```yaml Name: check_slots Endpoint: https://api.calendario.com/disponibilidade Parameters: - Name: service Type: string Description: "Tipo de serviço (corte, massagem, consulta)" - Name: date Type: string Description: "Data desejada (dd/mm/aaaa)" ```
-A IA irá:
-1. Perguntar o serviço desejado
-2. Coletar a data preferida
-3. Informar horários disponíveis
-</Accordion> <Accordion title="Validação de Cliente" icon="shield-check"> ```yaml Name: verify_customer Endpoint: https://api.crm.com/verify Parameters: - Name: phone Type: string Description: "Número de telefone com 10 dígitos" - Name: email Type: string Description: "Endereço de e-mail para validação" ```
-A IA irá:
-1. Coletar dados de contato
-2. Validar no CRM
-3. Prosseguir conforme o resultado
-</Accordion> </AccordionGroup>
+
+<AccordionGroup>
+  <Accordion title="Consulta de Pedido" icon="magnifying-glass">
+    Name: check\_order, Endpoint: https://api.sualoja.com/pedidos/\{order\_number}, Parameters: order\_number (string) – "Referência do pedido (formato: ORD-XXXXX)".
+
+    A IA irá:
+    1. Solicitar o número do pedido
+    2. Consultar o status
+    3. Informar prazos e situação ao cliente
+  </Accordion>
+  <Accordion title="Disponibilidade de Agenda" icon="calendar">
+    Name: check\_slots, Endpoint: https://api.calendario.com/disponibilidade, Parameters: service (string) – "Tipo de serviço (corte, massagem, consulta)"; date (string) – "Data desejada (dd/mm/aaaa)".
+
+    A IA irá:
+    1. Perguntar o serviço desejado
+    2. Coletar a data preferida
+    3. Informar horários disponíveis
+  </Accordion>
+  <Accordion title="Validação de Cliente" icon="shield-check">
+    Name: verify\_customer, Endpoint: https://api.crm.com/verify, Parameters: phone (string) – "Número de telefone com 10 dígitos"; email (string) – "Endereço de e-mail para validação".
+
+    A IA irá:
+    1. Coletar dados de contato
+    2. Validar no CRM
+    3. Prosseguir conforme o resultado
+  </Accordion>
+</AccordionGroup>
+
 Configurando o Uso pela IA
-<Info> A IA precisa de instruções claras no prompt de sistema para utilizar corretamente as ferramentas personalizadas. </Info>
+
+<Info>
+  A IA precisa de instruções claras no prompt de sistema para utilizar corretamente as ferramentas personalizadas.
+</Info>
+
 Exemplo de trecho de prompt:
-Quando usar a ferramenta check_order:
+
+Quando usar a ferramenta `check_order`:
 1. Cliente pergunta sobre status do pedido
 2. Menciona entrega ou rastreamento
 3. Quer saber onde está o pedido
@@ -212,4 +233,7 @@ Como utilizar:
 2. Validar formato (ORD-XXXXX)
 3. Usar a ferramenta para consultar o status
 4. Explicar o resultado de forma simples
-<Tip> Teste suas ferramentas com diferentes fluxos de conversa para garantir que a IA lide bem com todos os cenários. Comece com chamadas de teste simples antes de colocar em produção. </Tip> ```
+
+<Tip>
+  Teste suas ferramentas com diferentes fluxos de conversa para garantir que a IA lide bem com todos os cenários. Comece com chamadas de teste simples antes de colocar em produção.
+</Tip>
